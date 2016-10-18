@@ -1,0 +1,8 @@
+\select@language {ngerman}
+\contentsline {section}{\numberline {1}Einleitung}{1}{section.1}
+\contentsline {section}{\numberline {2}Theoretische Grundlagen}{2}{section.2}
+\contentsline {section}{\numberline {3}Versuchsaufbau und -Durchf\IeC {\"u}hrung}{3}{section.3}
+\contentsline {section}{\numberline {4}Auswertung}{3}{section.4}
+\contentsline {section}{\numberline {5}Zusammenfassung und Diskussion }{4}{section.5}
+\contentsline {section}{\numberline {6}Anhang}{5}{section.6}
+\contentsline {subsection}{\numberline {6.1}Laborheft}{5}{subsection.6.1}

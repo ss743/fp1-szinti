@@ -1,0 +1,27 @@
+\select@language {ngerman}
+\contentsline {section}{\numberline {1}Einleitung}{1}{section.1}
+\contentsline {section}{\numberline {2}Theoretische Grundlagen}{2}{section.2}
+\contentsline {subsection}{\numberline {2.1}Zerfallsgesetz}{2}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}Radioaktive Zerf\IeC {\"a}lle}{2}{subsection.2.2}
+\contentsline {subsubsection}{\numberline {2.2.1}$\alpha $-Zerfall}{2}{subsubsection.2.2.1}
+\contentsline {subsubsection}{\numberline {2.2.2}$\beta $-Zerfall}{2}{subsubsection.2.2.2}
+\contentsline {subsubsection}{\numberline {2.2.3}Elektroneneinfang}{3}{subsubsection.2.2.3}
+\contentsline {subsubsection}{\numberline {2.2.4}$\gamma $-Zerfall}{3}{subsubsection.2.2.4}
+\contentsline {subsubsection}{\numberline {2.2.5}Innere Konversion}{3}{subsubsection.2.2.5}
+\contentsline {subsection}{\numberline {2.3}Prozesse in der Atomh\IeC {\"u}lle}{3}{subsection.2.3}
+\contentsline {subsection}{\numberline {2.4}Wechselwirkung von $\gamma $-Strahlung mit Materie}{4}{subsection.2.4}
+\contentsline {subsubsection}{\numberline {2.4.1}Photo-Effekt}{4}{subsubsection.2.4.1}
+\contentsline {subsubsection}{\numberline {2.4.2}Compton-Effekt}{4}{subsubsection.2.4.2}
+\contentsline {subsubsection}{\numberline {2.4.3}Paarbildung und Paarvernichtung}{5}{subsubsection.2.4.3}
+\contentsline {subsection}{\numberline {2.5}Zerfallsreihen der verwendeten Pr\IeC {\"a}parate}{5}{subsection.2.5}
+\contentsline {subsubsection}{\numberline {2.5.1}Natrium $^{22}Na$}{5}{subsubsection.2.5.1}
+\contentsline {subsubsection}{\numberline {2.5.2}Cobalt $^{60}Co$}{5}{subsubsection.2.5.2}
+\contentsline {subsubsection}{\numberline {2.5.3}Europium $^{152}Eu$}{6}{subsubsection.2.5.3}
+\contentsline {subsubsection}{\numberline {2.5.4}Thorium $^{228}Th$}{6}{subsubsection.2.5.4}
+\contentsline {subsection}{\numberline {2.6}Szintillationsz\IeC {\"a}hler}{6}{subsection.2.6}
+\contentsline {subsection}{\numberline {2.7}Ger\IeC {\"a}tebeschreibung}{7}{subsection.2.7}
+\contentsline {section}{\numberline {3}Versuchsaufbau und -Durchf\IeC {\"u}hrung}{8}{section.3}
+\contentsline {section}{\numberline {4}Auswertung}{8}{section.4}
+\contentsline {section}{\numberline {5}Zusammenfassung und Diskussion }{9}{section.5}
+\contentsline {section}{\numberline {6}Anhang}{10}{section.6}
+\contentsline {subsection}{\numberline {6.1}Laborheft}{10}{subsection.6.1}

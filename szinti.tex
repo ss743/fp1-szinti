@@ -1,0 +1,315 @@
+\documentclass[12pt]{article}
+
+\usepackage{fancyhdr}
+\usepackage{geometry}
+\usepackage{ucs}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+\usepackage{amsmath,amssymb,amstext}
+\usepackage{hyperref}
+\usepackage{cancel}
+\usepackage{dsfont}
+\usepackage{physics}
+\usepackage{lmodern}
+\usepackage{enumerate}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{listings, color}
+\usepackage[labelfont=bf]{caption}
+\usepackage{titling}
+
+\lstset{basicstyle=\scriptsize} %Quellcode mit Umlauten und ganz klein
+\lstset{literate=
+  {Ö}{{\"O}}1
+  {Ä}{{\"A}}1
+  {Ü}{{\"U}}1
+  {ß}{{\ss}}2
+  {ü}{{\"u}}1
+  {ä}{{\"a}}1
+  {ö}{{\"o}}1
+}
+
+
+%Geometrie----------------------------------------------------------------------------------------------------------
+
+\geometry{a4paper, top=25mm, left=15mm, right=15mm, bottom=25mm,headsep=10mm, footskip=10mm}
+\pagestyle{fancy}
+\setlength{\parindent}{0pt} %Zeileneinrückung
+
+\fancyhf{} %Setzt voreingestellte Kopf-und Fußzeilen-Eigenschaften zurück
+
+\lhead{\nouppercase{\leftmark}}
+\chead{}
+\rhead{\thepage}
+
+\lfoot{}
+\cfoot{}
+\rfoot{}
+
+\title{\vspace{0cm}{\Huge Fortgeschrittenen-Praktikum I:\\ \vspace{1cm} Szintillationszähler}}
+\author{Saskia Bondza\\Simon Stephan}
+\date{durchgeführt am 12.10.2016 und 13.10.16}
+
+\pretitle{%
+  \begin{center}
+  \LARGE
+  \includegraphics[width=6cm,]{figures/siegel}\\[\bigskipamount]
+}
+\posttitle{\end{center}}
+
+%neue Commands----------------------------------------------------------------------------------------------------------
+\newcommand{\nab}{\vec{\nabla}} %direkter Befehl mit Vektorpfeil
+\newcommand{\gra}[3][0.7]{
+	\begin{minipage}[h!]{\textwidth}
+		\centering
+		\includegraphics[width=#1\textwidth]{figures/#2.png}
+		\captionof{figure}{#3}
+	\end{minipage}
+	\vskip 30 pt
+}
+\newcommand{\graTwo}[4][0.49]{
+	\begin{minipage}[h!]{\textwidth}
+		\centering
+		\includegraphics[width=#1\textwidth]{figures/#2.png}
+		\includegraphics[width=#1\textwidth]{figures/#3.png}
+		\captionof{figure}{#4}
+	\end{minipage}
+	\vskip 30 pt
+}
+\newcommand{\graTwoB}[5]{
+	\begin{minipage}[h!]{\textwidth}
+		\centering
+		\includegraphics[width=#1\textwidth]{figures/#3.png}
+		\includegraphics[width=#2\textwidth]{figures/#4.png}
+		\captionof{figure}{#5}
+	\end{minipage}
+	\vskip 30 pt
+}
+\newcommand{\del}[2][]{\frac{\partial #1}{\partial #2}}
+\newcommand{\code}[1]{\texttt{#1}}
+
+
+%Titel,Inhalt----------------------------------------------------------------------------------------------------------
+
+\begin{document}
+\pagenumbering{gobble} %verstecke Seitenzahl
+\maketitle
+\newpage
+
+\section*{Abstract}
+
+
+
+\newpage
+
+\thispagestyle{empty}
+\tableofcontents
+\newpage
+
+%Schreiben----------------------------------------------------------------------------------------------------------
+\pagenumbering{arabic} %verstecke Seitenzahl
+\section{Einleitung}
+
+
+
+
+\newpage
+\section{Theoretische Grundlagen}
+
+\subsection{Zerfallsgesetz}\label{zerfallsgesetz}
+Der radioaktive Zerfall ist ein statistischer Prozess, d.h. der genaue Zeitpunkt, zu dem ein Kern zerfällt, kann nicht vorhergesagt werden. Wir können nur Wahrscheinlichkeiten angeben. Die Zerfallsrate $dN/dt$ ist abhängig von der momentanen Anzahl $N$ der Atome.
+\[\frac{dN}{dt}=-\lambda N\]
+wobei $\lambda$ die Zerfallskonstante ist, welche den Bruchteil der zu Beginn vorhandenen Kerne, die pro Zeiteinheit zerfallen beschreibt. Zerfallskonstanten einzelner Zerfälle addieren sich, zerfällt ein Kern auf mehrere Arten. Durch Lösen dieser Differentialgleichung erhält man die Anzahl der Kerne $N$ zum Zeitpunkt $t$.
+\[N(t)=N_0e^{-\lambda t}\hspace{0.5cm}\]
+wobei $N_0=N(t=0)$ die anfängliche Anzahl der Kerne beschreibt. Hieraus lässt sich dann die mittlere Lebensdauer $\tau$ bestimmen:
+\[\tau=\frac{1}{\lambda}\]
+welche mit der Halbwertszeit $T_{1/2}$ wie folgt zusammenhängt:
+\[T_{1/2} = \ln2\cdot \tau = \frac{\ln2}{\lambda}\]
+%Eine weitere wichtige Größe ist die Aktivität $A$ welche die Anzahl der Zerfälle pro Sekunde beschreibt und in Becquerel ( $Bq=1/s$) gemessen wird:
+%\[A = \lambda N = \frac{N}{\tau} = \frac{N\ln2}{T_{1/2}}\]
+\subsection{Radioaktive Zerfälle}
+Instabile Atomkerne gehen, je nach Art des Zerfalls, unter Aussendung von ionisierender Strahlung und Aussendung von Teilchen spontan in einen anderen Atomkern über. Im Folgenden werden die verschiedenen Arten radioaktiver Zerfälle erläutert.
+\subsubsection{$\alpha$-Zerfall}
+Beim $\alpha$-Zerfall geht ein schwerer, instabiler Kern unter Aussendung eines $\alpha$-Teilchens, einem Heliumkern (zwei Protonen und zwei Neutronen) in einen stabilen Kern über. Die Massenzahl des neuen Atomkerns ist dabei um vier gesunken, die Ordnungszahl verringert sich um zwei.
+
+\begin{align}
+{}_Z^A X \rightarrow {}_{Z-2}^{A-4} Y + {}^4_2He
+\end{align}
+
+\subsubsection{$\beta$-Zerfall}
+Der $\beta$-Zerfall wird durch verschiedene Prozesse der schwachen Wechselwirkung beschrieben bei denen Elektronen  und Positronen auftreten. Bei diesem Vorgang wird durch W-Boson-Austausch ein Proton in ein Neutron umgewandelt bzw. ein Neutron in ein Proton.
+
+\paragraph*{$\beta^-$-Zerfall:} 
+Bei dieser Art des Zerfalls wandelt sich ein Neutron im Kern unter Aussendung eines Elektrons und eines Elektron-Antineutrinos in ein Proton um. 
+\begin{align*}
+n &\rightarrow p + e^- + \bar{\nu_e}\\
+{}_Z^A X &\rightarrow {}_{Z+1}^A Y + e^- + \bar{\nu_e}
+\end{align*}
+
+Hierbei entspricht X dem Mutternuklid und Y dem Tochternuklid. Die Ordnungszahl erhöht sich bei diesem Vorgang um eine Einheit, die Massenzahl ändert sich nicht.
+
+\paragraph*{$\beta^+$-Zerfall:}
+Der $\beta^+$-Zerfall ist dem $\beta^-$-Zerfall sehr ähnlich, Hier wandelt sich ein Proton im Kern unter Aussendung eines Positrons und eines Elektron-Neutrinos in ein Neutron um.
+\begin{align*}
+p &\rightarrow n + e^+ + \nu_e\\
+{}_Z^A X &\rightarrow {}_{Z-1}^A Y + e^+ + \nu_e
+\end{align*}
+
+Bei diesem Prozess sinkt die Kernladungszahl um eine Einheit während die Massenzahl wie auch beim $\beta^-$-Zerfall unverändert bleibt.
+
+\subsubsection{Elektroneneinfang}
+Die meisten schweren, instabilen Kerne mit Protonenüberschuss wandeln sich durch Elektroneneinfang in stabile Kerne um.
+Der Elektroneneinfang führt effektiv im Kern zum gleichen Resultat wie der $\beta^+$-Zerfall, d.h. die Ordnungszahl verringert sich um eine Einheit, die Massenzahl bleibt unverändert. Meist wird aus der Kern-nächsten Schale, der K-Schale, ein Bahnelektron unter Aussendung eines Neutrinos eingefangen. Die Lücke, die hierbei entsteht, wird meist durch ein aus der L-Schale stammendes Elektron unter Emission von Röntgenstrahlung oder Auger-Elektronen (siehe \ref{auger}) gefüllt. Dieser Vorgang wiederholt sich mit den weiter außen liegenden Schalen.
+\[{}_Z^A X + e^- \rightarrow\ {}_{Z-1}^A Y + \nu_e\]
+\subsubsection{$\gamma$-Zerfall}
+
+Der $\gamma$-Zerfall ist oft eine Begleiterscheinung der bereits diskutierten Kernzerfälle: Befindet sich das Tochternuklid nach dem Zerfall in einem angeregten Zustand, geht es über Aussendung eines $\gamma$-Quants (Photon)  in einen energetisch niedrigeren Zustand über. Die Energie dieser Photonen liegt dabei im Bereich von keV bis MeV. In Materie fällt die Intensität $I_d$ der $\gamma$-Strahlung exponentiell mit der Strecke $d$ ab:
+\[I_d=e^{\mu d}\]
+Dabei ist $\mu$ der Absorptionskoeffizent des Materials und $I_0$ die Anfangsintensität.
+
+\subsubsection{Innere Konversion}
+Konkurrierend zum $\gamma$-Zerfall gibt es auch die Innere Konversion. Bei dieser gehen angeregte Kernzustände strahlungslos in den Grundzustand über, wobei die Energie an ein Elektron übertragen und dieses abgestrahlt wird. Die so entstandene Lücke in der Atomhülle wird dann unter Emission von Röntgenstrahlung oder Auger-Elektronen (siehe \ref{auger}) gefüllt.
+
+\subsection{Prozesse in der Atomhülle}\label{auger}
+Bei manchen Zerfallsprozessen entsteht in der Atomhülle durch Emission eines Elektrons ein Loch. Dieses Loch wird gefüllt, indem ein Elektron einer höheren Schale in die Schale des Loches wechselt und dabei Energie freigibt. Diese Energie kann entweder über direkte Emission eines Photons (Röntgenstrahlung) oder über die Emission eines anderen Elektrons (Auger-Elektron) abgegeben werden. Dadurch entstehen ein oder zwei neue Lücken, welche wiederum über die weitere Emission von Röntgenstrahlung oder eines Auger-Elektrons geschlossen werden können.
+
+\subsection{Wechselwirkung von $\gamma$-Strahlung mit Materie}
+Um $\gamma$-Strahlung detektieren zu können, muss die $\gamma$-Strahlung mit Materie wechselwirken. Wir unterscheiden dabei grundsätzlich drei Prozesse: Den Photoeffekt, den Compton-Effekt und die Paarbildung.
+ \subsubsection{Photo-Effekt}
+ Beim Photoeffekt dringt ein Photon in das Atom ein und überträgt seine gesamte Energie an ein Elektron der inneren Schalen. Dabei wird Energie auf dieses Elektron übertragen, es wird aus der Atomhülle befreit und erhält kinetische Energie. Die hier entstandene Lücke wird über Abstrahlung eines $\gamma$-Quants oder eines Auger-Elektrons wieder gefüllt.
+ Der Photoeffekt findet typischerweise bei Energien bis zu $200$ keV statt.
+ 
+ \gra{Photo}{Äußerer Photoeffekt.}
+ \subsubsection{Compton-Effekt}
+ Beim Compton-Effekt trifft ein einfallendes $\gamma$-Quant auf ein freies oder nur leicht gebundenes Elektron und überträgt einen Teil seiner Energie auf dieses. Dieser Prozess findet meist bei Energien zwischen $200$ keV und $5$ MeV statt.
+ 
+ \gra{Compton}{links: In dieser Darstellung kann man ein Photon sehen, das mittels Comptonef-
+ fekt an einem Elektron gestreut wird und dabei Energie verliert, da es nach dem Stoß langwelliger
+ ist. rechts: Dieser Graph skizziert den erwateten Verlauf im Energiespektrum einer einzelnen
+ Photonenenregie durch Compton- und Photoeffekt. Die Wölbung des Comptonplateaus ist nicht zu
+ sehen.}
+ \subsubsection{Paarbildung und Paarvernichtung}
+ Bei der Paarbildung entsteht durch die Wechselwirkung des $\gamma$-Quants mit dem elektromagnetischen Feld des Atomkerns oder eines Elektrons ein Teilchen-Antiteilchen-Paar, z.B. Elektronen-Positronen-Paar.Paarbildung ist für Energien über $1,022$ MeV möglich. Die über diesen Grenzwert hinausgehende Energie wird auf die entstandenen Teilchen übertragen, der Imuls wird vom Kern aufgenommen. Da das Positron nicht lange alleine existieren kann, vereinigt es sich unter Abstrahlung von zwei $\gamma$-Quanten mit einem Elektron.
+ 
+ \subsection{Zerfallsreihen der verwendeten Präparate}
+ 
+ Das Produkt eines radioaktiven Zerfalls kann instabil sein und ebenfalls zerfallen. Diese
+ Abfolge von Zerfällen wird Zerfallsreihe genannt. Nachfolgend werden die Zerfallsrei-
+ hen der verwendeten radioaktiven Isotope und die sich hieraus ergebenden erwarteten Peaks im Spektrum erläutert.
+ 
+ \subsubsection{Natrium $^{22}Na$}
+ 
+ \gra{Zerfallsreihe-Na}{Zerfallsreihe von $^{22}Na$}
+ 
+ \subsubsection{Cobalt  $^{60}Co$}
+ 
+ \gra{Zerfallsreihe-Co}{Zerfallsreihe von $^{60}Co$ }
+ 
+ \subsubsection{Europium  $^{152}Eu$}
+ 
+ \gra{Zerfallsreihe-Eu}{Zerfallsreihe von $^{152}Eu$}
+ 
+  \subsubsection{Thorium  $^{228}Th$}
+  
+  \gra{Zerfallsreihe-Th}{Zerfallsreihe von  $^{228}Th$}
+ 
+ 
+ 
+ \subsection{Szintillationszähler}
+ 
+ \gra{Szinti}{Funktionsweise eines Szintillationszähler \cite{Demtröder} \label{Szintiyay}}
+ 
+ \subsection{Gerätebeschreibung}
+ \paragraph{Detektor} Der Szintillator und der Photomultiplier bilden zusammen den Detektor.
+ \paragraph{Pre-Amplifier}
+ Der Pre-Amplifier (PA) verstärkt die schwachen Signale des Detektors und verbessert so
+ das Signal zu Rausch Verhältnis. Um Signalverluste entlang der Kabel zu reduzieren, ist der PA im Gehäuse des PM integriert. Die Pulsform des Ausgangssignals besitzt eine negative Amplitude und nimmt exponentiell zu.
+ \paragraph{Main Amplifier (MA)}
+ Der Hauptverstärker  verstärkt das Spannungssignal rauscharm und erzeugt einen möglichst kurzen Puls, dessen Dauer Amplituden-unabhängig ist. Die Pulshöhe ist dabei annähernd proportional zur deponierten Ladungsmenge im Szintillator. Der Hauptverstärker hat zwei verschiedene Ausgänge, die entweder ein bipolares Signal (zeitsensible Messungen) oder ein unipolares Signal (Aufnahme der Spektren) liefern.
+ \paragraph{Multi Channel Analyser}
+ Der Multi Channel Analyser ordnet jeden eingehenden Puls, abhängig von der Pulshöhe (also von der im Szintillator deponierten Ladungsmenge ) einem Channel zu. Das so erhaltene Energiespektrum kann als Histogramm dargestellt werden.
+ \paragraph{Single Channel Analyser}
+ Ein Single Channel Analyser selektiert aus eingehenden Signalen in dem nur für Energien in einem einstellbaren Energiefenster ein Ausgangspuls erzeugt wird.  Für die Messung der verzögerten und zufälligen Koinzedenzen sollen hier die Energiefenster dem $122$ keV Peak und dem $14,4$ keV Peak angepasst werden (siehe \ref{Energiefenster})
+ \paragraph{Gate} Das Gate hat zwei Eingänge. Sofern am enable Eingang ein Signal ankommt, wird das Signal des anderen Eingangs während dieser Zeit direkt als Output weitergeleitet. Die Dauer des Gatesignals kann mit einem Schlitzschraubenzieher eingestellt werden.
+ \paragraph{Timing Unit}
+ \paragraph{Coincidence Unit}
+ Man spricht von einer Koinzidenz wenn zwei oder mehr Signale zeitgleich auftreten. Sofern eine Koinzidenz (dies kann durch Überschreiten einer Schwelle von der Summe beider Signale erfasst werden) vorliegt, erzeugt die Koinzidenz Unit ein logisches Ausgangssignal.
+ \paragraph{HEX Counter}
+Der HEX-Counter zählt die eintreffenden Signale sowie die Zeit.
+ 
+\newpage
+\section{Versuchsaufbau und -Durchführung}
+
+
+\section{Auswertung}
+
+
+\newpage
+\section{Zusammenfassung und Diskussion \label{Diskussion}}
+
+
+\newpage
+\section{Anhang}
+
+%\subsection{Grafiken}
+
+
+%\subsection{Tabellen}
+
+%\subsubsection{$\alpha$-Plateau Samarium}
+%\lstinputlisting[language=MATLAB]{Rohdaten/alphaPlateau_Sm.txt}
+
+
+%\newpage
+%\subsection{Quellcode (MATLAB)}
+%\lstinputlisting[language=MATLAB]{Rohdaten/alpha.m}
+
+%\newpage
+\subsection{Laborheft}
+%\begin{minipage}{\textwidth}
+%\centering
+%\includegraphics[width=0.9\textwidth]{figures/IMG_20151002_141014.jpg}
+%\end{minipage}
+\label{Laborbuch}
+\newpage
+\listoffigures
+
+%Literatur----------------------------------------------------------------------------------------------------------
+
+%\cite{les}
+\newpage
+\thispagestyle{empty}
+\begin{thebibliography}{9}
+
+\bibitem{anleitung}
+	M. Köhli,
+	\emph{Versuchsanleitung: Szintillationszähler},
+	Institut für Mathematik und Physik,
+	Albert-Ludwigs-universität,
+	2011
+\bibitem{staat}
+	Tobijas Kotyk,
+	\emph{Versuche zur Radioaktivität im Physikalischen Fortgeschrittenen Praktikum an der Albert-Ludwigs-Universität Freiburg},
+	Institut für Mathematik und Physik,
+	Albert-Ludwigs-universität,
+	2011
+\bibitem{med}
+	Dirk Hünninger, Kieran Maher, uvm.,
+	\emph{Physikalische Grundlagen der Nuklearmedizin},
+	Wikibooks.org,
+	2012
+\bibitem{photo}
+	\emph{Praktikum im DESY Zeuthen}
+	https://www-zeuthen.desy.de/exps/physik\_begreifen/chris/\\Photomultiplier.html,
+	Stand: 27.09.15
+	
+\bibitem{Demtröder}
+Wolfgang Demtröder
+ \emph{Experimentalphysik 4: Kern-, Teilchen-, und Astrophysik},
+ Springer-Verlag,
+ 4. Auflage,
+ 2014
+\end{thebibliography}
+
+\end{document}
