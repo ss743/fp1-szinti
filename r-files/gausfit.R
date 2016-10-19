@@ -122,6 +122,11 @@ plotgaus2 <- function(fit,bereich,log="",col="red"){ #--- Plotten der gefitteten
 
 printfitdata <- function(fit,title=""){ #--- Ausgabe der Gaußfit-Daten
   fitdata <- summary(fit)$parameters
+
+  N<-fitdata["N","Estimate"]
+  sN<-fitdata["N","Std. Error"]
+  C<-fitdata["C","Estimate"]
+  sC<-fitdata["C","Std. Error"]
   
   mu<-fitdata["mu","Estimate"]
   smu<-fitdata["mu","Std. Error"]
@@ -130,7 +135,20 @@ printfitdata <- function(fit,title=""){ #--- Ausgabe der Gaußfit-Daten
   
   cat(title)
   cat("\n")
+
+  cat(" N    = ")
+  cat(N)
+  cat("+-")
+  cat(sN)
+  cat("\n")
   
+  cat(" C    = ")
+  cat(C)
+  cat("+-")
+  cat(sC)
+  cat("\n")
+  
+    
   cat(" mu    = ")
   cat(mu)
   cat("+-")
