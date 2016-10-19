@@ -192,7 +192,7 @@ Um $\gamma$-Strahlung detektieren zu können, muss die $\gamma$-Strahlung mit Ma
  \subsubsection{Paarbildung und Paarvernichtung}
  Bei der Paarbildung entsteht durch die Wechselwirkung des $\gamma$-Quants mit dem elektromagnetischen Feld des Atomkerns oder eines Elektrons ein Teilchen-Antiteilchen-Paar, z.B. Elektronen-Positronen-Paar.Paarbildung ist für Energien über $1,022$ MeV möglich. Die über diesen Grenzwert hinausgehende Energie wird auf die entstandenen Teilchen übertragen, der Imuls wird vom Kern aufgenommen. Da das Positron nicht lange alleine existieren kann, vereinigt es sich unter Abstrahlung von zwei $\gamma$-Quanten mit einem Elektron.
  
- \subsection{Zerfallsreihen der verwendeten Präparate}
+ \subsection{Zerfallsreihen der verwendeten Präparate \label{ZR}}
  
  Das Produkt eines radioaktiven Zerfalls kann instabil sein und ebenfalls zerfallen. Diese
  Abfolge von Zerfällen wird Zerfallsreihe genannt. Nachfolgend werden die Zerfallsreihen der verwendeten radioaktiven Isotope und die sich hieraus ergebenden erwarteten Peaks im Spektrum erläutert.
@@ -202,22 +202,33 @@ Um $\gamma$-Strahlung detektieren zu können, muss die $\gamma$-Strahlung mit Ma
  \gra{Zerfallsreihe-Na}{Zerfallsreihe von $^{22}Na$}
  
  \subsubsection{Cobalt  $^{60}Co$}
+ $^{60}Co$ zerfällt durch zwei $\beta^-$ -Zerfälle mit annähernd 100 \% in den angeregten Zustand 4+ von  $^{60}Ni$, wobei die Halbwertszeit $T=5,2714$ Jahre beträgt. Die höchste Wahrscheinlichkeit hat dann der Übergang vom 4+ in den 2+ Kernzustand. Im Energiespektrum von $^{60}Co$ sind somit Peaks bei $1173,2$ keV und $1332,5$ keV  zu erwarten, wobei ersterer der Energiedifferenz zwischen dem 4+ und dem 2+ Kernzustand entspricht und der zweite der Energiedifferenz des Übergangs in den Grundzustand (siehe Abbildung \ref{Co} )
  
- \gra{Zerfallsreihe-Co}{Zerfallsreihe von $^{60}Co$ }
+ \gra{Zerfallsreihe-Co}{Zerfallsreihe von $^{60}Co$ \label{Co} }
  
  \subsubsection{Europium  $^{152}Eu$}
+ Das Europium Isotop $^{152}Eu$ zerfällt mit einer Halbertszeit von 12 Jahren durch $\beta^-$ -Zerfall in   $^{152}_{64}Gd$ sowie $\beta^+$ -Zerfall und Electron Capture in $^{152}_{62}Sm$. Der Übergang der angeregten Zustände von  $^{152}_{64}Gd$ und $^{152}_{62}Sm$ in den Grundzustand entspricht Peaks bei 122 keV und 344 keV. In Abbildung \ref{Eu} sind die für diesen Versuch relevanten Zerfälle dargestellt.
  
- \gra{Zerfallsreihe-Eu}{Zerfallsreihe von $^{152}Eu$}
+ 
+ \gra{Zerfallsreihe-Eu}{Vereinfachte Zerfallsreihe von $^{152}Eu$ \label{Eu}}
  
   \subsubsection{Thorium  $^{228}Th$}
+  In Abbildung \ref{Th} ist die Zerfallsreihe von Thorium  $^{232}Th$ dargestellt, die $^{228}Th$ als Zerfallsprodukt enthält. Es wird hier auf Grund der Komplexität dieser Zerfallsreihe auf die Darstellung der wahrscheinlichsten Übergänge und deren zugehörigen Peaks verzichtet und auf REF verwiesen.
   
-  \gra{Zerfallsreihe-Th}{Zerfallsreihe von  $^{228}Th$}
+  \gra{Zerfallsreihe-Th}{Zerfallsreihe von  $^{228}Th$ \label{Th}}
  
  
  
  \subsection{Szintillationszähler}
  
+ In Abbildung \ref{Szintiyay} ist die Funktionsweise eines Szntillators dargestellt.Mit Szintillatoren bezeichnet man spezielle Messgeräte, mit denen hochenergetische Photonen in Strah-
+ lung niedrigerer Energie aber höherer Intensität umgewandelt werden. Die Intensität der Szintillator-
+ strahlung ist proportional zur Energie der zu detektierenden Strahlung. Im Szintillationsmedium regt
+ die radioaktive Strahlung durch Kernprozesse die Emission von Photonen an. Diese Photonen kön-
+ nen das Medium durchdringen und werden in einem Photomultiplier verstärkt und gemessen.
  \gra{Szinti}{Funktionsweise eines Szintillationszähler \cite{Demtröder} \label{Szintiyay}}
+ 
+ \subsubsection{Organischer Sz}
  
  \subsection{Gerätebeschreibung}
  \paragraph{Detektor} Der Szintillator und der Photomultiplier bilden zusammen den Detektor.
@@ -237,15 +248,47 @@ Um $\gamma$-Strahlung detektieren zu können, muss die $\gamma$-Strahlung mit Ma
  Man spricht von einer Koinzidenz wenn zwei oder mehr Signale zeitgleich auftreten. Sofern eine Koinzidenz (dies kann durch Überschreiten einer Schwelle von der Summe beider Signale erfasst werden) vorliegt, erzeugt die Koinzidenz Unit ein logisches Ausgangssignal.
  \paragraph{HEX Counter}
 Der HEX-Counter zählt die eintreffenden Signale sowie die Zeit.
+
+\subsection{Energiespektrum}
+
+Das Energiespektrum, das aus den gemessenen Photonenenergien ensteht, weißt  charakteristische Merkmale auf. Diese sind im Folgenden erklärt. 
  
+ 
+ \paragraph{Photopeak}
+ 
+ Wird die gesamte Energie eines von der Quelle stammenden Photons im Szintillator absorbiert, so wird dies im Spektrum einem Photopeak zugeordnet. Die zu erwarteten Photopeaks sind vom Präparat abhängig und sind in Kapitel \ref{ZR} erklärt.
+ \paragraph{Escape-Peak}
+ Wenn ein Röntgenquant den Szintillator ohne Wechselwirkung verlassen kann, folgt ein Verlust der Differenz der Bindungsenergie zwischen K-, und L-Schale. Diese Differenz beträgt im Fall des NaI-Szintillators $28$ keV. Damit sind Escapepeaks bei $E_\gamma - 28$ keV zu erwarten, wobei $E_\gamma$ die Energie eines Photopeaks ist.
+
+ \paragraph{Compton-Kante}
+ Die maximale Energie, die ein Photon durch den Compton-Effekt auf ein Elektron übertragen kann, entspricht im Spektrum der Compton-Kante. Diese ist charakterisiert durch einen starken Abfall der Zählrate.
+ 
+ \paragraph{Rückstreupeak}
+ 
+ Die Rückstreuung unter einem Winkel von 180 ° hat beim Compton-Effekt die höchste Wahrscheinlichkeit.
+ Man beobachtet daher einen Rückstreu-Peak im Spektrum unterhalb der Compton-Kante.
+
+ 
+ \paragraph{Röntgen-Fluoreszenz-Peak}
+Es können in der Quelle Wechselwirkungen von $\gamma$-Quanten mit Elektronen stattfinden, ohne dass diese vom Szintillator detektiert werden. Geht ein Elektron von einer höheren Schale in jene Schale über aus der ein Elktron ausgetreten ist, kann ein Auger-Elektron oder charakteristische Röntgenstrahlung freigesetzt werden. Die Energie dieser charakteristischen Röntgenstrahlung ist dann als Röntgen-Fluoreszenz-Peak im Energiespektrum zu beobachten.
+
+
+
+
 \newpage
 \section{Versuchsaufbau und -Durchführung}
 
+\subsection{Teil I: Vorbereitung und Energiekalibrierung}
+
+\subsection{Teil II: Messung der Koinzedenzen}
+
+
+
+
 \newpage
-\section{Auswertung}
-Die Auswertung haben wir mit der Programmiersprache \code{R} durchgeführt. Der Quellcode befindet sich im Anhang in Kapitel \ref{sourcecode}.
+\section{Auswertung}Die Auswertung haben wir mit der Programmiersprache \code{R} durchgeführt. Der Quellcode befindet sich im Anhang in Kapitel \ref{sourcecode}.
 \subsection{Aufnahme des Thoriumspektrums}
-Um das aufgenommene Thoriumspektrum auswerten zu können, müssen wir den Kanälen des MCA die entsprechende Energie zuordnen. Dazu haben wir für Cobalt, Natrium und Europium ebenfalls Spektren aufgenommen und aus den bekannten Peaks für diese Proben die Energiekalibrierung durchgeführt. Um die Spektren zu bereinigen, haben wir eine Untergrundmessung durchgeführt und die Zählraten des Untergrunds von den gemessenen Zählraten abgezogen, um äußere Einflüsse auf die Spektren zu verringern (siehe \ref{untergrund}).
+Um das aufgenommene Thoriumspektrum auswerten zu können, müssen wir den Kanälen des MCA die entsprechende Energie zuordnen. Dazu haben wir für Cobalt, Natrium und Europium ebenfalls Spektren aufgenommen und aus den bekannten Peaks für diese Proben die Energiekalibrierung durchgeführt. Um die Spektren zu bereinigen, haben wir eine Untergrundmessung durchgeführt und die Zählraten des Untergrunds von den gemessenen Zählraten abgezogen, um äußere Einflüsse auf die Spektren zu verringern (siehe \ref{untergrund}). Der Fehler auf die Messwerte ergibt sich durch den Poissonfehler $s_N=\sqrt{N}$ss
 
 \subsubsection{Energiekalibrierung}
 \paragraph{Cobaltspektrum}\ \\
@@ -307,21 +350,22 @@ In Abbildung \ref{natriumbild} ist das Spektrum der Europiumprobe mit den Gaußf
 
 Anschließend tragen wir die Kanäle der gemessenen Peaks über die dazugehörigen Energien auf und fitten daran eine lineare Funktion, um die Umrechnung zwischen Kanälen und Energien zu bestimmen. Aus dem Fit erhalten wir folgende Funktion:
 \begin{align*}
-	\text{Kanal}&=\left(2.217\pm0.012\right)\mathrm{\frac1{eV}}\cdot E + \left(34\pm 5\right)&\text{ mit } \chi^2&=0.34
+\text{Kanal}&=\left(2.217\pm0.012\right)\mathrm{\frac1{eV}}\cdot E + \left(34\pm 5\right)&\text{ mit } \chi^2&=0.34
 \end{align*}
 Also gilt für die Umrechnung von Kanälen in Energie nun:
 \begin{align}
-	E&=\left(0.451\pm0.002\right)\mathrm{keV}\cdot\text{Kanal}+\left(15\pm2\right)\mathrm{keV}\label{umrechnung}
+E&=\left(0.451\pm0.002\right)\mathrm{keV}\cdot\text{Kanal}+\left(15\pm2\right)\mathrm{keV}\label{umrechnung}
 \end{align}
 mit dem Fehler auf die Energie durch Gauß'sche Fehlerfortpflanzung:
 \begin{align*}
-	s_E&=\cdot\sqrt{E^2\cdot\left(\left(\frac{s_{\text{Kanal}}}{\text{Kanal}}\right)^2+\left(\frac{0.002}{0.451}\right)^2\right)+4}
+s_E&=\cdot\sqrt{E^2\cdot\left(\left(\frac{s_{\text{Kanal}}}{\text{Kanal}}\right)^2+\left(\frac{0.002}{0.451}\right)^2\right)+4}
 \end{align*}
 Im Folgenden werden die Spektren immer mithilfe von (\ref{umrechnung}) über die Energie aufgetragen.
 
 \subsubsection{Untergrund}\label{untergrund}
 %\gra[1]{untergrund-0}{Untergrundspektrum}
-\gra[1]{untergrund}{Untergrundspektrum}
+\gra[1]{untergrund}{Untergrundspektrum\label{background}}
+In Abbildung \ref{background} ist das gemessene Untergrundspektrum aufgetragen. In diesem lassen sich zwei Peaks identifizieren
 
 \subsubsection{Bestimmung der Thorium-Peaks}
 \gra{thorium-1}{Ausschnitt aus dem Thoriumspektrum}
