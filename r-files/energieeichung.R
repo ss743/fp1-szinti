@@ -2,6 +2,8 @@ source("functions.R")
 source("gausfit.R")
 source("linearfit.R")
 
+par(mar=c(5,5,1,1))
+
 europium   = read("Europium")[[1]]
 cobalt     = read("Cobalt")[[1]]
 natrium    = read("Natrium")[[1]]
@@ -34,7 +36,7 @@ channels   = c(1:8192)
 untergrund=untergrund/tuntergrund
 suntergrund=suntergrund/tuntergrund
 
-drawCI(channels,untergrund,suntergrund,log="y")
+drawCI(channels,untergrund,suntergrund,log="y",xlab="Kanal",ylim=c(10^-5,10^0))
 
 europium_c = europium/teuropium - untergrund
 cobalt_c   = cobalt  /tcobalt   - untergrund
@@ -46,57 +48,93 @@ scobalt_c   = sqrt((scobalt/tcobalt)^2    +(suntergrund)^2)
 snatrium_c  = sqrt((snatrium/tnatrium)^2  +(suntergrund)^2)
 sthorium_c  = sqrt((sthorium/tthorium)^2  +(suntergrund)^2)
 
-na_fitgrenzen=array(c(1100,1300,2670,3100),dim=c(2,2))
-co_fitgrenzen=array(c(2500,2750,2850,3200),dim=c(2,2))
-eu_fitgrenzen=array(c(250,350,700,900),dim=c(2,2))
+na_fitgrenzen=array(c(1100,1300,2670,3100,3800,4200),dim=c(2,3))
+co_fitgrenzen=array(c(2500,2750,2850,3200,5400,6000),dim=c(2,3))
+eu_fitgrenzen=array(c(250,350,700,900,520,680,1700,1900,2100,2300,2350,2650,3000,3300,60,140,150,250),dim=c(2,9))
 try({
   na_fit1=gausfit(data.frame(x=channels,y=natrium_c,sy=snatrium_c),na_fitgrenzen[,1],weighted=TRUE)
   na_fit2=gausfit(data.frame(x=channels,y=natrium_c,sy=snatrium_c),na_fitgrenzen[,2],weighted=TRUE)
+  na_fit3=gausfit(data.frame(x=channels,y=natrium_c,sy=snatrium_c),na_fitgrenzen[,3],weighted=TRUE)
 })
 try({
   co_fit1=gausfit(data.frame(x=channels,y=cobalt_c,sy=scobalt_c),co_fitgrenzen[,1],weighted=TRUE)
   co_fit2=gausfit(data.frame(x=channels,y=cobalt_c,sy=scobalt_c),co_fitgrenzen[,2],weighted=TRUE)
+  co_fit3=gausfit(data.frame(x=channels,y=cobalt_c,sy=scobalt_c),co_fitgrenzen[,3],weighted=TRUE)
 })
 try({
   eu_fit1=gausfit(data.frame(x=channels,y=europium_c,sy=seuropium_c),eu_fitgrenzen[,1],weighted=TRUE)
   eu_fit2=gausfit(data.frame(x=channels,y=europium_c,sy=seuropium_c),eu_fitgrenzen[,2],weighted=TRUE)
+  eu_fit3=gausfit(data.frame(x=channels,y=europium_c,sy=seuropium_c),eu_fitgrenzen[,3],weighted=TRUE)
+  eu_fit4=gausfit(data.frame(x=channels,y=europium_c,sy=seuropium_c),eu_fitgrenzen[,4],weighted=TRUE)
+  eu_fit5=gausfit(data.frame(x=channels,y=europium_c,sy=seuropium_c),eu_fitgrenzen[,5],weighted=TRUE)
+  eu_fit6=gausfit(data.frame(x=channels,y=europium_c,sy=seuropium_c),eu_fitgrenzen[,6],weighted=TRUE)
+  eu_fit7=gausfit(data.frame(x=channels,y=europium_c,sy=seuropium_c),eu_fitgrenzen[,7],weighted=TRUE)
+  eu_fit8=gausfit(data.frame(x=channels,y=europium_c,sy=seuropium_c),eu_fitgrenzen[,8],weighted=TRUE)
+  eu_fit9=gausfit(data.frame(x=channels,y=europium_c,sy=seuropium_c),eu_fitgrenzen[,9],weighted=TRUE)
 })
 
 
 drawCI(channels,europium_c,seuropium_c,log="y")
 plotgaus(eu_fit1,eu_fitgrenzen[,1])
 plotgaus(eu_fit2,eu_fitgrenzen[,2])
+plotgaus(eu_fit3,eu_fitgrenzen[,3])
+plotgaus(eu_fit4,eu_fitgrenzen[,4])
+plotgaus(eu_fit5,eu_fitgrenzen[,5])
+plotgaus(eu_fit6,eu_fitgrenzen[,6])
+plotgaus(eu_fit7,eu_fitgrenzen[,7])
+plotgaus(eu_fit8,eu_fitgrenzen[,8],col="pink")
+plotgaus(eu_fit9,eu_fitgrenzen[,9],col="pink")
 
 drawCI(channels,cobalt_c,scobalt_c,log="y")
 plotgaus(co_fit1,co_fitgrenzen[,1])
 plotgaus(co_fit2,co_fitgrenzen[,2])
+plotgaus(co_fit3,co_fitgrenzen[,3],col="pink")
 
 drawCI(channels,natrium_c,snatrium_c,log="y")
 plotgaus(na_fit1,na_fitgrenzen[,1])
 plotgaus(na_fit2,na_fitgrenzen[,2])
+plotgaus(na_fit3,na_fitgrenzen[,3],col="pink")
 
 
 eu1=getresult(eu_fit1)
 eu2=getresult(eu_fit2)
+eu3=getresult(eu_fit3)
+eu4=getresult(eu_fit4)
+eu5=getresult(eu_fit5)
+eu6=getresult(eu_fit6)
+eu7=getresult(eu_fit7)
+eu8=getresult(eu_fit8)
+eu9=getresult(eu_fit9)
 co1=getresult(co_fit1)
 co2=getresult(co_fit2)
+co3=getresult(co_fit3)
 na1=getresult(na_fit1)
 na2=getresult(na_fit2)
+na3=getresult(na_fit3)
 
 print(getresult(eu_fit1))
 print(getresult(eu_fit2))
+print(getresult(eu_fit3))
+print(getresult(eu_fit4))
+print(getresult(eu_fit5))
+print(getresult(eu_fit6))
+print(getresult(eu_fit7))
+print(getresult(eu_fit8))
+print(getresult(eu_fit9))
 
 print(getresult(co_fit1))
 print(getresult(co_fit2))
+print(getresult(co_fit3))
 
 print(getresult(na_fit1))
 print(getresult(na_fit2))
+print(getresult(na_fit3))
 
 channel  = c(eu1[1],eu2[1],co1[1],co2[1],na1[1],na2[1])
 schannel = c(eu1[2],eu2[2],co1[2],co2[2],na1[2],na2[2])
 energy   = c(122,344,1173.2,1332.5,511,1274.6)
 
-drawCI(energy,channel,schannel,ylim=c(min(channel),max(channel)),xlab="E / keV", ylab="Energie / keV")
+drawCI(energy,channel,schannel,ylim=c(min(channel),max(channel)),xlab="Energie / keV", ylab="Kanal")
 
 lin=linearfit(data.frame(x=energy,y=channel,sy=schannel),weighted=TRUE)
 plotlinear(lin,c(1,8192))
@@ -108,13 +146,18 @@ print(linres)
 energyCh = 1/linres[1]*channels+linres[3]/linres[1]
 senergyCh = sqrt((linres[2]*energyCh/linres[1])^2+(linres[4]/linres[1])^2)
 
-drawCIx(energyCh,untergrund,senergyCh,suntergrund,log="y")
-un_fitgrenzen=array(c(1400,1600),dim=c(2,14))
+drawCIx(energyCh,untergrund,senergyCh,suntergrund,log="y",xlab="Energie / keV",ylim=c(10^-5,10^0))
+un_fitgrenzen=array(c(1400,1600,2500,2720),dim=c(2,2))
 
 try({
   un_fit1=gaus2(data.frame(x=energyCh,y=untergrund,sy=suntergrund),un_fitgrenzen[,1],weighted=TRUE)
   plotgaus(un_fit1,un_fitgrenzen[,1])
   print(getresult(un_fit1))
+})
+try({
+  un_fit2=gaus2(data.frame(x=energyCh,y=untergrund,sy=suntergrund),un_fitgrenzen[,2],weighted=TRUE)
+  plotgaus(un_fit2,un_fitgrenzen[,2])
+  print(getresult(un_fit2))
 })
 
 
@@ -199,12 +242,12 @@ drawCIx(energyCh[m:n],thorium_c[m:n],senergyCh[m:n],sthorium_c[m:n],xlab="Energi
 
 try({
   th_fit12=gaus2(data.frame(x=energyCh,y=thorium_c,sy=sthorium_c),th_fitgrenzen[,12],weighted=TRUE)
-  #plotgaus(th_fit12,th_fitgrenzen[,12])
+  plotgaus(th_fit12,th_fitgrenzen[,12])
   print(getresult(th_fit12))
 })
 try({
   th_fit13=gaus2(data.frame(x=energyCh,y=thorium_c,sy=sthorium_c),th_fitgrenzen[,13],weighted=TRUE)
-  #plotgaus(th_fit13,th_fitgrenzen[,13])
+  plotgaus(th_fit13,th_fitgrenzen[,13])
   print(getresult(th_fit13))
 })
 try({
@@ -227,9 +270,27 @@ th_fit=c(getresult(th_fit1)[1],
          getresult(th_fit9)[1],
          getresult(th_fit10)[1],
          getresult(th_fit11)[1],
-         #getresult(th_fit12)[1],
-         #getresult(th_fit13)[1],
+         getresult(th_fit12)[1],
+         getresult(th_fit13)[1],
          getresult(th_fit14)[1])
 for(a in th_fit){
   abline(v=a,col="pink")
 }
+
+color="pink"
+
+plotgaus(th_fit1,th_fitgrenzen[,1],col=color)
+plotgaus(th_fit2,th_fitgrenzen[,2],col=color)
+plotgaus(th_fit3,th_fitgrenzen[,3],col=color)
+plotgaus(th_fit4,th_fitgrenzen[,4],col=color)
+plotgaus(th_fit5,th_fitgrenzen[,5],col=color)
+plotgaus(th_fit6,th_fitgrenzen[,6],col=color)
+plotgaus(th_fit7,th_fitgrenzen[,7],col=color)
+plotgaus(th_fit8,th_fitgrenzen[,8],col=color)
+plotgaus(th_fit9,th_fitgrenzen[,9],col=color)
+plotgaus(th_fit10,th_fitgrenzen[,10],col=color)
+plotgaus(th_fit11,th_fitgrenzen[,11],col=color)
+plotgaus(th_fit12,th_fitgrenzen[,12],col=color)
+plotgaus(th_fit13,th_fitgrenzen[,13],col=color)
+plotgaus(th_fit14,th_fitgrenzen[,14],col=color)
+

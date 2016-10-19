@@ -63,7 +63,7 @@ gaus2 <- function(input,bereich,weighted=FALSE,sig0=0,N0=0){ #--- Fitten der Gau
 }
 
 
-plotgaus <- function(fit,bereich,log=""){ #--- Plotten der gefitteten Gaußfunktion in vorhandenen Graph
+plotgaus <- function(fit,bereich,log="",col="red"){ #--- Plotten der gefitteten Gaußfunktion in vorhandenen Graph
   fitdata <- summary(fit)$parameters
   
   N<-fitdata["N","Estimate"]
@@ -71,7 +71,7 @@ plotgaus <- function(fit,bereich,log=""){ #--- Plotten der gefitteten Gaußfunkt
   mu<-fitdata["mu","Estimate"]
   sig<-fitdata["sig","Estimate"]
   
-  plot (function(x){C + N*exp(-(x-mu)^2/(2*sig^2))},bereich[1],bereich[2],add=TRUE,col="red",log=log)
+  plot (function(x){C + N*exp(-(x-mu)^2/(2*sig^2))},bereich[1],bereich[2],add=TRUE,col=col,log=log,lwd=2)
   
 }
 

@@ -1,4 +1,4 @@
-\documentclass[12pt]{article}
+\documentclass[12pt,listof=totoc]{scrartcl}
 
 \usepackage{fancyhdr}
 \usepackage{geometry}
@@ -49,7 +49,7 @@
 
 \title{\vspace{0cm}{\Huge Fortgeschrittenen-Praktikum I:\\ \vspace{1cm} Szintillationszähler}}
 \author{Saskia Bondza\\Simon Stephan}
-\date{durchgeführt am 12.10.2016 und 13.10.16}
+\date{durchgeführt am 12.10.2016 und 13.10.2016}
 
 \pretitle{%
   \begin{center}
@@ -227,7 +227,7 @@ Um $\gamma$-Strahlung detektieren zu können, muss die $\gamma$-Strahlung mit Ma
  das Signal zu Rausch Verhältnis. Um Signalverluste entlang der Kabel zu reduzieren, ist der PA im Gehäuse des PM integriert. Die Pulsform des Ausgangssignals besitzt eine negative Amplitude und nimmt exponentiell zu.
  \paragraph{Main Amplifier (MA)}
  Der Hauptverstärker  verstärkt das Spannungssignal rauscharm und erzeugt einen möglichst kurzen Puls, dessen Dauer Amplituden-unabhängig ist. Die Pulshöhe ist dabei annähernd proportional zur deponierten Ladungsmenge im Szintillator. Der Hauptverstärker hat zwei verschiedene Ausgänge, die entweder ein bipolares Signal (zeitsensible Messungen) oder ein unipolares Signal (Aufnahme der Spektren) liefern.
- \paragraph{Multi Channel Analyser}
+ \paragraph{Multi Channel Analyser (MCA)}
  Der Multi Channel Analyser ordnet jeden eingehenden Puls, abhängig von der Pulshöhe (also von der im Szintillator deponierten Ladungsmenge ) einem Channel zu. Das so erhaltene Energiespektrum kann als Histogramm dargestellt werden.
  \paragraph{Single Channel Analyser}
  Ein Single Channel Analyser selektiert aus eingehenden Signalen in dem nur für Energien in einem einstellbaren Energiefenster ein Ausgangspuls erzeugt wird.  Für die Messung der verzögerten und zufälligen Koinzedenzen sollen hier die Energiefenster dem $122$ keV Peak und dem $14,4$ keV Peak angepasst werden (siehe \ref{Energiefenster})
@@ -242,9 +242,75 @@ Der HEX-Counter zählt die eintreffenden Signale sowie die Zeit.
 \newpage
 \section{Versuchsaufbau und -Durchführung}
 
-
+\newpage
 \section{Auswertung}
+Die Auswertung haben wir mit der Programmiersprache \code{R} durchgeführt. Der Quellcode befindet sich im Anhang in Kapitel \ref{sourcecode}.
+\subsection{Aufnahme des Thoriumspektrums}
+Um das aufgenommene Thoriumspektrum auswerten zu können, müssen wir den Kanälen des MCA die entsprechende Energie zuordnen. Dazu haben wir für Cobalt, Natrium und Europium ebenfalls Spektren aufgenommen und aus den bekannten Peaks für diese Proben die Energiekalibrierung durchgeführt. Um die Spektren zu bereinigen, haben wir eine Untergrundmessung durchgeführt und die Zählraten des Untergrunds von den gemessenen Zählraten abgezogen, um äußere Einflüsse auf die Spektren zu verringern (siehe \ref{untergrund}).
 
+\subsubsection{Energiekalibrierung}
+\gra[0.9]{cobalt}{Cobaltspektrum zur Bestimmung der Energiekalibrierung\label{cobaltbild}}
+Zunächst bestimmen wir die Positionen der Peaks im Cobaltspektrum und ordnen diese den bekannten Energien des Cobaltspektrums zu. Dabei erhalten wir folgende Ergebnisse:
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{c|c|c}
+		&Position (Kanal)& Energie / keV (nach \cite{staat})\\\hline
+		Peak 1&$2640\pm30$&$1173.2$\\
+		Peak 2&$2980\pm40$&$1332.5$\\
+		Peak 3&$5630\pm60$&$-$\\		
+	\end{tabular}
+\end{table}
+
+In Abbildung \ref{cobaltbild} ist das Cobaltspektrum mit den Gaußfits zu sehen. Dabei sind die bekannten Peaks rot und die unbekannten Peaks rosa eingezeichnet.
+
+\gra[0.9]{natrium}{Natriumspektrum zur Bestimmung der Energiekalibrierung\label{natriumbild}}
+Nun bestimmen wir die Positionen der Peaks im Natriumspektrum und ordnen diese den bekannten Energien der Natriumpeaks zu. Wir erhalten folgende Werte:
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{c|c|c}
+		&Position (Kanal)& Energie / keV (nach \cite{staat})\\\hline
+		Peak 1&$1170\pm50$&$511$\\
+		Peak 2&$2830\pm50$&$1274.6$\\
+		Peak 3&$3980\pm120$&$-$\\		
+	\end{tabular}
+\end{table}
+
+In Abbildung \ref{natriumbild} ist das Natriumspektrum mit den Gaußfits zu sehen. Dabei sind die bekannten Peaks rot und die unbekannten Peaks rosa eingezeichnet.
+
+\gra[0.9]{europium}{Europiumspektrum zur Bestimmung der Energiekalibrierung}
+Nun bestimmen wir die Positionen der Peaks im Natriumspektrum und ordnen diese den bekannten Energien der Natriumpeaks zu. Wir erhalten folgende Werte:
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{c|c|c}
+		&Position (Kanal)& Energie / keV (nach \cite{staat})\\\hline
+		Peak 1&$105\pm6$&$-$\\
+		Peak 2&$199\pm9$&$-$\\
+		Peak 3&$302\pm7$&$122$\\
+		Peak 4&$583\pm11$&$245$\\
+		Peak 5&$810\pm15$&$344$\\
+		Peak 6&$1780\pm20$&$779$\\
+		Peak 7&$2190\pm30$&$964$\\
+		Peak 8&$2480\pm40$&$1086\text{ bzw. }1112$\\		
+		Peak 9&$3160\pm30$&$1408$\\		
+	\end{tabular}
+\end{table}
+
+In Abbildung \ref{natriumbild} ist das Spektrum der Europiumprobe mit den Gaußfits zu sehen. Dabei sind die bekannten Peaks rot und die unbekannten Peaks rosa eingezeichnet. Zur Energiekalibrierung verwenden wir von Europium die beiden bekannten Peaks der höchsten Intensität.
+
+\gra{calibration}{Energiekalibrierung mithilfe der bekannten Peaks von Cobalt, Natrium und Europium}
+
+\subsubsection{Untergrund}\label{untergrund}
+%\gra[1]{untergrund-0}{Untergrundspektrum}
+\gra[1]{untergrund}{Untergrundspektrum}
+
+\subsubsection{Bestimmung der Thorium-Peaks}
+\gra{thorium-1}{Ausschnitt aus dem Thoriumspektrum}
+\gra{thorium-2}{Ausschnitt aus dem Thoriumspektrum}
+\gra{thorium-3}{Ausschnitt aus dem Thoriumspektrum}
+\gra[1]{thorium-gesamt}{Gesamtes Thoriumspektrum}
 
 \newpage
 \section{Zusammenfassung und Diskussion \label{Diskussion}}
@@ -263,7 +329,8 @@ Der HEX-Counter zählt die eintreffenden Signale sowie die Zeit.
 
 
 %\newpage
-%\subsection{Quellcode (MATLAB)}
+\subsection{Quellcode}
+\label{sourcecode}
 %\lstinputlisting[language=MATLAB]{Rohdaten/alpha.m}
 
 %\newpage
