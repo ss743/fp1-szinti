@@ -192,7 +192,7 @@ Um $\gamma$-Strahlung detektieren zu können, muss die $\gamma$-Strahlung mit Ma
  \subsubsection{Paarbildung und Paarvernichtung}
  Bei der Paarbildung entsteht durch die Wechselwirkung des $\gamma$-Quants mit dem elektromagnetischen Feld des Atomkerns oder eines Elektrons ein Teilchen-Antiteilchen-Paar, z.B. Elektronen-Positronen-Paar.Paarbildung ist für Energien über $1,022$ MeV möglich. Die über diesen Grenzwert hinausgehende Energie wird auf die entstandenen Teilchen übertragen, der Imuls wird vom Kern aufgenommen. Da das Positron nicht lange alleine existieren kann, vereinigt es sich unter Abstrahlung von zwei $\gamma$-Quanten mit einem Elektron.
  
- \subsection{Zerfallsreihen der verwendeten Präparate}
+ \subsection{Zerfallsreihen der verwendeten Präparate \label{ZR}}
  
  Das Produkt eines radioaktiven Zerfalls kann instabil sein und ebenfalls zerfallen. Diese
  Abfolge von Zerfällen wird Zerfallsreihe genannt. Nachfolgend werden die Zerfallsrei-
@@ -220,6 +220,8 @@ Um $\gamma$-Strahlung detektieren zu können, muss die $\gamma$-Strahlung mit Ma
  
  \gra{Szinti}{Funktionsweise eines Szintillationszähler \cite{Demtröder} \label{Szintiyay}}
  
+ \subsubsection{Organischer Sz}
+ 
  \subsection{Gerätebeschreibung}
  \paragraph{Detektor} Der Szintillator und der Photomultiplier bilden zusammen den Detektor.
  \paragraph{Pre-Amplifier}
@@ -238,7 +240,33 @@ Um $\gamma$-Strahlung detektieren zu können, muss die $\gamma$-Strahlung mit Ma
  Man spricht von einer Koinzidenz wenn zwei oder mehr Signale zeitgleich auftreten. Sofern eine Koinzidenz (dies kann durch Überschreiten einer Schwelle von der Summe beider Signale erfasst werden) vorliegt, erzeugt die Koinzidenz Unit ein logisches Ausgangssignal.
  \paragraph{HEX Counter}
 Der HEX-Counter zählt die eintreffenden Signale sowie die Zeit.
+
+\subsection{Energiespektrum}
+
+Das Energiespektrum, das aus den gemessenen Photonenenergien ensteht, weißt  charakteristische Merkmale auf. Diese sind im Folgenden erklärt. 
  
+ 
+ \paragraph{Photopeak}
+ 
+ Wird die gesamte Energie eines von der Quelle stammenden Photons im Szintillator absorbiert, so wird dies im Spektrum einem Photopeak zugeordnet. Die zu erwarteten Photopeaks sind vom Präparat abhängig und sind in Kapitel \ref{ZR} erklärt.
+ \paragraph{Escape-Peak}
+ Wenn ein Röntgenquant den Szintillator ohne Wechselwirkung verlassen kann, folgt ein Verlust der Differenz der Bindungsenergie zwischen K-, und L-Schale. Diese Differenz beträgt im Fall des NaI-Szintillators $28$ keV. Damit sind Escapepeaks bei $E_\gamma - 28$ keV zu erwarten, wobei $E_\gamma$ die Energie eines Photopeaks ist.
+
+ \paragraph{Compton-Kante}
+ Die maximale Energie, die ein Photon durch den Compton-Effekt auf ein Elektron übertragen kann, entspricht im Spektrum der Compton-Kante. Diese ist charakterisiert durch einen starken Abfall der Zählrate.
+ 
+ \paragraph{Rückstreupeak}
+ 
+ Die Rückstreuung unter einem Winkel von 180 ° hat beim Compton-Effekt die höchste Wahrscheinlichkeit.
+ Man beobachtet daher einen Rückstreu-Peak im Spektrum unterhalb der Compton-Kante.
+
+ 
+ \paragraph{Röntgen-Fluoreszenz-Peak}
+Es können in der Quelle Wechselwirkungen von $\gamma$-Quanten mit Elektronen stattfinden, ohne dass diese vom Szintillator detektiert werden. Geht ein Elektron von einer höheren Schale in jene Schale über aus der ein Elktron ausgetreten ist, kann ein Auger-Elektron oder charakteristische Röntgenstrahlung freigesetzt werden. Die Energie dieser charakteristischen Röntgenstrahlung ist dann als Röntgen-Fluoreszenz-Peak im Energiespektrum zu beobachten.
+
+
+
+
 \newpage
 \section{Versuchsaufbau und -Durchführung}
 
