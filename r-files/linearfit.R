@@ -22,8 +22,8 @@ linearfit <- function(input,bereich=c(min(input$x),max(input$x)),weighted=FALSE)
     
     intererr=summary(fit)$coefficients[["(Intercept)","Std. Error"]]
     slopeerr=summary(fit)$coefficients[["x","Std. Error"]]
-    
-    chiquadratndf=sum(residuals(fit)^2/abs(fitted(fit)))/(summary(fit)$df[2]-1)
+    print(summary(fit)[[4]])
+    chiquadratndf=sum(summary(fit)[[4]]^2)/(summary(fit)$df[2])
   })  
   return(c(intercept,slope,intererr,slopeerr,chiquadratndf))
 }
@@ -57,6 +57,6 @@ plotlindata <- function(fitdata,title=""){
 
 getlinresults <- function(fit){
   
-  return(c(roundfunc(c(fit[2],fit[4])),roundfunc(c(fit[1],fit[3]))))
+  return(c(roundfunc(c(fit[2],fit[4])),roundfunc(c(fit[1],fit[3])),fit[5]))
   
 }

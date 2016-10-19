@@ -1,6 +1,6 @@
 source("functions.R")
 
-gausfit <- function(input,bereich,weighted=FALSE,sig0=0,N0=0){ #--- Fitten der Gaußfunktion
+gausfit <- function(input,bereich=c(1,length(input)),weighted=FALSE,sig0=0,N0=0){ #--- Fitten der Gaußfunktion
   
   thegaussian <- y ~ C + N*exp(-(x-mu)^2/(2*sig^2))
   
@@ -31,7 +31,38 @@ gausfit <- function(input,bereich,weighted=FALSE,sig0=0,N0=0){ #--- Fitten der G
   
 }
 
-gaus2 <- function(input,bereich,weighted=FALSE,sig0=0,N0=0){ #--- Fitten der Gaußfunktion
+gaus2 <- function(input,bereich=c(min(input$x),max(input$x)),weighted=FALSE,sig0=0,N0=0){ #--- Fitten der Gaußfunktion
+  
+  thegaussian <- y ~ C + N*exp(-(x-mu)^2/(2*sig^2))
+  
+  daten=subset(input,x>=bereich[1] & x <= bereich[2])#input[bereich[1]:bereich[2],]
+  ymin=min(daten$y)
+  if(N0==0){
+    ymax=max(daten$y)
+  } else {
+    ymax=N0
+  }
+  mu0 =daten$x[which.max(daten$y)]
+  if(sig0==0)
+  {
+    #sig0=(daten$x[bereich[2]]-daten$x[bereich[1]])/3
+    sig0=(bereich[2]-bereich[1])/3
+  }
+  err=daten$sy
+  
+  #plot(function(x){ymin + ymax*exp(-(x-mu0)^2/(2*sig0^2))},bereich[1],bereich[2],add=TRUE,col="green")
+  
+  
+  if(weighted)
+    fit = nls(thegaussian,daten,weights=1/err^2,start=list(C=ymin,N=ymax,mu=mu0,sig=sig0))
+  else
+    fit = nls(thegaussian,daten,start=list(C=ymin,N=ymax,mu=mu0,sig=sig0))
+  
+  return(fit)
+  
+}
+
+gaus3 <- function(input,bereich=c(min(input$x),max(input$x)),weighted=FALSE,sig0=0,N0=0){ #--- Fitten der Gaußfunktion
   
   thegaussian <- y ~ C + N*exp(-(x-mu)^2/(2*sig^2))
   
@@ -63,6 +94,7 @@ gaus2 <- function(input,bereich,weighted=FALSE,sig0=0,N0=0){ #--- Fitten der Gau
 }
 
 
+
 plotgaus <- function(fit,bereich,log="",col="red"){ #--- Plotten der gefitteten Gaußfunktion in vorhandenen Graph
   fitdata <- summary(fit)$parameters
   
@@ -74,6 +106,19 @@ plotgaus <- function(fit,bereich,log="",col="red"){ #--- Plotten der gefitteten 
   plot (function(x){C + N*exp(-(x-mu)^2/(2*sig^2))},bereich[1],bereich[2],add=TRUE,col=col,log=log,lwd=2)
   
 }
+
+plotgaus2 <- function(fit,bereich,log="",col="red"){ #--- Plotten der gefitteten Gaußfunktion in vorhandenen Graph
+  fitdata <- summary(fit)$parameters
+  
+  N<-fitdata["N","Estimate"]
+  C<-fitdata["C","Estimate"]
+  mu<-fitdata["mu","Estimate"]
+  sig<-fitdata["sig","Estimate"]
+  
+  plot (function(x){C + N*exp(-(x-mu)^2/(2*sig^2))},bereich[1],bereich[2],add=TRUE,col=col,log=log,lwd=2,n=5000)
+  
+}
+
 
 printfitdata <- function(fit,title=""){ #--- Ausgabe der Gaußfit-Daten
   fitdata <- summary(fit)$parameters
@@ -107,7 +152,8 @@ getresult <- function(fit){
   smu<-fitdata["mu","Std. Error"]
   sig<-fitdata["sig","Estimate"]
   ssig<-fitdata["sig","Std. Error"]
+  chisquare<-sum(((summary(fit))[[2]])^2)/(summary(fit)[[4]][[2]])
   
-  return(roundfunc(c(mu,abs(sig/2))))
+  return(c(roundfunc(c(mu,abs(sig/2))),chisquare))
   
 }

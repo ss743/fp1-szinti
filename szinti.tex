@@ -195,8 +195,7 @@ Um $\gamma$-Strahlung detektieren zu können, muss die $\gamma$-Strahlung mit Ma
  \subsection{Zerfallsreihen der verwendeten Präparate}
  
  Das Produkt eines radioaktiven Zerfalls kann instabil sein und ebenfalls zerfallen. Diese
- Abfolge von Zerfällen wird Zerfallsreihe genannt. Nachfolgend werden die Zerfallsrei-
- hen der verwendeten radioaktiven Isotope und die sich hieraus ergebenden erwarteten Peaks im Spektrum erläutert.
+ Abfolge von Zerfällen wird Zerfallsreihe genannt. Nachfolgend werden die Zerfallsreihen der verwendeten radioaktiven Isotope und die sich hieraus ergebenden erwarteten Peaks im Spektrum erläutert.
  
  \subsubsection{Natrium $^{22}Na$}
  
@@ -249,58 +248,76 @@ Die Auswertung haben wir mit der Programmiersprache \code{R} durchgeführt. Der 
 Um das aufgenommene Thoriumspektrum auswerten zu können, müssen wir den Kanälen des MCA die entsprechende Energie zuordnen. Dazu haben wir für Cobalt, Natrium und Europium ebenfalls Spektren aufgenommen und aus den bekannten Peaks für diese Proben die Energiekalibrierung durchgeführt. Um die Spektren zu bereinigen, haben wir eine Untergrundmessung durchgeführt und die Zählraten des Untergrunds von den gemessenen Zählraten abgezogen, um äußere Einflüsse auf die Spektren zu verringern (siehe \ref{untergrund}).
 
 \subsubsection{Energiekalibrierung}
+\paragraph{Cobaltspektrum}\ \\
 \gra[0.9]{cobalt}{Cobaltspektrum zur Bestimmung der Energiekalibrierung\label{cobaltbild}}
 Zunächst bestimmen wir die Positionen der Peaks im Cobaltspektrum und ordnen diese den bekannten Energien des Cobaltspektrums zu. Dabei erhalten wir folgende Ergebnisse:
 
 \begin{table}[h!]
 	\centering
-	\begin{tabular}{c|c|c}
-		&Position (Kanal)& Energie / keV (nach \cite{staat})\\\hline
-		Peak 1&$2640\pm30$&$1173.2$\\
-		Peak 2&$2980\pm40$&$1332.5$\\
-		Peak 3&$5630\pm60$&$-$\\		
+	\begin{tabular}{c|c|c|c}
+		&Position (Kanal)&$\frac{\chi^2}{\text{ndf}}$& Energie / keV (nach \cite{staat})\\\hline
+		Peak 1&$2640\pm30$&$1.9$&$1173.2$\\
+		Peak 2&$2980\pm40$&$2.4$&$1332.5$\\
+		Peak 3&$5630\pm60$&$1.5$&$-$\\		
 	\end{tabular}
 \end{table}
 
 In Abbildung \ref{cobaltbild} ist das Cobaltspektrum mit den Gaußfits zu sehen. Dabei sind die bekannten Peaks rot und die unbekannten Peaks rosa eingezeichnet.
 
+\paragraph{Natriumspektrum}\ \\
 \gra[0.9]{natrium}{Natriumspektrum zur Bestimmung der Energiekalibrierung\label{natriumbild}}
 Nun bestimmen wir die Positionen der Peaks im Natriumspektrum und ordnen diese den bekannten Energien der Natriumpeaks zu. Wir erhalten folgende Werte:
 
 \begin{table}[h!]
 	\centering
-	\begin{tabular}{c|c|c}
-		&Position (Kanal)& Energie / keV (nach \cite{staat})\\\hline
-		Peak 1&$1170\pm50$&$511$\\
-		Peak 2&$2830\pm50$&$1274.6$\\
-		Peak 3&$3980\pm120$&$-$\\		
+	\begin{tabular}{c|c|c|c}
+		&Position (Kanal)&$\frac{\chi^2}{\text{ndf}}$& Energie / keV (nach \cite{staat})\\\hline
+		Peak 1&$1170\pm50$&$17$&$511$\\
+		Peak 2&$2830\pm50$&$7.5$&$1274.6$\\
+		Peak 3&$3980\pm120$&$8.8$&$-$\\		
 	\end{tabular}
 \end{table}
 
 In Abbildung \ref{natriumbild} ist das Natriumspektrum mit den Gaußfits zu sehen. Dabei sind die bekannten Peaks rot und die unbekannten Peaks rosa eingezeichnet.
 
-\gra[0.9]{europium}{Europiumspektrum zur Bestimmung der Energiekalibrierung}
-Nun bestimmen wir die Positionen der Peaks im Natriumspektrum und ordnen diese den bekannten Energien der Natriumpeaks zu. Wir erhalten folgende Werte:
+\paragraph{Europiumspektrum}\ \\
+\gra[1]{europium}{Europiumspektrum zur Bestimmung der Energiekalibrierung}
+Nun bestimmen wir die Positionen der Peaks im Europiumspektrum und ordnen diese den bekannten Energien der Europiumpeaks zu. Wir erhalten folgende Werte:
 
 \begin{table}[h!]
 	\centering
-	\begin{tabular}{c|c|c}
-		&Position (Kanal)& Energie / keV (nach \cite{staat})\\\hline
-		Peak 1&$105\pm6$&$-$\\
-		Peak 2&$199\pm9$&$-$\\
-		Peak 3&$302\pm7$&$122$\\
-		Peak 4&$583\pm11$&$245$\\
-		Peak 5&$810\pm15$&$344$\\
-		Peak 6&$1780\pm20$&$779$\\
-		Peak 7&$2190\pm30$&$964$\\
-		Peak 8&$2480\pm40$&$1086\text{ bzw. }1112$\\		
-		Peak 9&$3160\pm30$&$1408$\\		
+	\begin{tabular}{c|c|c|c}
+		&Position (Kanal)&$\frac{\chi^2}{\text{ndf}}$& Energie / keV (nach \cite{staat})\\\hline
+		Peak 1&$105\pm6$&$25$&$-$\\
+		Peak 2&$199\pm9$&$16$&$-$\\
+		Peak 3&$302\pm7$&$4.2$&$122$\\
+		Peak 4&$583\pm11$&$1.3$&$245$\\
+		Peak 5&$810\pm15$&$1.8$&$344$\\
+		Peak 6&$1780\pm20$&$1.1$&$779$\\
+		Peak 7&$2190\pm30$&$1.1$&$964$\\
+		Peak 8&$2480\pm40$&$1.3$&$1086\text{ bzw. }1112$\\		
+		Peak 9&$3160\pm30$&$1.1$&$1408$\\		
 	\end{tabular}
 \end{table}
 
-In Abbildung \ref{natriumbild} ist das Spektrum der Europiumprobe mit den Gaußfits zu sehen. Dabei sind die bekannten Peaks rot und die unbekannten Peaks rosa eingezeichnet. Zur Energiekalibrierung verwenden wir von Europium die beiden bekannten Peaks der höchsten Intensität.
+In Abbildung \ref{natriumbild} ist das Spektrum der Europiumprobe mit den Gaußfits zu sehen. Dabei sind die bekannten Peaks rot und die unbekannten Peaks rosa eingezeichnet. Zur Energiekalibrierung verwenden wir von Europium die beiden bekannten Peaks der höchsten Intensitäten.
 
+\paragraph{Energiekalibrierung}\ \\
 \gra{calibration}{Energiekalibrierung mithilfe der bekannten Peaks von Cobalt, Natrium und Europium}
+
+Anschließend tragen wir die Kanäle der gemessenen Peaks über die dazugehörigen Energien auf und fitten daran eine lineare Funktion, um die Umrechnung zwischen Kanälen und Energien zu bestimmen. Aus dem Fit erhalten wir folgende Funktion:
+\begin{align*}
+	\text{Kanal}&=\left(2.217\pm0.012\right)\mathrm{\frac1{eV}}\cdot E + \left(34\pm 5\right)&\text{ mit } \chi^2&=0.34
+\end{align*}
+Also gilt für die Umrechnung von Kanälen in Energie nun:
+\begin{align}
+	E&=\left(0.451\pm0.002\right)\mathrm{keV}\cdot\text{Kanal}+\left(15\pm2\right)\mathrm{keV}\label{umrechnung}
+\end{align}
+mit dem Fehler auf die Energie durch Gauß'sche Fehlerfortpflanzung:
+\begin{align*}
+	s_E&=\cdot\sqrt{E^2\cdot\left(\left(\frac{s_{\text{Kanal}}}{\text{Kanal}}\right)^2+\left(\frac{0.002}{0.451}\right)^2\right)+4}
+\end{align*}
+Im Folgenden werden die Spektren immer mithilfe von (\ref{umrechnung}) über die Energie aufgetragen.
 
 \subsubsection{Untergrund}\label{untergrund}
 %\gra[1]{untergrund-0}{Untergrundspektrum}
