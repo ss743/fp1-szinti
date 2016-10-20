@@ -130,38 +130,75 @@ printfitdata <- function(fit,title=""){ #--- Ausgabe der Gaußfit-Daten
   
   mu<-fitdata["mu","Estimate"]
   smu<-fitdata["mu","Std. Error"]
-  sig<-fitdata["sig","Estimate"]
-  ssig<-fitdata["sig","Std. Error"]
+  sigma<-fitdata["sig","Estimate"]
+  ssigma<-fitdata["sig","Std. Error"]
+  chisquare<-sum(((summary(fit))[[2]])^2)/(summary(fit)[[4]][[2]])
   
   cat(title)
-  cat("\n")
+  cat("&")
 
-  cat(" N    = ")
+  rN=roundfunc(c(N,sN))
+  N=rN[1]
+  sN=rN[2]
+  
+  rC=roundfunc(c(C,sC))
+  C=rC[1]
+  sC=rC[2]
+  
+  rmu=roundfunc(c(mu,smu))
+  mu=rmu[1]
+  smu=rmu[2]
+  
+  rsigma=roundfunc(c(sigma,ssigma))
+  sig=rsigma[1]
+  ssig=rsigma[2]
+  
+  #cat(" N    = ")
   cat(N)
   cat("+-")
   cat(sN)
-  cat("\n")
+  cat("&")
   
-  cat(" C    = ")
+  #cat(" C    = ")
   cat(C)
   cat("+-")
   cat(sC)
-  cat("\n")
+  cat("&")
   
     
-  cat(" mu    = ")
+  #cat(" mu    = ")
   cat(mu)
   cat("+-")
   cat(smu)
-  cat("\n")
+  cat("&")
   
-  cat(" sigma = ")
+  #cat(" sigma = ")
   cat(sig)
   cat("+-")
   cat(ssig)
-  cat("\n")
+  cat("&")
+  
+  cat(round(chisquare,2))
+  cat("\\\\\n")
 
 }
+
+starttable <- function(){
+  
+  cat("\\begin{table}[h!]\n\\footnotesize\\centering\n\\begin{tabular}{|c||c|c|c|c||c|}\n\\hline\nEnergie / keV&$N/\\mathrm{s^{-1}}$&$C/\\mathrm{s^{-1}}$&$\\mu/\\mathrm{keV}$&$\\sigma/\\mathrm{keV^{-2}}$&$\\chi^2$ / ndf\\\\\\hline\\hline")
+  
+}
+
+endtable <- function(caption="",label=""){
+  txtlabel=paste("\\label{",label,"}",sep="")
+  if(label=="")
+    txtlabel=""
+  
+  cat(paste("\\hline\\end{tabular}\n\\caption{",caption,txtlabel,"}\n\\end{table}\n",sep=""))
+  
+}
+
+
 
 getresult <- function(fit){
   fitdata <- summary(fit)$parameters

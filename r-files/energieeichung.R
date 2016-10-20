@@ -257,6 +257,53 @@ try({
 })
 m=1
 n=8192
+pre=""
+suf=" keV"
+
+cat("\n\nCobalt:\n\n")
+starttable()
+printfitdata(co_fit1,paste(pre,getresult(co_fit1)[1],suf,sep=""))
+printfitdata(co_fit2,paste(pre,getresult(co_fit2)[1],suf,sep=""))
+printfitdata(co_fit3,paste(pre,getresult(co_fit3)[1],suf,sep=""))
+endtable("Fitdaten der Cobaltpeaks","cobalttable")
+
+cat("\n\nNatrium:\n\n")
+starttable()
+printfitdata(na_fit1,paste(pre,getresult(na_fit1)[1],suf,sep=""))
+printfitdata(na_fit2,paste(pre,getresult(na_fit2)[1],suf,sep=""))
+printfitdata(na_fit3,paste(pre,getresult(na_fit3)[1],suf,sep=""))
+endtable("Fitdaten der Natriumpeaks","natriumtable")
+
+cat("\n\nEuropium:\n\n")
+starttable()
+printfitdata(eu_fit8,paste(pre,getresult(eu_fit8)[1],suf,sep=""))
+printfitdata(eu_fit9,paste(pre,getresult(eu_fit9)[1],suf,sep=""))
+printfitdata(eu_fit1,paste(pre,getresult(eu_fit1)[1],suf,sep=""))
+printfitdata(eu_fit3,paste(pre,getresult(eu_fit3)[1],suf,sep=""))
+printfitdata(eu_fit2,paste(pre,getresult(eu_fit2)[1],suf,sep=""))
+printfitdata(eu_fit4,paste(pre,getresult(eu_fit4)[1],suf,sep=""))
+printfitdata(eu_fit5,paste(pre,getresult(eu_fit5)[1],suf,sep=""))
+printfitdata(eu_fit6,paste(pre,getresult(eu_fit6)[1],suf,sep=""))
+printfitdata(eu_fit7,paste(pre,getresult(eu_fit7)[1],suf,sep=""))
+endtable("Fitdaten der Europiumpeaks","europiumtable")
+
+cat("\n\nThorium:\n\n")
+starttable()
+printfitdata(th_fit1,paste(pre,getresult(th_fit1)[1],suf,sep=""))
+printfitdata(th_fit2,paste(pre,getresult(th_fit2)[1],suf,sep=""))
+printfitdata(th_fit3,paste(pre,getresult(th_fit3)[1],suf,sep=""))
+printfitdata(th_fit4,paste(pre,getresult(th_fit4)[1],suf,sep=""))
+printfitdata(th_fit5,paste(pre,getresult(th_fit5)[1],suf,sep=""))
+printfitdata(th_fit6,paste(pre,getresult(th_fit6)[1],suf,sep=""))
+printfitdata(th_fit7,paste(pre,getresult(th_fit7)[1],suf,sep=""))
+printfitdata(th_fit8,paste(pre,getresult(th_fit8)[1],suf,sep=""))
+printfitdata(th_fit9,paste(pre,getresult(th_fit9)[1],suf,sep=""))
+printfitdata(th_fit10,paste(pre,getresult(th_fit10)[1],suf,sep=""))
+printfitdata(th_fit11,paste(pre,getresult(th_fit11)[1],suf,sep=""))
+printfitdata(th_fit12,paste(pre,getresult(th_fit12)[1],suf,sep=""))
+printfitdata(th_fit13,paste(pre,getresult(th_fit13)[1],suf,sep=""))
+printfitdata(th_fit14,paste(pre,getresult(th_fit14)[1],suf,sep=""))
+endtable("Fitdaten der Thoriumpeaks","thoriumtable")
 
 drawCIx(energyCh[m:n],thorium_c[m:n],senergyCh[m:n],sthorium_c[m:n],log="y",xlab="Energie / keV",ylim=c(10^-5,10^0))
 th_fit=c(getresult(th_fit1)[1],
