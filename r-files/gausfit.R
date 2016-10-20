@@ -135,7 +135,7 @@ printfitdata <- function(fit,title=""){ #--- Ausgabe der Gaußfit-Daten
   chisquare<-sum(((summary(fit))[[2]])^2)/(summary(fit)[[4]][[2]])
   
   cat(title)
-  cat("&")
+  cat("&$")
 
   rN=roundfunc(c(N,sN))
   N=rN[1]
@@ -155,39 +155,41 @@ printfitdata <- function(fit,title=""){ #--- Ausgabe der Gaußfit-Daten
   
   #cat(" N    = ")
   cat(N)
-  cat("+-")
+  cat("\\pm")
   cat(sN)
-  cat("&")
+  cat("$&$")
   
   #cat(" C    = ")
   cat(C)
-  cat("+-")
+  cat("\\pm")
   cat(sC)
-  cat("&")
+  cat("$&$")
   
     
   #cat(" mu    = ")
   cat(mu)
-  cat("+-")
+  cat("\\pm")
   cat(smu)
-  cat("&")
+  cat("$&$")
   
   #cat(" sigma = ")
   cat(sig)
-  cat("+-")
+  cat("\\pm")
   cat(ssig)
-  cat("&")
+  cat("$&$")
   
   cat(round(chisquare,2))
-  cat("\\\\\n")
+  cat("$\\\\\n")
 
 }
 
 starttable <- function(){
-  
   cat("\\begin{table}[h!]\n\\footnotesize\\centering\n\\begin{tabular}{|c||c|c|c|c||c|}\n\\hline\nEnergie / keV&$N/\\mathrm{s^{-1}}$&$C/\\mathrm{s^{-1}}$&$\\mu/\\mathrm{keV}$&$\\sigma/\\mathrm{keV^{-2}}$&$\\chi^2$ / ndf\\\\\\hline\\hline")
-  
 }
+starttableKanal <- function(){
+  cat("\\begin{table}[h!]\n\\footnotesize\\centering\n\\begin{tabular}{|c||c|c|c|c||c|}\n\\hline\nEnergie / Kanal&$N/\\mathrm{s^{-1}}$&$C/\\mathrm{s^{-1}}$&$\\mu/\\mathrm{Kanal}$&$\\sigma/\\mathrm{Kanal^{-2}}$&$\\chi^2$ / ndf\\\\\\hline\\hline")
+}
+
 
 endtable <- function(caption="",label=""){
   txtlabel=paste("\\label{",label,"}",sep="")
