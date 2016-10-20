@@ -184,10 +184,10 @@ printfitdata <- function(fit,title=""){ #--- Ausgabe der Gaußfit-Daten
 }
 
 starttable <- function(){
-  cat("\\begin{table}[h!]\n\\footnotesize\\centering\n\\begin{tabular}{|c||c|c|c|c||c|}\n\\hline\nEnergie / keV&$N/\\mathrm{s^{-1}}$&$C/\\mathrm{s^{-1}}$&$\\mu/\\mathrm{keV}$&$\\sigma/\\mathrm{keV^{-2}}$&$\\chi^2$ / ndf\\\\\\hline\\hline")
+  cat("\\begin{table}[h!]\n\\footnotesize\\centering\n\\begin{tabular}{|c||c|c|c|c||c|}\n\\hline\nEnergie / keV&$N/\\mathrm{s^{-1}}$&$C/\\mathrm{s^{-1}}$&$\\mu/\\mathrm{keV}$&$\\sigma/\\mathrm{keV}$&$\\chi^2$ / ndf\\\\\\hline\\hline")
 }
 starttableKanal <- function(){
-  cat("\\begin{table}[h!]\n\\footnotesize\\centering\n\\begin{tabular}{|c||c|c|c|c||c|}\n\\hline\nEnergie / Kanal&$N/\\mathrm{s^{-1}}$&$C/\\mathrm{s^{-1}}$&$\\mu/\\mathrm{Kanal}$&$\\sigma/\\mathrm{Kanal^{-2}}$&$\\chi^2$ / ndf\\\\\\hline\\hline")
+  cat("\\begin{table}[h!]\n\\footnotesize\\centering\n\\begin{tabular}{|c||c|c|c|c||c|}\n\\hline\nEnergie / Kanal&$N/\\mathrm{s^{-1}}$&$C/\\mathrm{s^{-1}}$&$\\mu/\\mathrm{Kanal}$&$\\sigma/\\mathrm{Kanal}$&$\\chi^2$ / ndf\\\\\\hline\\hline")
 }
 
 

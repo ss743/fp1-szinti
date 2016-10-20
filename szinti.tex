@@ -231,15 +231,12 @@ Um $\gamma$-Strahlung detektieren zu können, muss die $\gamma$-Strahlung mit Ma
  
  \subsection{Szintillationszähler}
  
- In Abbildung \ref{Szintiyay} ist die Funktionsweise eines Szntillators dargestellt.Mit Szintillatoren bezeichnet man spezielle Messgeräte, mit denen hochenergetische Photonen in Strah-
- lung niedrigerer Energie aber höherer Intensität umgewandelt werden. Die Intensität der Szintillator-
- strahlung ist proportional zur Energie der zu detektierenden Strahlung. Im Szintillationsmedium regt
- die radioaktive Strahlung durch Kernprozesse die Emission von Photonen an. Diese Photonen kön-
- nen das Medium durchdringen und werden in einem Photomultiplier verstärkt und gemessen.
+ In Abbildung \ref{Szintiyay} ist die Funktionsweise eines Szntillators dargestellt.Mit Szintillatoren bezeichnet man spezielle Messgeräte, mit denen hochenergetische Photonen in Strahlung niedrigerer Energie aber höherer Intensität umgewandelt werden. Die Intensität der Szintillatorstrahlung ist proportional zur Energie der zu detektierenden Strahlung. Im Szintillationsmedium regt
+ die radioaktive Strahlung durch Kernprozesse die Emission von Photonen an. Diese Photonen können das Medium durchdringen und werden in einem Photomultiplier verstärkt und gemessen.
  
  \gra{Szinti}{Funktionsweise eines Szintillationszähler \cite{Demtröder} \label{Szintiyay}}
  
- \subsubsection{Organischer Sz}
+ \subsubsection{Organischer Szintillator}
  
  \subsection{Gerätebeschreibung}
  \paragraph{Detektor} Der Szintillator und der Photomultiplier bilden zusammen den Detektor.
@@ -309,8 +306,8 @@ Zunächst bestimmen wir die Positionen der Peaks im Cobaltspektrum und ordnen di
 	\centering
 	\begin{tabular}{c|c|c|c}
 		&Position (Kanal)&$\frac{\chi^2}{\text{ndf}}$& Energie / keV (nach \cite{staat})\\\hline
-		Peak 1&$2640\pm30$&$1.9$&$1173.2$\\
-		Peak 2&$2980\pm40$&$2.4$&$1332.5$\\
+		\textbf{Peak 1}&$\mathbf{2640\pm30}$&$\mathbf{1.9}$&$\mathbf{1173.2}$\\
+		\textbf{Peak 2}&$\mathbf{2980\pm40}$&$\mathbf{2.4}$&$\mathbf{1332.5}$\\
 		Peak 3&$5630\pm60$&$1.5$&$-$\\		
 	\end{tabular}
 	\caption{Kanäle der gefundenen Cobaltpeaks\label{cobaltpeaks}}
@@ -327,8 +324,8 @@ Nun bestimmen wir die Positionen der Peaks im Natriumspektrum und ordnen diese d
 	\centering
 	\begin{tabular}{c|c|c|c}
 		&Position (Kanal)&$\frac{\chi^2}{\text{ndf}}$& Energie / keV (nach \cite{staat})\\\hline
-		Peak 1&$1170\pm50$&$17$&$511$\\
-		Peak 2&$2830\pm50$&$7.5$&$1274.6$\\
+		\textbf{Peak 1}&$\mathbf{1170\pm50}$&$\mathbf{17}$&$\mathbf{511}$\\
+		\textbf{Peak 2}&$\mathbf{2830\pm50}$&$\mathbf{7.5}$&$\mathbf{1274.6}$\\
 		Peak 3&$3980\pm120$&$8.8$&$-$\\		
 	\end{tabular}
 	\caption{Kanäle der gefundenen Natriumpeaks\label{natriumpeaks}}
@@ -347,9 +344,9 @@ Nun bestimmen wir die Positionen der Peaks im Europiumspektrum und ordnen diese 
 		&Position (Kanal)&$\frac{\chi^2}{\text{ndf}}$& Energie / keV (nach \cite{staat})\\\hline
 		Peak 1&$105\pm6$&$25$&$-$\\
 		Peak 2&$199\pm9$&$16$&$-$\\
-		Peak 3&$302\pm7$&$4.2$&$122$\\
+		\textbf{Peak 3}&$\mathbf{302\pm7}$&$\mathbf{4.2}$&$\mathbf{122}$\\
 		Peak 4&$583\pm11$&$1.3$&$245$\\
-		Peak 5&$810\pm15$&$1.8$&$344$\\
+		\textbf{Peak 5}&$\mathbf{810\pm15}$&$\mathbf{1.8}$&$\mathbf{344}$\\
 		Peak 6&$1780\pm20$&$1.1$&$779$\\
 		Peak 7&$2190\pm30$&$1.1$&$964$\\
 		Peak 8&$2480\pm40$&$1.3$&$1086\text{ bzw. }1112$\\		
@@ -431,26 +428,42 @@ Die Fits ergeben folgende Werte für die Energien der Peaks:
 Um die Peaks zu identifizieren, untersuchen wir drei Bereiche des Thoriumspektrums getrennt (Abbildungen \ref{thorium1}-\ref{thorium3}), da aufgrund der stark unterschiedlichen Peakintensitäten und -Breiten einige Peaks ansonsten nicht gut zu erkennen wären. 
 
 \gra{thorium-1}{Ausschnitt aus dem Thoriumspektrum (Peaks 1 bis 7)\label{thorium1}}
-Im ersten Ausschnitt (siehe Abbildung \ref{thorium1}) befinden sich 7 Peaks. Von diesen lassen sich die meisten im Rahmen ihrer Fehler mit Literaturwerten identifizieren, für Peak 2,3 und 6 fällt dies jedoch schwer. Die Werte der Peaks finden sich in Tabelle \ref{thoriumpeaks1}.
+Im ersten Ausschnitt (siehe Abbildung \ref{thorium1}) befinden sich 7 Peaks. Von diesen lassen sich die meisten im Rahmen ihrer Fehler mit Literaturwerten identifizieren, für Peak 2 und 6 fällt dies jedoch schwer. Die Werte der Peaks finden sich in Tabelle \ref{thoriumpeaks1}.
  \begin{table}[h!]
  	\centering
- 	\begin{tabular}{c|c|c||c}
- 		&Energie / keV&Literaturwert\textsuperscript{\cite{staat}}&$\frac{\chi^2}{\text{ndf}}$\\\hline
- 		Peak 1&$70\pm20$&	$84.37$	&$1.3$\\
- 		Peak 2&$110\pm4$&	$131.61$	&$0.99$\\
- 		Peak 3&$182\pm 5$&	$166.41$	&$1.3$\\
- 		Peak 4&$272\pm 6$&	$277.36$	&$0.99$\\
- 		Peak 5&$301\pm 6$&	$300.09$	&$1.3$\\
- 		Peak 6&$379\pm 13$&	$?$	&$0.99$\\
- 		Peak 7&$442\pm 8$&	$452.98$	&$1.3$
+ 	\begin{tabular}{c|c|c|c}
+ 		&Energie / keV&$\frac{\chi^2}{\text{ndf}}$&Literaturwert\textsuperscript{\cite{staat}\cite{energien1}}\\\hline
+ 		Peak 1&$70\pm20$	&$1.3$&	$84.37$\\
+ 		Peak 2&$110\pm4$	&$0.99$&	$131.61$\\
+ 		Peak 3&$182\pm 5$	&$1.3$&	$182.3$\\
+ 		Peak 4&$272\pm 6$	&$0.99$&	$277.36$\\
+ 		Peak 5&$301\pm 6$	&$1.3$&	$300.09$\\
+ 		Peak 6&$379\pm 13$	&$0.99$&	$?$\\
+ 		Peak 7&$442\pm 8$	&$1.3$&	$452.98$
  	\end{tabular}
  	 \caption{Energien der Thoriumpeaks 1 bis 7 aus Abbildung \ref{thorium1}\label{thoriumpeaks1}}
  \end{table}
  
- Zu den Peaks 2 und 3 lassen sich Literaturpeaks finden, allerdings zeigen diese eine deutliche Verschiebung (ca. 4 bis 5 $\sigma$). Die Verschiebung zu höheren Energien, wie sie bei Peak 2 auftritt, könnte zum Beispiel durch Comptoneffekte der nachfolgenden Peaks entstanden sein.
- Im Bereich der Energie von Peak 6 ($379\pm14 \mathrm{keV}$) befindet sich kein erwarteter Peak.
+ Zu Peak 2 lässt sich ein Literaturpeak finden, allerdings ist die gemessene Energie um ca. $6\sigma$ größer als der literaturpeak. Die Verschiebung zu einer höheren Energie, wie sie bei Peak 2 auftritt, könnte zum Beispiel durch Comptoneffekte der nachfolgenden Peaks entstanden sein.
+ Im Bereich der Energie von Peak 6 ($379\pm14 \mathrm{keV}$) befindet sich kein erwarteter Peak. Die Herkuinft dieses Peaks ist uns also unbekannt.
  
 \gra{thorium-2}{Ausschnitt aus dem Thoriumspektrum (Peaks 8 bis 11)\label{thorium2}}
+Im zweiten Ausschnitt (siehe Abbildung \ref{thorium1}) befinden sich 7 Peaks. Von diesen lassen sich die meisten im Rahmen ihrer Fehler mit Literaturwerten identifizieren, für Peak 2 und 6 fällt dies jedoch schwer. Die Werte der Peaks finden sich in Tabelle \ref{thoriumpeaks1}.
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{c|c|c|c}
+		&Energie / keV&$\frac{\chi^2}{\text{ndf}}$&Literaturwert\textsuperscript{\cite{staat}\cite{energien1}}\\\hline
+		Peak 1&$70\pm20$	&$1.3$&	$84.37$\\
+		Peak 2&$110\pm4$	&$0.99$&	$131.61$\\
+		Peak 3&$182\pm 5$	&$1.3$&	$182.3$\\
+		Peak 4&$272\pm 6$	&$0.99$&	$277.36$\\
+		Peak 5&$301\pm 6$	&$1.3$&	$300.09$\\
+		Peak 6&$379\pm 13$	&$0.99$&	$?$\\
+		Peak 7&$442\pm 8$	&$1.3$&	$452.98$
+	\end{tabular}
+	\caption{Energien der Thoriumpeaks 1 bis 7 aus Abbildung \ref{thorium1}\label{thoriumpeaks1}}
+\end{table}
+
 \gra{thorium-3}{Ausschnitt aus dem Thoriumspektrum (Peaks 12 bis 14)\label{thorium3}}
 
 
@@ -478,12 +491,11 @@ C &= (0.00107 \pm 0.00013)° \\
 \section{Anhang}
 \subsection{Fitdaten}
 
-
 \begin{table}[h!]
 	\footnotesize\centering
 	\begin{tabular}{|c||c|c|c|c||c|}
 		\hline
-		Energie / Kanal&$N/\mathrm{s^{-1}}$&$C/\mathrm{s^{-1}}$&$\mu/\mathrm{Kanal}$&$\sigma/\mathrm{Kanal^{-2}}$&$\chi^2$ / ndf\\\hline\hline2640&$2.209\pm0.011$&$0.686\pm0.011$&$2636.98\pm0.16$&$56.5\pm0.4$&$1.94$\\
+		Energie / Kanal&$N/\mathrm{s^{-1}}$&$C/\mathrm{s^{-1}}$&$\mu/\mathrm{Kanal}$&$\sigma/\mathrm{Kanal}$&$\chi^2$ / ndf\\\hline\hline2640&$2.209\pm0.011$&$0.686\pm0.011$&$2636.98\pm0.16$&$56.5\pm0.4$&$1.94$\\
 		2980&$2.218\pm0.006$&$0.136\pm0.003$&$2984.74\pm0.16$&$70.5\pm0.2$&$2.43$\\
 		5630&$0.0497\pm5e-04$&$0.0015\pm2e-04$&$5633\pm1$&$112\pm1.2$&$1.49$\\
 		\hline\end{tabular}
@@ -495,7 +507,7 @@ C &= (0.00107 \pm 0.00013)° \\
 	\footnotesize\centering
 	\begin{tabular}{|c||c|c|c|c||c|}
 		\hline
-		Energie / Kanal&$N/\mathrm{s^{-1}}$&$C/\mathrm{s^{-1}}$&$\mu/\mathrm{Kanal}$&$\sigma/\mathrm{Kanal^{-2}}$&$\chi^2$ / ndf\\\hline\hline1170&$26.8\pm0.7$&$-3.2\pm0.7$&$1168.7\pm0.3$&$92\pm2$&$17.28$\\
+		Energie / Kanal&$N/\mathrm{s^{-1}}$&$C/\mathrm{s^{-1}}$&$\mu/\mathrm{Kanal}$&$\sigma/\mathrm{Kanal}$&$\chi^2$ / ndf\\\hline\hline1170&$26.8\pm0.7$&$-3.2\pm0.7$&$1168.7\pm0.3$&$92\pm2$&$17.28$\\
 		2830&$3.19\pm0.02$&$1.42\pm0.02$&$2828.2\pm0.5$&$109\pm1$&$7.53$\\
 		3980&$3\pm0.6$&$-1.3\pm0.6$&$3984.6\pm0.8$&$230\pm30$&$8.83$\\
 		\hline\end{tabular}
@@ -507,7 +519,7 @@ C &= (0.00107 \pm 0.00013)° \\
 	\footnotesize\centering
 	\begin{tabular}{|c||c|c|c|c||c|}
 		\hline
-		Energie / Kanal&$N/\mathrm{s^{-1}}$&$C/\mathrm{s^{-1}}$&$\mu/\mathrm{Kanal}$&$\sigma/\mathrm{Kanal^{-2}}$&$\chi^2$ / ndf\\\hline\hline105&$5.35\pm0.08$&$0.93\pm0.03$&$104.56\pm0.15$&$11.38\pm0.17$&$25.54$\\
+		Energie / Kanal&$N/\mathrm{s^{-1}}$&$C/\mathrm{s^{-1}}$&$\mu/\mathrm{Kanal}$&$\sigma/\mathrm{Kanal}$&$\chi^2$ / ndf\\\hline\hline105&$5.35\pm0.08$&$0.93\pm0.03$&$104.56\pm0.15$&$11.38\pm0.17$&$25.54$\\
 		199&$1.01\pm0.03$&$0.6\pm0.03$&$198.7\pm0.5$&$18.3\pm0.9$&$16.14$\\
 		302&$2.82\pm0.02$&$0.606\pm0.009$&$301.74\pm0.1$&$13.37\pm0.11$&$4.15$\\
 		583&$0.526\pm0.006$&$0.641\pm0.003$&$582.5\pm0.3$&$-21.9\pm0.3$&$1.32$\\
@@ -525,7 +537,7 @@ C &= (0.00107 \pm 0.00013)° \\
 	\footnotesize\centering
 	\begin{tabular}{|c||c|c|c|c||c|}
 		\hline
-		Energie / keV&$N/\mathrm{s^{-1}}$&$C/\mathrm{s^{-1}}$&$\mu/\mathrm{keV}$&$\sigma/\mathrm{keV^{-2}}$&$\chi^2$ / ndf\\\hline\hline70&$1\pm3$&$-1\pm3$&$74.6\pm0.2$&$40\pm90$&$1.04$\\
+		Energie / keV&$N/\mathrm{s^{-1}}$&$C/\mathrm{s^{-1}}$&$\mu/\mathrm{keV}$&$\sigma/\mathrm{keV}$&$\chi^2$ / ndf\\\hline\hline70&$1\pm3$&$-1\pm3$&$74.6\pm0.2$&$40\pm90$&$1.04$\\
 		110&$0.791\pm0.013$&$0.157\pm0.013$&$109.6\pm0.08$&$8.51\pm0.19$&$22.84$\\
 		182&$0.208\pm0.003$&$0.155\pm0.003$&$181.85\pm0.06$&$9.2\pm0.18$&$1.49$\\
 		272&$0.429\pm0.014$&$0.143\pm0.015$&$271.79\pm0.16$&$12.5\pm0.4$&$2.83$\\
@@ -548,11 +560,12 @@ C &= (0.00107 \pm 0.00013)° \\
 	\footnotesize\centering
 	\begin{tabular}{|c||c|c|c|c||c|}
 		\hline
-		Energie / keV&$N/\mathrm{s^{-1}}$&$C/\mathrm{s^{-1}}$&$\mu/\mathrm{keV}$&$\sigma/\mathrm{keV^{-2}}$&$\chi^2$ / ndf\\\hline\hline1490&$0.01089\pm0.00013$&$0.00192\pm1e-04$&$1487.8\pm0.4$&$39.1\pm0.6$&$1.28$\\
+		Energie / keV&$N/\mathrm{s^{-1}}$&$C/\mathrm{s^{-1}}$&$\mu/\mathrm{keV}$&$\sigma/\mathrm{keV}$&$\chi^2$ / ndf\\\hline\hline1490&$0.01089\pm0.00013$&$0.00192\pm1e-04$&$1487.8\pm0.4$&$39.1\pm0.6$&$1.28$\\
 		2620&$0.00089\pm3e-05$&$0.00022\pm3e-05$&$2623.9\pm1.3$&$43\pm2$&$0.99$\\
 		\hline\end{tabular}
 	\caption{Fitdaten der Untergrundpeaks\label{untergrundtable}}
 \end{table}
+
 %\subsection{Grafiken}
 
 
@@ -612,6 +625,10 @@ Wolfgang Demtröder
  Springer-Verlag,
  4. Auflage,
  2014
+ 
+\bibitem{energien1}
+\emph{http://hacol13.physik.uni-freiburg.de/fp/Versuche/FP1/FP1-3-Szintillationszaehler/Anhang/Th-228\_tables.pdf}, Stand: 20.10.2016
+ 
 \end{thebibliography}
 
 \end{document}
