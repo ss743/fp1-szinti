@@ -208,8 +208,9 @@ Um $\gamma$-Strahlung detektieren zu können, muss die $\gamma$-Strahlung mit Ma
  Abfolge von Zerfällen wird Zerfallsreihe genannt. Nachfolgend werden die Zerfallsreihen der verwendeten radioaktiven Isotope und die sich hieraus ergebenden erwarteten Peaks im Spektrum erläutert.
  
  \subsubsection{Natrium $^{22}Na$}
+ Das in diesem Versuch verwendete Natrium-Isotop $^{22}Na$ zerfällt mit einer Halbwertszeit von $T=2,6088$ Jahren zu  89,9\% durch $\beta^+$ -Zerfallund zu  10,1 \% durch Electron Capture und zu  in den angeregten Kernzustand 2+ von $^{22}Ne$. Die Zerfallsreihe ist in Abbildung \ref{NA} dargestellt. Bei beiden Zerfällen entstehen Positronen, die in Materie mit Elektronen annihilieren und dabei zwei $\gamma$-Quanten mit einer Energie von $511\,\mathrm{keV}$ abstrahlen. Da impulserhaltung gilt, erwartet man für diese einen Winkel von $180\,\mathrm{°}$. Die Winkelabhängigkeit wird in REF überprüft. Man erwartet im Natriumspektrum also einen Peak von $511\,\mathrm{keV}$. Zusätzlich erwartet man einen Peak bei $1274,6\,\mathrm{keV}$, dies entpricht der Energie des Photons, das beim Übergang in den Grundzustand frei wird.
  
- \gra{Zerfallsreihe-Na}{Zerfallsreihe von $^{22}Na$}
+ \gra{Zerfallsreihe-Na}{Zerfallsreihe von $^{22}Na$ \label{NA}}
  
  \subsubsection{Cobalt  $^{60}Co$}
  $^{60}Co$ zerfällt durch zwei $\beta^-$ -Zerfälle mit annähernd 100 \% in den angeregten Zustand 4+ von  $^{60}Ni$, wobei die Halbwertszeit $T=5,2714$ Jahre beträgt. Die höchste Wahrscheinlichkeit hat dann der Übergang vom 4+ in den 2+ Kernzustand. Im Energiespektrum von $^{60}Co$ sind somit Peaks bei $1173,2$ keV und $1332,5$ keV  zu erwarten, wobei ersterer der Energiedifferenz zwischen dem 4+ und dem 2+ Kernzustand entspricht und der zweite der Energiedifferenz des Übergangs in den Grundzustand (siehe Abbildung \ref{Co} )
@@ -457,7 +458,7 @@ Im ersten Ausschnitt (siehe Abbildung \ref{thorium1}) befinden sich 7 Peaks. Von
 \newpage
 \subsection{Winkelabhängigkeit der Paarvernichtung}
 
-Zur Überprüfung der erwarteten Winkelabhängigkeit der Paarvernichtung, tragen wir die Anzahl der gemessenen Koinzedenzen über den Winkel auf. Wie in REF erklärt, erwarten wir ein Maximum bei 180°, was in diesem Versuchsaufbau einem Winkel von 0° entspricht. Als y-Fehlerbalken sind hier die Poissonfehler $s_N = \sqrt{N}$ aufgetragen, die x-Fehlerbalken entsprehen den abgeschätzten Unsicherheiten auf die Winkel. Hierbei haben wir für alle Winkel die mit einer Einrastfunktion eingestellt werden konnten einen Fehler von $s_\alpha = 0.1°$ abgeschätzt und einen Fehler von 0.5° auf die Winkel für die keine Kerbe zum Einrasten vorhanden war. Die hieraus erhaltene Abbildung ist in \ref{PVN} dargestellt. 
+Zur Überprüfung der erwarteten Winkelabhängigkeit der Paarvernichtung, tragen wir die Anzahl der gemessenen Koinzedenzen über den Winkel $\alpha$ auf. Wie in REF erklärt, erwarten wir ein Maximum bei 180°, was in diesem Versuchsaufbau einem Winkel von 0° entspricht. Als y-Fehlerbalken sind hier die Poissonfehler $s_N = \sqrt{N}$ aufgetragen, die x-Fehlerbalken entsprehen den abgeschätzten Unsicherheiten auf die Winkel. Hierbei haben wir für alle Winkel die mit einer Einrastfunktion eingestellt werden konnten einen Fehler von $s_\alpha = 0.1°$ abgeschätzt und einen Fehler von 0.5° auf die Winkel für die keine Kerbe zum Einrasten vorhanden war. Die hieraus erhaltene Abbildung ist in \ref{PVN} dargestellt. 
 
 \gra{winkel}{Winkelabhängigkeit der Paarvernichtung \label{PVN}}
 
@@ -466,9 +467,26 @@ An die Werte fitten wir nun eine Gaußfuntkion und erhalten für die einzelnen P
 \begin{align*}
 \mu &= (1.50 \pm 0.17) °\\
 \sigma &= (4.27 \pm 0.14) °\\
-N &= (0.0245 \pm 0.0011) °\\
-C &= (0.00107 \pm 0.00013)° \\
+N &= (0.0245 \pm 0.0011) \frac{1}{s}\\
+C &= (0.00107 \pm 0.00013)\frac{1}{s}\\
 \end{align*}
+
+Wir wählen als Fehler auf den Mittelwert dabei $\frac{\sigma}{2}$, da es sich hier um eine statistische Verteilung handelt und die statistische Unsicherheit damit nicht durch den Fehler auf den Fitparameter gegeben ist, sondern die Breite des Peaks. Wir erhalten damit:
+
+\begin{align}
+\alpha_{max} = (1 \pm 2)°
+\end{align}
+
+Der Fitparameter C entspricht außerdem dem Untergrund der Messung.
+Diesen nahmen wir zusätzlich an Hand einer zweiten Messung bei verstelltem Delay ($t=11\,\mathrm{\mu s}$) auf. Wir erhielten dabei $N=63$ counts in $t=363669$  Sekunden, woraus wir einen Untergrund $C_2$ von 
+
+\begin{align}
+C' = \frac{N}{t} = ( 0.00017 \pm 0.00002) \frac{1}{s} 
+\end{align} 
+
+wobei sich der Fehler aus dem Poissonfehler mit Gauß'scher Fehlerfortpflanzung berechnet, der Fehler auf die Zeit kann vernachlässigt werden.
+
+
 
 \newpage
 \section{Zusammenfassung und Diskussion \label{Diskussion}}
