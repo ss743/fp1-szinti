@@ -308,7 +308,9 @@ Es können in der Quelle Wechselwirkungen von $\gamma$-Quanten mit Elektronen st
 \newpage
 \section{Auswertung}Die Auswertung haben wir mit der Programmiersprache \code{R} durchgeführt. Der Quellcode befindet sich im Anhang in Kapitel \ref{sourcecode}.
 \subsection{Aufnahme des Thoriumspektrums}
-Um das aufgenommene Thoriumspektrum auswerten zu können, müssen wir den Kanälen des MCA die entsprechende Energie zuordnen. Dazu haben wir für Cobalt, Natrium und Europium ebenfalls Spektren aufgenommen und aus den bekannten Peaks für diese Proben die Energiekalibrierung durchgeführt. Um die Spektren zu bereinigen, haben wir eine Untergrundmessung durchgeführt und die Zählraten des Untergrunds von den gemessenen Zählraten abgezogen, um äußere Einflüsse auf die Spektren zu verringern (siehe \ref{untergrund}). Der Fehler auf die Zählraten ergibt sich durch den Poissonfehler $s_N=\sqrt{N}$ auf die Ereigniszahlen und ist damit $s_n=\frac{\sqrt{N}}{t}=\sqrt{\frac{n}{t}}$.
+Um das aufgenommene Thoriumspektrum auswerten zu können, müssen wir den Kanälen des MCA die entsprechende Energie zuordnen. Dazu haben wir für Cobalt, Natrium und Europium ebenfalls Spektren aufgenommen und aus den bekannten Peaks (siehe Kapitel \ref{ZR}) für diese Proben die Energiekalibrierung durchgeführt. Um die Spektren zu bereinigen, haben wir eine Untergrundmessung durchgeführt und die Zählraten des Untergrunds von den gemessenen Zählraten abgezogen, um äußere Einflüsse auf die Spektren zu verringern (siehe Kapitel \ref{untergrund}). Der Fehler auf die Zählraten ergibt sich durch den Poissonfehler $s_N=\sqrt{N}$ auf die Ereigniszahlen und ist damit $s_n=\frac{\sqrt{N}}{t}=\sqrt{\frac{n}{t}}$.\\
+
+%Mithilfe kurzer Messungen der verwendeten Präparate stellten wir den MCA so ein, dass auch der äußerste erwartete Thoriumpeak (bei $2614.53\,\mathrm{keV}$ \textsuperscript{\cite{staat}}) noch innerhalb des Messbereichs des MCA lag.
 \newpage
 \subsubsection{Energiekalibrierung}
 \paragraph{Cobaltspektrum}\ \\
@@ -385,7 +387,7 @@ mit dem Fehler auf die Energie durch Gauß'sche Fehlerfortpflanzung:
 \begin{align*}
 s_E&=\cdot\sqrt{E^2\cdot\left(\left(\frac{s_{\text{Kanal}}}{\text{Kanal}}\right)^2+\left(\frac{0.002}{0.451}\right)^2\right)+4}
 \end{align*}
-Im Folgenden werden die Spektren immer mithilfe von (\ref{umrechnung}) über die Energie aufgetragen.
+Im Folgenden werden die Spektren immer mithilfe von Gleichung (\ref{umrechnung}) über die Energie aufgetragen.
 
 \subsubsection{Untergrund}\label{untergrund}
 %\gra[1]{untergrund-0}{Untergrundspektrum}
