@@ -117,8 +117,10 @@
 
 \section*{Abstract}
 
-In diesem Versuch werden verschiedene $\gamma$-Strahler und ihre Wechselwirkung mit Materie untersucht wobei verschiedene Szintillatoren als Detektor verwendet werden. 
-In einem ersten Versuchsteil werden mit einem NaI-Szintillationszähler die Spektren von
+In diesem Versuch werden verschiedene $\gamma$-Strahler und ihre Wechselwirkung mit Materie untersucht wobei verschiedene Szintillatoren als Detektor verwendet werden. Ziel ist es dabei, ein Verständis für die Funktionsweise von Szintillatoren zu entwickeln. Außerdem wird das Spektrum des Thorium Isotops $^{228}Th$ aufgenommen  und die Winkelabhängigkeit der Paarvernichtung überprüft. Zusätzlich werden Spektren von Natriumproben unterschiedlichen Alters aufgenommen und ausgewertet.\\
+
+In einem ersten Versuchsteil wurden mit einem NaI-Szintillationszähler die Zerfallsspektren von  $^{22}Na$, $^{60}Co$ und $^{152}Eu$ aufgenommen. Durch Identifizierung der bekannten Peaks aus den Zerfällen mit jeweils bekannten Energien haben wir dann eine Energiekalibrierung durchgeführt. Es wurde dann das Spektrum von $^{228}Th$ aufgenommen und die beobachteten Peaks mit Hilfe der zuvor durchgeführten Energiekalibrierung erfolgreich identifziert. 
+Die erwartete Winkelabhängigkeit mit einem Maximum bei 180° konnte ebenfalls bestätigt werden.
 
 
 \newpage
@@ -137,6 +139,8 @@ In einem ersten Versuchsteil werden mit einem NaI-Szintillationszähler die Spek
 \newpage
 \section{Theoretische Grundlagen}
 
+In diesem Abschnitt werden die für das Verständnis dieses Versuches wesentlichen Hintergründe erklärt.
+
 \subsection{Zerfallsgesetz}\label{zerfallsgesetz}
 Der radioaktive Zerfall ist ein statistischer Prozess, d.h. der genaue Zeitpunkt, zu dem ein Kern zerfällt, kann nicht vorhergesagt werden. Wir können nur Wahrscheinlichkeiten angeben. Die Zerfallsrate $dN/dt$ ist abhängig von der momentanen Anzahl $N$ der Atome.
 \[\frac{dN}{dt}=-\lambda N\]
@@ -146,9 +150,9 @@ wobei $N_0=N(t=0)$ die anfängliche Anzahl der Kerne beschreibt. Hieraus lässt 
 \[\tau=\frac{1}{\lambda}\]
 welche mit der Halbwertszeit $T_{1/2}$ wie folgt zusammenhängt:
 \[T_{1/2} = \ln2\cdot \tau = \frac{\ln2}{\lambda}\]
-%Eine weitere wichtige Größe ist die Aktivität $A$ welche die Anzahl der Zerfälle pro Sekunde beschreibt und in Becquerel ( $Bq=1/s$) gemessen wird:
-%\[A = \lambda N = \frac{N}{\tau} = \frac{N\ln2}{T_{1/2}}\]
+
 \subsection{Radioaktive Zerfälle}
+In diesem Versuch werden verschiedene radioaktive Proben untersucht, die auf unterschiedliche Weise zerfallen.
 Instabile Atomkerne gehen, je nach Art des Zerfalls, unter Aussendung von ionisierender Strahlung und Aussendung von Teilchen spontan in einen anderen Atomkern über. Im Folgenden werden die verschiedenen Arten radioaktiver Zerfälle erläutert.
 \subsubsection{$\alpha$-Zerfall}
 Beim $\alpha$-Zerfall geht ein schwerer, instabiler Kern unter Aussendung eines $\alpha$-Teilchens, einem Heliumkern (zwei Protonen und zwei Neutronen) in einen stabilen Kern über. Die Massenzahl des neuen Atomkerns ist dabei um vier gesunken, die Ordnungszahl verringert sich um zwei.
@@ -204,8 +208,8 @@ Um $\gamma$-Strahlung detektieren zu können, muss die $\gamma$-Strahlung mit Ma
  \subsubsection{Compton-Effekt}
  Beim Compton-Effekt trifft ein einfallendes $\gamma$-Quant auf ein freies oder nur leicht gebundenes Elektron und überträgt einen Teil seiner Energie auf dieses. Dieser Prozess findet meist bei Energien zwischen $200$ keV und $5$ MeV statt.
  
- \graShort{Compton-Effekt}{Compton}{links: In dieser Darstellung kann man ein Photon sehen, das mittels Comptoneffekt an einem Elektron gestreut wird und dabei Energie verliert, da es nach dem Stoß langwelliger
- ist. rechts: Dieser Graph skizziert den erwateten Verlauf im Energiespektrum einer einzelnen
+
+ \graShort{Compton-Effekt}{Compton}{links: In dieser Darstellung kann man ein Photon sehen, das mittels Comptoneffekt an einem Elektron gestreut wird und dabei Energie verliert, da es nach dem Stoß langwelliger ist. rechts: Dieser Graph skizziert den erwateten Verlauf im Energiespektrum einer einzelnen
  Photonenenregie durch Compton- und Photoeffekt. Die Wölbung des Comptonplateaus ist nicht zu
  sehen.}
  \subsubsection{Paarbildung und Paarvernichtung}
@@ -241,16 +245,28 @@ Um $\gamma$-Strahlung detektieren zu können, muss die $\gamma$-Strahlung mit Ma
  
  \subsection{Szintillationszähler}
  
+ In diesem Versuch werden Szintillationszähler als Detektoren verwendet.
+ Ein Szintillationszähler besteht aus einem Szintillator und einem Photomultiplier. 
  In Abbildung \ref{Szintiyay} ist die Funktionsweise eines Szntillators dargestellt.Mit Szintillatoren bezeichnet man spezielle Messgeräte, mit denen hochenergetische Photonen in Strahlung niedrigerer Energie aber höherer Intensität umgewandelt werden. Die Intensität der Szintillatorstrahlung ist proportional zur Energie der zu detektierenden Strahlung. Im Szintillationsmedium regt
- die radioaktive Strahlung durch Kernprozesse die Emission von Photonen an. Diese Photonen können das Medium durchdringen und werden in einem Photomultiplier verstärkt und gemessen.
- 
+ die radioaktive Strahlung durch Kernprozesse die Emission von Photonen an. Diese Photonen können das Medium durchdringen und werden in einem Photomultiplier verstärkt und gemessen. Die Funktionsweise eines Photomultipliers kann in REF nachgelesen werden.
+
  \gra{Szinti}{Funktionsweise eines Szintillationszähler \cite{Demtröder} \label{Szintiyay}}
+ 
+ In diesem Versuch wird ein organischer Plastikszintillator sowie ein anorganischer NaI-Szintillator verwendet. 
  
  \subsubsection{Organischer Szintillator}
  
+ Organische Szintillatoren haben den Vorteil, dass sie auf Grund der geringeren Abklingzeit eine bessere Reaktionszeit haben und sich somit gut für Zeitmessungen eignen. Der in diesem Versuch verwendete PLastikszintillator besteht aus einer Trägersubstanz und einer Aktivatorsubstanz. Eingallende Photonen regen die Moleküle des Plastikmaterials an, die ihre Energie dann auf die Moleküle der Aktivatorsubstanz übertragen. Die Moleküle der verschiedenen Stoffe haben dabei unterschiedliche Energieniveaus. Beim Abregen der Moleküle der Aktivatorsubstanz werden Photonen der gleichen Energie emittiert, die den Szintillator verlassen und vom Photomultiplier detektiert werden können.
+
  \subsubsection{Anorganischer Szintillator}
  
+ Anorganische Szintillatoren haben eine deutlich bessere Energieauflösung als organische Szintillatoren. Dies liegt an ihrer hohen Ordnungszahl und Dichte die eine hohe Nachweiswahrscheinlichkeit mit sich bringt. Der in diesem Versuch verwendete NaI-Kristall ist mit Thalium dotiert. 
+ Dringen Photonen in den Kristall ein, können sie ihre Energie durch Photo-bzw. Comptoneffekt an die Elektronen im Valenzband übertragen, die dann in das Leiterband angeregt werden können. Diese regen sich dann unter Aussendung eines niederenergetischen Photons wieder ab und fallen in das Valenzband zurück. Eine Dotierung mit Thalium verhindert durch zusätzliche Energieniveaus zwischen Valenz-und Leitungsband in die Elektronen aufgenommen werden können, eine ständige Reabsorption un Emission der Photonen, sodass diese den Kristall verlassen und detektiert werden können.
+ 
  \subsection{Gerätebeschreibung}
+ 
+ Die verschiedenen Geräte, die im Versuchsaufbau als Teil der NIM-Module verwendet werden, sind im Folgenden aufgelistet und ihre Funktionsweise wird erklärt:
+ 
  \paragraph{Detektor} Der Szintillator und der Photomultiplier bilden zusammen den Detektor.
  \paragraph{Pre-Amplifier}
  Der Pre-Amplifier (PA) verstärkt die schwachen Signale des Detektors und verbessert so
@@ -300,7 +316,11 @@ Es können in der Quelle Wechselwirkungen von $\gamma$-Quanten mit Elektronen st
 
 \subsection{Teil I: Vorbereitung und Energiekalibrierung}
 
+\gra[0.9]{schaltbild1}{Versuchsaufbau zur Aufnahme der Energiespektren}
+
 \subsection{Teil II: Messung der Koinzedenzen}
+
+\gra[0.95]{schaltbild2}{Versuchsaufbau zur Untersuchung der Winkelabhängigkeit}
 
 
 
