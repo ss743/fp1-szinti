@@ -6,6 +6,13 @@ read <- function(filename){
   
 }
 
+readTxt <- function(filename){
+  
+  return (read.table(paste("../data/",filename,".txt",sep=""),skip=10))
+  
+}
+
+
 draw <- function(x,y,add=FALSE,col="black",log=""){
   if(add){
     points(x,y,bty="l",cex=0.6,pch=4,col=col)
