@@ -68,6 +68,14 @@
 	\end{minipage}
 	\vskip 30 pt
 }
+\newcommand{\graShort}[4][0.7]{
+	\begin{minipage}[h!]{\textwidth}
+		\centering
+		\includegraphics[width=#1\textwidth]{figures/#3.png}
+		\captionof{figure}[#2]{#4}
+	\end{minipage}
+	\vskip 30 pt
+}
 \newcommand{\graTwo}[4][0.49]{
 	\begin{minipage}[h!]{\textwidth}
 		\centering
@@ -196,8 +204,7 @@ Um $\gamma$-Strahlung detektieren zu können, muss die $\gamma$-Strahlung mit Ma
  \subsubsection{Compton-Effekt}
  Beim Compton-Effekt trifft ein einfallendes $\gamma$-Quant auf ein freies oder nur leicht gebundenes Elektron und überträgt einen Teil seiner Energie auf dieses. Dieser Prozess findet meist bei Energien zwischen $200$ keV und $5$ MeV statt.
  
- \gra{Compton}{links: In dieser Darstellung kann man ein Photon sehen, das mittels Comptonef-
- fekt an einem Elektron gestreut wird und dabei Energie verliert, da es nach dem Stoß langwelliger
+ \graShort{Compton-Effekt}{Compton}{links: In dieser Darstellung kann man ein Photon sehen, das mittels Comptoneffekt an einem Elektron gestreut wird und dabei Energie verliert, da es nach dem Stoß langwelliger
  ist. rechts: Dieser Graph skizziert den erwateten Verlauf im Energiespektrum einer einzelnen
  Photonenenregie durch Compton- und Photoeffekt. Die Wölbung des Comptonplateaus ist nicht zu
  sehen.}
