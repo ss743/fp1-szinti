@@ -68,6 +68,14 @@
 	\end{minipage}
 	\vskip 30 pt
 }
+\newcommand{\graShort}[4][0.7]{
+	\begin{minipage}[h!]{\textwidth}
+		\centering
+		\includegraphics[width=#1\textwidth]{figures/#3.png}
+		\captionof{figure}[#2]{#4}
+	\end{minipage}
+	\vskip 30 pt
+}
 \newcommand{\graTwo}[4][0.49]{
 	\begin{minipage}[h!]{\textwidth}
 		\centering
@@ -109,7 +117,7 @@
 
 \section*{Abstract}
 
-In diesem Versuch wurden verschiedene $\gamma$-Strahler und ihre Wechselwirkung mit Materie untersucht wobei verschiedene Szintillatoren als Detektor verwendet wurden. Ziel ist es dabei, ein Verständis für die Funktionsweise von Szintillatoren zu entwickeln. Außerdem soll das Spektrum des Thorium Isotops $^{228}Th$ aufgenommen werden und die Winkelabhängigkeit der Paarvernichtung überprüft werden. Zusätzlich wurden Spektren von Natriumproben unterschiedlichen Alters aufgenommen und ausgewertet.
+In diesem Versuch werden verschiedene $\gamma$-Strahler und ihre Wechselwirkung mit Materie untersucht wobei verschiedene Szintillatoren als Detektor verwendet werden. Ziel ist es dabei, ein Verständis für die Funktionsweise von Szintillatoren zu entwickeln. Außerdem wird das Spektrum des Thorium Isotops $^{228}Th$ aufgenommen  und die Winkelabhängigkeit der Paarvernichtung überprüft. Zusätzlich werden Spektren von Natriumproben unterschiedlichen Alters aufgenommen und ausgewertet.\\
 
 In einem ersten Versuchsteil wurden mit einem NaI-Szintillationszähler die Zerfallsspektren von  $^{22}Na$, $^{60}Co$ und $^{152}Eu$ aufgenommen. Durch Identifizierung der bekannten Peaks aus den Zerfällen mit jeweils bekannten Energien haben wir dann eine Energiekalibrierung durchgeführt. Es wurde dann das Spektrum von $^{228}Th$ aufgenommen und die beobachteten Peaks mit Hilfe der zuvor durchgeführten Energiekalibrierung erfolgreich identifziert. 
 Die erwartete Winkelabhängigkeit mit einem Maximum bei 180° konnte ebenfalls bestätigt werden.
@@ -200,8 +208,8 @@ Um $\gamma$-Strahlung detektieren zu können, muss die $\gamma$-Strahlung mit Ma
  \subsubsection{Compton-Effekt}
  Beim Compton-Effekt trifft ein einfallendes $\gamma$-Quant auf ein freies oder nur leicht gebundenes Elektron und überträgt einen Teil seiner Energie auf dieses. Dieser Prozess findet meist bei Energien zwischen $200$ keV und $5$ MeV statt.
  
- \gra{Compton}{links: In dieser Darstellung kann man ein Photon sehen, das mittels Comptoneffekt an einem Elektron gestreut wird und dabei Energie verliert, da es nach dem Stoß langwelliger
- ist. rechts: Dieser Graph skizziert den erwateten Verlauf im Energiespektrum einer einzelnen
+
+ \graShort{Compton-Effekt}{Compton}{links: In dieser Darstellung kann man ein Photon sehen, das mittels Comptoneffekt an einem Elektron gestreut wird und dabei Energie verliert, da es nach dem Stoß langwelliger ist. rechts: Dieser Graph skizziert den erwateten Verlauf im Energiespektrum einer einzelnen
  Photonenenregie durch Compton- und Photoeffekt. Die Wölbung des Comptonplateaus ist nicht zu
  sehen.}
  \subsubsection{Paarbildung und Paarvernichtung}
@@ -257,7 +265,7 @@ Um $\gamma$-Strahlung detektieren zu können, muss die $\gamma$-Strahlung mit Ma
  
  \subsection{Gerätebeschreibung}
  
- Die verschiedenen Geräte, die im Versuchsaufbau verwendet werden sind im Folgenden aufgelistet und ihre Funktionsweise wird erklärt:
+ Die verschiedenen Geräte, die im Versuchsaufbau als Teil der NIM-Module verwendet werden, sind im Folgenden aufgelistet und ihre Funktionsweise wird erklärt:
  
  \paragraph{Detektor} Der Szintillator und der Photomultiplier bilden zusammen den Detektor.
  \paragraph{Pre-Amplifier}
@@ -308,7 +316,11 @@ Es können in der Quelle Wechselwirkungen von $\gamma$-Quanten mit Elektronen st
 
 \subsection{Teil I: Vorbereitung und Energiekalibrierung}
 
+\gra[0.9]{schaltbild1}{Versuchsaufbau zur Aufnahme der Energiespektren}
+
 \subsection{Teil II: Messung der Koinzedenzen}
+
+\gra[0.95]{schaltbild2}{Versuchsaufbau zur Untersuchung der Winkelabhängigkeit}
 
 
 
@@ -316,7 +328,9 @@ Es können in der Quelle Wechselwirkungen von $\gamma$-Quanten mit Elektronen st
 \newpage
 \section{Auswertung}Die Auswertung haben wir mit der Programmiersprache \code{R} durchgeführt. Der Quellcode befindet sich im Anhang in Kapitel \ref{sourcecode}.
 \subsection{Aufnahme des Thoriumspektrums}
-Um das aufgenommene Thoriumspektrum auswerten zu können, müssen wir den Kanälen des MCA die entsprechende Energie zuordnen. Dazu haben wir für Cobalt, Natrium und Europium ebenfalls Spektren aufgenommen und aus den bekannten Peaks für diese Proben die Energiekalibrierung durchgeführt. Um die Spektren zu bereinigen, haben wir eine Untergrundmessung durchgeführt und die Zählraten des Untergrunds von den gemessenen Zählraten abgezogen, um äußere Einflüsse auf die Spektren zu verringern (siehe \ref{untergrund}). Der Fehler auf die Zählraten ergibt sich durch den Poissonfehler $s_N=\sqrt{N}$ auf die Ereigniszahlen und ist damit $s_n=\frac{\sqrt{N}}{t}=\sqrt{\frac{n}{t}}$.
+Um das aufgenommene Thoriumspektrum auswerten zu können, müssen wir den Kanälen des MCA die entsprechende Energie zuordnen. Dazu haben wir für Cobalt, Natrium und Europium ebenfalls Spektren aufgenommen und aus den bekannten Peaks (siehe Kapitel \ref{ZR}) für diese Proben die Energiekalibrierung durchgeführt. Um die Spektren zu bereinigen, haben wir eine Untergrundmessung durchgeführt und die Zählraten des Untergrunds von den gemessenen Zählraten abgezogen, um äußere Einflüsse auf die Spektren zu verringern (siehe Kapitel \ref{untergrund}). Der Fehler auf die Zählraten ergibt sich durch den Poissonfehler $s_N=\sqrt{N}$ auf die Ereigniszahlen und ist damit $s_n=\frac{\sqrt{N}}{t}=\sqrt{\frac{n}{t}}$.\\
+
+%Mithilfe kurzer Messungen der verwendeten Präparate stellten wir den MCA so ein, dass auch der äußerste erwartete Thoriumpeak (bei $2614.53\,\mathrm{keV}$ \textsuperscript{\cite{staat}}) noch innerhalb des Messbereichs des MCA lag.
 \newpage
 \subsubsection{Energiekalibrierung}
 \paragraph{Cobaltspektrum}\ \\
@@ -393,7 +407,7 @@ mit dem Fehler auf die Energie durch Gauß'sche Fehlerfortpflanzung:
 \begin{align*}
 s_E&=\cdot\sqrt{E^2\cdot\left(\left(\frac{s_{\text{Kanal}}}{\text{Kanal}}\right)^2+\left(\frac{0.002}{0.451}\right)^2\right)+4}
 \end{align*}
-Im Folgenden werden die Spektren immer mithilfe von (\ref{umrechnung}) über die Energie aufgetragen.
+Im Folgenden werden die Spektren immer mithilfe von Gleichung (\ref{umrechnung}) über die Energie aufgetragen.
 
 \subsubsection{Untergrund}\label{untergrund}
 %\gra[1]{untergrund-0}{Untergrundspektrum}

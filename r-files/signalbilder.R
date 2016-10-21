@@ -1,0 +1,7 @@
+par(mar=c(1,1,1,1))
+plot(function(x){0*(x<0)-200000*x*(x>=0 & x<=0.00005)-exp(-x)*(x>0.00005)},-3,5,n=5000,bty="n",xaxt="n",yaxt="n",ylab="",xlab="",lwd=10,col="blue")
+plot(function(x){exp(-(x^2))},-3,3,n=5000,bty="n",xaxt="n",yaxt="n",ylab="",xlab="",lwd=10,col="blue")
+plot(function(x){-2*x*exp(-(x^2))},-3,3,n=5000,bty="n",xaxt="n",yaxt="n",ylab="",xlab="",lwd=10,col="blue")
+plot(function(x){0*(x<0&x>2)+200000*x*(x>=0 & x<=0.00005)-200000*x*(x<=2 & x>=2-0.00005)+1*(x>0.00005&x<2-0.00005)},-2.5,4.5,n=5000,bty="n",xaxt="n",yaxt="n",ylab="",xlab="",lwd=10,col="blue")
+plot(function(x){-(0*(x<0&x>2)+200000*x*(x>=0 & x<=0.00005)-200000*x*(x<=2 & x>=2-0.00005)+1*(x>0.00005&x<2-0.00005))},-2,4,n=5000,bty="n",xaxt="n",yaxt="n",ylab="",xlab="",lwd=10,col="blue")
+plot(function(x){-(0*(x<0&x>2)+200000*x*(x>=0 & x<=0.00005)-200000*x*(x<=2 & x>=2-0.00005)+1*(x>0.00005&x<2-0.00005))},-1,3,n=5000,bty="n",xaxt="n",yaxt="n",ylab="",xlab="",lwd=10,col="blue")
