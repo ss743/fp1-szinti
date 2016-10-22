@@ -38,6 +38,32 @@ drawCI <- function(x,y,sy,col="black",log="",ylim=c(10^-4,10^2),xlab="Kanal",yla
   
 }
 
+draw1 <- function(x,y,sy,ylim=c(0.000001,20),xlab="Energie / Kanal",ylab=expression(Zählrate / s^-1),col="black",scol="darkgrey"){
+  plot(x,y,pch=4,cex=0.6,bty="l",log="y",ylim=ylim,col=col,xlab=xlab,ylab=ylab)
+  condition=1#(y<=sy)
+  lowlim=y-sy
+  #if(log=="y"){
+    lowlim=((y-sy)*(y>sy)+0.000001*(y<=sy))
+  #}
+  arrows(x,y*condition,x,lowlim*condition,cex=0.6,pch=4,bty="l",col=scol,length=0.05,angle=90)
+  arrows(x,y*condition,x,(y+sy)*condition,cex=0.6,pch=4,bty="l",col=scol,length=0.05,angle=90)
+  points(x,y,cex=0.6,pch=4,col=col)
+  
+}
+draw2 <- function(x,y,sy,col="black",scol="darkgrey"){
+  #plot(x,y,pch=4,cex=0.6,bty="l",log="y",ylim=ylim,col=col,xlab=xlab,ylab=ylab)
+  condition=1#(y<=sy)
+  lowlim=y-sy
+  #if(log=="y"){
+  lowlim=((y-sy)*(y>sy)+0.000001*(y<=sy))
+  #}
+  arrows(x,y*condition,x,lowlim*condition,cex=0.6,pch=4,bty="l",col=scol,length=0.05,angle=90)
+  arrows(x,y*condition,x,(y+sy)*condition,cex=0.6,pch=4,bty="l",col=scol,length=0.05,angle=90)
+  points(x,y,cex=0.6,pch=4,col=col)
+  
+}
+
+
 drawCIx <- function(x,y,sx,sy,col="black",scol="darkgrey",barsize=0.05,vbarsize=0.005,log="",ylim=c(10^-4,10^2),xlab="Kanal",ylab=expression(Zählrate / s^-1)){
   condition=1#(y<=sy)
   lowlim=y-sy
