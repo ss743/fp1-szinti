@@ -19,7 +19,7 @@
 \usepackage[labelfont=bf]{caption}
 \usepackage{titling}
 
-\lstset{basicstyle=\scriptsize} %Quellcode mit Umlauten und ganz klein
+\lstset{basicstyle=\scriptsize,breaklines=true} %Quellcode mit Umlauten und ganz klein
 \lstset{literate=
   {Ö}{{\"O}}1
   {Ä}{{\"A}}1
@@ -160,7 +160,7 @@ Beim Optimieren der Einstellungen und besseren Verständnis der einzelnen Gerät
 \newpage
 \section{Theoretische Grundlagen}
 
-In diesem Abschnitt werden die für das Verständnis dieses Versuches wesentlichen Hintergründe erklärt.
+Dieser Abschnitt orientiert sich im Wesentlichen an Referenz \cite{staat}. Es werden die für das Verständnis dieses Versuches wesentlichen Hintergründe erklärt. 
 
 \subsection{Zerfallsgesetz\label{zerfallsgesetz}}
 Der radioaktive Zerfall ist ein statistischer Prozess, d.h. der genaue Zeitpunkt, zu dem ein Kern zerfällt, kann nicht vorhergesagt werden. Wir können nur Wahrscheinlichkeiten angeben. Die Zerfallsrate $\frac{dN}{dt}$ ist abhängig von der momentanen Anzahl $N$ der Atome.
@@ -320,7 +320,7 @@ Um $\gamma$-Strahlung detektieren zu können, muss die $\gamma$-Strahlung mit Ma
  \paragraph{HEX Counter}
 Der HEX-Counter zählt die eintreffenden Signale sowie die Zeit.
 
-\subsection{Energiespektrum}
+\subsection{Energiespektrum}\label{saskiascoolerabschnitt}
 
 Das Energiespektrum, das aus den gemessenen Photonenenergien entsteht, weist  charakteristische Merkmale auf. Diese sind im Folgenden erklärt. 
  
@@ -349,7 +349,7 @@ Es können in der Quelle Wechselwirkungen von $\gamma$-Quanten mit Elektronen st
 \newpage
 \section{Versuchsaufbau und -Durchführung}
 
-Nachfolgend ist der Versuchsaufbau für die verschiedenen Teile des Versuchs erklärt sowie die Versuchsdurchführung protokolliert. Zur Optimierung der Einstellungen und Überprüfen der Signale wurde ein Oszilloskop verwendet. Da dieses keinen der zur Verfügung stehenden USB-Sticks erkannte, wurden mit dem Handy Fotos gemacht.
+Nachfolgend ist der Versuchsaufbau für die verschiedenen Teile des Versuchs erklärt sowie die Versuchsdurchführung protokolliert. Zur Optimierung der Einstellungen und Überprüfen der Signale wurde ein Oszilloskop verwendet. Da dieses keinen der zur Verfügung stehenden USB-Sticks erkannte, wurden mit dem Handy Fotos gemacht. Diese wurden anschließend mit dem Programm \code{GIMP} nachbearbeitet.
 
 \subsection{Teil I: Vorbereitung und Energiekalibrierung \label{Teil1}}
 
@@ -409,7 +409,7 @@ Die dabei bestimmten Fitparameter sind in Tabelle \ref{cobalttable} im Anhang zu
 \end{table}
 
 Die Fehler auf die Positionen der Peaks ergeben sich dabei aus dem Fitparameter $\sigma$ mit $s=\frac{\sigma}{2}$.
-In Abbildung \ref{cobaltbild} ist das Cobaltspektrum mit den Gaußfits zu sehen. Dabei sind die bekannten Peaks rot und die unbekannten Peaks rosa eingezeichnet. 
+In Abbildung \ref{cobaltbild} ist das Cobaltspektrum mit den Gaußfits zu sehen. Dabei sind die bekannten Peaks rot und die unbekannten Peaks rosa eingezeichnet. Die in Tabelle \ref{cobaltpeaks} fett gedruckten Peaks werden zur Energiekalibrierung verwendet.
 \newpage
 \paragraph{Natriumspektrum}\ \\
 \gra[0.9]{natrium}{Natriumspektrum zur Bestimmung der Energiekalibrierung\label{natriumbild}}
@@ -427,7 +427,7 @@ Nun bestimmen wir die Positionen der Peaks im Natriumspektrum und ordnen diese d
 \end{table}
 
 Die Fehler auf die Positionen der Peaks ergeben sich dabei wieder aus dem Fitparameter $\sigma$ mit $s=\frac{\sigma}{2}$.
-In Abbildung \ref{natriumbild} ist das Natriumspektrum mit den Gaußfits zu sehen. Dabei sind die bekannten Peaks rot und die unbekannten Peaks rosa eingezeichnet.
+In Abbildung \ref{natriumbild} ist das Natriumspektrum mit den Gaußfits zu sehen. Dabei sind die bekannten Peaks rot und die unbekannten Peaks rosa eingezeichnet. Die in Tabelle \ref{natriumpeaks} fett gedruckten Peaks werden zur Energiekalibrierung verwendet.
 \newpage
 \paragraph{Europiumspektrum}\ \\
 \gra[0.9]{europium}{Europiumspektrum zur Bestimmung der Energiekalibrierung \label{europiumbild}}
@@ -451,7 +451,7 @@ Nun bestimmen wir die Positionen der Peaks im Europiumspektrum und ordnen diese 
 \end{table}
 
 Die Fehler auf die Positionen der Peaks ergeben sich dabei erneut aus dem Fitparameter $\sigma$ mit $s=\frac{\sigma}{2}$.
-In Abbildung \ref{europiumbild} ist das Spektrum der Europiumprobe mit den Gaußfits zu sehen. Wie bisher sind die bekannten Peaks rot und die unbekannten Peaks rosa eingezeichnet. Zur Energiekalibrierung verwenden wir von Europium die beiden bekannten Peaks der höchsten Intensitäten.
+In Abbildung \ref{europiumbild} ist das Spektrum der Europiumprobe mit den Gaußfits zu sehen. Wie bisher sind die bekannten Peaks rot und die unbekannten Peaks rosa eingezeichnet. Zur Energiekalibrierung verwenden wir von Europium die beiden bekannten Peaks der höchsten Intensitäten. Diese Peaks sind in Tabelle \ref{europiumpeaks} fett gedruckt.
 \newpage
 \paragraph{Energiekalibrierung}\ \\
 \gra{calibration}{Energiekalibrierung mithilfe der bekannten Peaks von Cobalt, Natrium und Europium}
@@ -544,7 +544,7 @@ Im ersten Ausschnitt (siehe Abbildung \ref{thorium1}) befinden sich 7 Peaks. Von
  Im Bereich der Energie von Peak 6 ($379\pm14 \mathrm{keV}$) befindet sich kein erwarteter Peak. Die Herkunft dieses Peaks ist uns also unbekannt.
  
 \gra{thorium-2}{Ausschnitt aus dem Thoriumspektrum (Peaks 8 bis 11)\label{thorium2}}
-Im zweiten Ausschnitt (siehe Abbildung \ref{thorium2}) befinden sich 4 Peaks. Von diesen lässt sich nur Peak 8 im Rahmen seiner Fehler mit Literaturwerten identifizieren, für Peak 9 bis 11 können wir Verschiebungen zu höheren Energien beobachten, die vermutlich auf Comptoneffekte durch höhere Peaks zurückzuführen sind. Die Werte der Peaks finden sich in Tabelle \ref{thoriumpeaks2}.
+Im zweiten Ausschnitt (siehe Abbildung \ref{thorium2}) befinden sich 4 Peaks. Von diesen lässt sich nur Peak 8 im Rahmen seiner Fehler mit Literaturwerten identifizieren, für Peak 9 bis 11 können wir Verschiebungen zu höheren Energien beobachten, die vermutlich auf Comptoneffekte durch höhere Peaks zurückzuführen sind (siehe Kapitel \ref{saskiascoolerabschnitt}). Die Werte der Peaks finden sich in Tabelle \ref{thoriumpeaks2}.
 \begin{table}[h!]
 	\centering
 	\begin{tabular}{c|c|c|c}
@@ -564,7 +564,7 @@ Im dritten Ausschnitt (siehe Abbildung \ref{thorium3}) befinden sich 3 Peaks. Vo
 	\begin{tabular}{c|c|c|c}
 		&Energie / keV&$\frac{\chi^2}{\text{ndf}}$&Literaturwert\textsuperscript{\cite{staat}\cite{energien1}}\\\hline
  		Peak 12&$1610\pm 40$&$1.37$&$1620.5$\\
- 		Peak 13&$2180\pm 100$&$1.46$&$-$\\
+ 		Peak 13&$2180\pm 100$&$1.46$&$?$\\
  		Peak 14&$2640\pm 20$&$1.02$&$2610$ bzw. $2614.53$\\
 	\end{tabular}
 	\caption{Energien der Thoriumpeaks 12 bis 14 aus Abbildung \ref{thorium1}\label{thoriumpeaks3}}
@@ -624,7 +624,37 @@ Von den Zählraten der einzelnen Messungen wird der jeweilige Untergrund abgezog
 \gra{natriumactivity}{Gesamtaktivitäten der Natriumproben nach Abzug des Untergrunds (unbrauchbare Messungen)\label{gesamtactivity}}
 \newpage
 \section{Zusammenfassung und Diskussion \label{Diskussion}}
+Im ersten Versuchsteil konnten wir folgende Peaks des Thoriumspektrums finden und größtenteils mit Literaturwerten identifizieren:
 
+ \begin{table}[h!]
+ 	\centering
+ 	\begin{tabular}{c|c|c|c}
+ 		&Energie / keV&$\frac{\chi^2}{\text{ndf}}$&Literaturwert\textsuperscript{\cite{staat}\cite{energien1}}\\\hline
+ 		Peak 1&$70\pm20$	&$1.04$&	$84.37$\\
+ 		Peak 2&$110\pm4$	&$22.8$&	$131.61$\\
+ 		Peak 3&$182\pm 5$	&$1.49$&	$182.3$\\
+ 		Peak 4&$272\pm 6$	&$2.83$&	$277.36$\\
+ 		Peak 5&$301\pm 6$	&$6.07$&	$300.09$\\
+ 		Peak 6&$379\pm 13$	&$9.77$&	$?$\\
+ 		Peak 7&$442\pm 8$	&$1.81$&	$452.98$\\
+ 		Peak 8&$551\pm 6$&$1.28$& $549.73$\\
+ 		Peak 9&$622\pm 11$&$1.21$&$583.19$ \\
+ 		Peak 10&$753\pm 15$&$1.16$& $727.3$\\
+ 		Peak 11&$870\pm 11$&$1.32$& $804.9$\\
+ 		Peak 12&$1610\pm 40$&$1.37$&$1620.5$\\
+ 		Peak 13&$2180\pm 100$&$1.46$&$?$\\
+ 		Peak 14&$2640\pm 20$&$1.02$&$2610$ bzw. $2614.53$\\
+ 	\end{tabular}
+ 	\caption{Energien der Thoriumpeaks\label{thoriumergebnisse}}
+ \end{table}
+ 
+ Bei manchen der Peaks stellen wir Verschiebungen zum Literaturwert fest, welche möglicherweise auf Compton-Effekte der höheren Peaks zurückzuführen sind. Zwei Peaks konnten wir nicht identifizieren, eventuell sind diese Peaks auf Peaks aus dem die Probe umgebenden Messingzylinder zurückzuführen. Messing ist eine Legierung aus Kupfer und Zink. Das Kupferisotop $^{61}$Cu hat Peaks an den Energien $E_1=371.05\,\mathrm{keV}$ und $E_2=2124\,\mathrm{keV}$ (siehe Referenz \cite{energien3}). Die gefundenen unbekannten Peaks stimmen mit diesen Peaks innerhalb ihrer Fehler überein. Möglicherweise wurde der Messingzylinder also durch das enthaltene Thorium zur Strahlung angeregt oder die Peaks entstehen durch die natürliche Strahlung des Kupfers.\\
+ 
+ Im zweiten Teil des Versuchs konnte die erwartete Winkelabhängigkeit der Paarvernichtung bestätigt werden. Das Intensitätsmaximum konnten wir bei einem Winkel von $\alpha=181\pm2\,°$ bestimmen.\\
+ 
+ Im dritten Teil des Versuchs erhielten wir bei der Untersuchung unterschiedlich alter Natriumproben ein widersprüchliches Ergebnis der Aktivitäten der von uns gemessenen Natriumproben: die uns als älteste Probe bekannte Probe hat eine deutlich höhere Aktivität gezeigt als die uns als zweitälteste Probe bekannte Probe. Ansonsten scheint die relative Aktivität der Proben zueinander jedoch sinnvoll. Wir konnten hieraus jedoch kein Alter der Proben berechnen, da uns wesentliche Angaben, wie z.B. die Masse der verschiedenen Proben gefehlt hat.
+ Bei der Untersuchung einer Natriumprobe zu verschiedenen Zeitpunkten kamen wir zu keinen Ergebnis, da die uns zur Verfügung gestellten Datensätze der vergangenen Jahre nicht sinnvoll waren, so erhielten wir beispielsweise aus den aufgenommenen Spektren nach Abzug des zugehörigen Untergrunds negative Aktivitäten.
+ 
 
 \newpage
 \listoffigures
@@ -717,9 +747,9 @@ Von den Zählraten der einzelnen Messungen wird der jeweilige Untergrund abgezog
 
 %\subsubsection{$\alpha$-Plateau Samarium}
 %\lstinputlisting[language=MATLAB]{Rohdaten/alphaPlateau_Sm.txt}
+\newpage
 
 
-%\newpage
 \subsection{Quellcode}
 \label{sourcecode}
 \subsubsection{\code{auswertung.R}}\label{auswertungR}
@@ -794,6 +824,9 @@ Wolfgang Demtröder
 
 \bibitem{energien2}
 \emph{http://www.nucleide.org/DDEP\_WG/Nuclides/K-40\_tables.pdf}, Stand: 22.10.2016
+
+\bibitem{energien3}
+\emph{http://www.nucleide.org/DDEP\_WG/Nuclides/Cu-61\_tables.pdf}, Stand: 22.10.2016
 
 \bibitem{anleitung1}
 (Zerfall von $^{57}$Co): http://hacol13.physik.uni-freiburg.de/fp/Versuche/FP1/FP1-6-KurzeHalbwertzeiten/Anleitung.pdf
