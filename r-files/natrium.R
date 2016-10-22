@@ -56,7 +56,7 @@ u2n=untergrund15_1/tuntergrund15_1
 
 c3n=c(rep(0,2048))
 u3n=c(rep(0,2048))
-for(i in c(1:length(c4))){
+for(i in c(1:length(c3))){
   c3n[(i-1)%/%4+1]=c3n[(i-1)%/%4+1]+c3[i]
   u3n[(i-1)%/%4+1]=u3n[(i-1)%/%4+1]+(untergrund15_2/tuntergrund15_2)[i]
 }
@@ -65,7 +65,7 @@ c4n=c(rep(0,2048))
 u4n=c(rep(0,2048))
 for(i in c(1:length(c4))){
   c4n[(i-1)%/%2+1]=c4n[(i-1)%/%2+1]+c4[i]
-  u4n[(i-1)%/%4+1]=u4n[(i-1)%/%4+1]+(untergrund15_3/tuntergrund15_3)[i]
+  u4n[(i-1)%/%2+1]=u4n[(i-1)%/%2+1]+(untergrund15_3/tuntergrund15_3)[i]
 }
 
 c5n=c(rep(0,2048))
@@ -75,7 +75,7 @@ for(i in c(1:length(c5))){
   u5n[(i-1)%/%4+1]=u5n[(i-1)%/%4+1]+(untergrund16/tuntergrund16)[i]
 }
 
-cutoff=16
+cutoff=32
 
 c1n[1:cutoff]=rep(0,cutoff)
 c2n[1:cutoff]=rep(0,cutoff)
@@ -89,11 +89,11 @@ u3n[1:cutoff]=rep(0,cutoff)
 u4n[1:cutoff]=rep(0,cutoff)
 u5n[1:cutoff]=rep(0,cutoff)
 
-c1n=c1n/sum(u1n)
-c2n=c2n/sum(u2n)
-c3n=c3n/sum(u3n)
-c4n=c4n/sum(u4n)
-c5n=c5n/sum(u5n)
+c1n=c1n#/sum(u1n)
+c2n=c2n#/sum(u2n)
+c3n=c3n#/sum(u3n)
+c4n=c4n#/sum(u4n)
+c5n=c5n#/sum(u5n)
 
 activity=c(sum(c1n),
            sum(c2n),
@@ -154,6 +154,12 @@ cn3 = natrium3/tnatrium3 - untergrund/tuntergrund
 cn4 = natrium4/tnatrium4 - untergrund/tuntergrund
 cn5 = natrium5/tnatrium5 - untergrund/tuntergrund
 
+scn1 = sqrt((sqrt(natrium1)/tnatrium1)^2 + (sqrt(untergrund)/tuntergrund)^2)
+scn2 = sqrt((sqrt(natrium2)/tnatrium2)^2 + (sqrt(untergrund)/tuntergrund)^2)
+scn3 = sqrt((sqrt(natrium3)/tnatrium3)^2 + (sqrt(untergrund)/tuntergrund)^2)
+scn4 = sqrt((sqrt(natrium4)/tnatrium4)^2 + (sqrt(untergrund)/tuntergrund)^2)
+scn5 = sqrt((sqrt(natrium5)/tnatrium5)^2 + (sqrt(untergrund)/tuntergrund)^2)
+
 x=c(1,2,3,4,5)
 y=c(sum(cn1),
     sum(cn2),
@@ -161,13 +167,17 @@ y=c(sum(cn1),
     sum(cn4),
     sum(cn5))
 
-plot(x,y)
+plotCI(x,y,uiw=sqrt(y),pch=4,cex=1,lwd=3,log="y",xlab="Probe Nr.",ylab="Aktivität / Bq",bty="l")
+grid()
 
 x=c(1:8192)
 
-plot(x,cn1,pch=4,cex=0.6,bty="l",log="y",ylim=c(0.000001,20))
-points(x,cn2,pch=4,cex=0.6,col="blue")
-points(x,cn3,pch=4,cex=0.6,col="green")
-points(x,cn4,pch=4,cex=0.6,col="deeppink")
-points(x,cn5,pch=4,cex=0.6,col="red")
+colors=c("blue","black","green","deeppink","red")
+plot(x,cn3,pch=4,cex=0.6,bty="l",log="y",ylim=c(0.000001,20),col=colors[3],xlab="Energie / Kanal",ylab=expression(Zählrate / s^-1))
+points(x,cn2,pch=4,cex=0.6,,col=colors[2],add=TRUE)
+points(x,cn4,pch=4,cex=0.6,,col=colors[4],add=TRUE)
+points(x,cn1,pch=4,cex=0.6,,col=colors[1],add=TRUE)
+points(x,cn5,pch=4,cex=0.6,,col=colors[5],add=TRUE)
 grid()
+labels=c("Probe 1","Probe 2","Probe 3","Probe 4","Probe 5")
+legend(6500,10,labels,fil=colors)

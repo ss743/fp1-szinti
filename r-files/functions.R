@@ -23,9 +23,9 @@ draw <- function(x,y,add=FALSE,col="black",log=""){
   
 }
 
-drawCI <- function(x,y,sy,col="black",log="",ylim=c(10^-4,10^2),xlab="Kanal",ylab=expression(Zählrate / s^-1)){
+drawCI <- function(x,y,sy,col="black",log="",ylim=c(10^-4,10^2),xlab="Kanal",ylab=expression(Zählrate / s^-1),add=FALSE){
 
-  plot(x,y,bty="l",cex=0.6,pch=4,col=col,log=log,ylim=ylim,xlab=xlab,ylab=ylab)
+  plot(x,y,bty="l",cex=0.6,pch=4,col=col,log=log,ylim=ylim,xlab=xlab,ylab=ylab,add=add)
   condition=1#(y<=sy)
   lowlim=y-sy
   if(log=="y"){

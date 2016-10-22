@@ -327,7 +327,7 @@ Es können in der Quelle Wechselwirkungen von $\gamma$-Quanten mit Elektronen st
 
 \newpage
 \section{Auswertung}Die Auswertung haben wir mit der Programmiersprache \code{R} durchgeführt. Der Quellcode befindet sich im Anhang in Kapitel \ref{sourcecode}.
-\subsection{Aufnahme des Thoriumspektrums}
+\subsection{Aufnahme des Thoriumspektrums}\label{thoriumspektrum}
 Um das aufgenommene Thoriumspektrum auswerten zu können, müssen wir den Kanälen des MCA die entsprechende Energie zuordnen. Dazu haben wir für Cobalt, Natrium und Europium ebenfalls Spektren aufgenommen und aus den bekannten Peaks (siehe Kapitel \ref{ZR}) für diese Proben die Energiekalibrierung durchgeführt. Um die Spektren zu bereinigen, haben wir eine Untergrundmessung durchgeführt und die Zählraten des Untergrunds von den gemessenen Zählraten abgezogen, um äußere Einflüsse auf die Spektren zu verringern (siehe Kapitel \ref{untergrund}). Der Fehler auf die Zählraten ergibt sich durch den Poissonfehler $s_N=\sqrt{N}$ auf die Ereigniszahlen und ist damit $s_n=\frac{\sqrt{N}}{t}=\sqrt{\frac{n}{t}}$.\\
 
 %Mithilfe kurzer Messungen der verwendeten Präparate stellten wir den MCA so ein, dass auch der äußerste erwartete Thoriumpeak (bei $2614.53\,\mathrm{keV}$ \textsuperscript{\cite{staat}}) noch innerhalb des Messbereichs des MCA lag.
@@ -509,7 +509,7 @@ Im dritten Ausschnitt (siehe Abbildung \ref{thorium3}) befinden sich 3 Peaks. Vo
 \end{table}
 
 \newpage
-\subsection{Winkelabhängigkeit der Paarvernichtung}
+\subsection{Winkelabhängigkeit der Paarvernichtung}\label{winkel}
 
 Zur Überprüfung der erwarteten Winkelabhängigkeit der Paarvernichtung, tragen wir die Anzahl der gemessenen Koinzedenzen über den Winkel $\alpha$ auf. Wie in REF erklärt, erwarten wir ein Maximum bei 180°, was in diesem Versuchsaufbau einem Winkel von 0° entspricht. Als y-Fehlerbalken sind hier die Poissonfehler $s_N = \sqrt{N}$ aufgetragen, die x-Fehlerbalken entsprehen den abgeschätzten Unsicherheiten auf die Winkel. Hierbei haben wir für alle Winkel die mit einer Einrastfunktion eingestellt werden konnten einen Fehler von $s_\alpha = 0.1°$ abgeschätzt und einen Fehler von 0.5° auf die Winkel für die keine Kerbe zum Einrasten vorhanden war. Die hieraus erhaltene Abbildung ist in \ref{PVN} dargestellt. 
 
@@ -539,7 +539,18 @@ C' = \frac{N}{t} = ( 0.00017 \pm 0.00002) \frac{1}{s}
 
 wobei sich der Fehler aus dem Poissonfehler mit Gauß'scher Fehlerfortpflanzung berechnet, der Fehler auf die Zeit kann vernachlässigt werden.
 
+\newpage
+\subsection{Untersuchung der Natriumproben}
+\subsubsection{Untersuchung unterschiedlich alter Natriumproben}\label{alter}
+Wir haben verschiedene Natriumproben untersucht, welche im Praktikum verwendet wurden, bevor die aktuelle Probe angeschafft wurde. Wir haben dafür insgesamt 5 unterschiedliche Proben untersucht. Probe 5 ist die aktuelle Probe, welche auch bereits in den Kapiteln \ref{thoriumspektrum} und \ref{winkel} verwendet wurde. Die restlichen Proben sind nach dem uns für sie angegebenen Alter nummeriert (Probe 1 ist die älteste Probe).
 
+\gra[0.9]{natriumproben1}{Spektren der verschiedenen Natriumproben\label{natriumspektren}}
+\gra[0.6]{natriumproben2}{Aktivitäten der verschiedenen Natriumproben\label{natriumactivities}}
+
+In Abbildung \ref{natriumspektren} sind die Energiespektren der Proben aufgetragen. In Abbildung \ref{natriumactivities} sind die Gesamtaktivitäten der Proben zu sehen. Dabei fällt auf, dass die Aktivität der ältesten Probe nicht die geringste Aktivität hat, sondern eine deutlich höhere Aktivität als die nächsjüngere Probe. Dies lässt am angegeben Alter der Probe schließen, da uns keine genauen und verlässlichen Angaben zum Alter der Proben vorliegen. Es könnte allerdings auch an einer höheren Anfangsmasse der Proben im Vergleich zu den anderen Proben liegen. Andererseits stellt sich dann die Frage, warum die Probe dann durch eine deutlich schlechtere Probe ersetzt wurde.
+
+\subsubsection{Untersuchung einer Natriumprobe zu verschiedenen Zeitpunkten}
+Anschließend wollten wir die Aktivität der Probe 4 aus Kapitel \ref{alter} in Abhängigkeit der Zeit bestimmen.
 
 \newpage
 \section{Zusammenfassung und Diskussion \label{Diskussion}}
