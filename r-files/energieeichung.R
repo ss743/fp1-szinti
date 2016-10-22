@@ -162,10 +162,10 @@ try({
 
 
 #drawCIx(energyCh,thorium_c,senergyCh,sthorium_c,log="y",xlab="Energie / keV",ylim=c(10^-5,10^0))
-#drawCI(channels,thorium_c,sthorium_c,log="y",xlab="Energie / Kanäle",ylim=c(10^-5,10^0))
+#drawCI(channels,thorium_c,sthorium_c,log="y",xlab="Energie / Kan??le",ylim=c(10^-5,10^0))
 
 n=1024
-#rawCI(channels[1:n],thorium_c[1:n],sthorium_c[1:n],xlab="Energie / Kanäle",ylim=c(10^-2,10^0))
+#rawCI(channels[1:n],thorium_c[1:n],sthorium_c[1:n],xlab="Energie / Kan??le",ylim=c(10^-2,10^0))
 drawCIx(energyCh[1:n],thorium_c[1:n],senergyCh[1:n],sthorium_c[1:n],log="y",xlab="Energie / keV",ylim=c(5*10^-2,10^0))
 
 th_fitgrenzen=array(c(60,84,90,130,160,200,250,277,288,340,355,410,420,480,520,580,590,670,700,775,825,915,1400,1800,1900,2500,2520,2750),dim=c(2,14))
@@ -210,7 +210,7 @@ try({
 m=2048
 
 n=1024
-#rawCI(channels[n:m],thorium_c[n:m],sthorium_c[n:m],xlab="Energie / Kanäle",ylim=c(10^-2,10^0))
+#rawCI(channels[n:m],thorium_c[n:m],sthorium_c[n:m],xlab="Energie / Kan??le",ylim=c(10^-2,10^0))
 drawCIx(energyCh[n:m],thorium_c[n:m],senergyCh[n:m],sthorium_c[n:m],log="y",xlab="Energie / keV",ylim=c(10^-2,10^-1))
 
 try({
@@ -237,7 +237,7 @@ try({
 
 #m=4096
 n=8192
-#rawCI(channels[m:n],thorium_c[m:n],sthorium_c[m:n],xlab="Energie / Kanäle",ylim=c(10^-2,10^0))
+#rawCI(channels[m:n],thorium_c[m:n],sthorium_c[m:n],xlab="Energie / Kan??le",ylim=c(10^-2,10^0))
 drawCIx(energyCh[m:n],thorium_c[m:n],senergyCh[m:n],sthorium_c[m:n],xlab="Energie / keV",ylim=c(10^-5,0.5*10^-2))
 
 try({
