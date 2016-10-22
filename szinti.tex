@@ -385,7 +385,7 @@ Um das aufgenommene Thoriumspektrum (siehe Kapitel \ref{Teil1}) auswerten zu kö
 
 %Mithilfe kurzer Messungen der verwendeten Präparate stellten wir den MCA so ein, dass auch der äußerste erwartete Thoriumpeak (bei $2614.53\,\mathrm{keV}$ \textsuperscript{\cite{staat}}) noch innerhalb des Messbereichs des MCA lag.
 \newpage
-\subsubsection{Energiekalibrierung}
+\subsubsection{Energiekalibrierung}\label{calibration}
 \paragraph{Cobaltspektrum}\ \\
 \gra[0.9]{cobalt}{Cobaltspektrum zur Bestimmung der Energiekalibrierung\label{cobaltbild}}
 Zunächst bestimmen wir die Positionen der Peaks im Cobaltspektrum und ordnen diese den bekannten Energien des Cobaltspektrums zu. Die Positionen der Peaks erhalten wir durch Fitten einer Gaußfunktion an die Zählraten: $$f(x)=C+N\cdot\exp(-\frac{(x-\mu)^2}{2\sigma^2})$$ Die dabei bestimmten Fitparameter sind in Tabelle \ref{cobalttable} im Anhang zu finden. Aus dem Fit erhalten wir folgende Ergebnisse:
@@ -476,10 +476,10 @@ In Abbildung \ref{background} ist das gemessene Untergrundspektrum aufgetragen. 
 	\end{tabular}
 	\caption{Energien der gefundenen Untergrundpeaks\label{untergrundpeaks}}
 \end{table}
-Der erste Peak befindet sich mit einer Energie von $E=1490\pm20\,\mathrm{keV]$ innerhalb von zwei Standardabweichungen bei der Energie des $^40\mathrm{K}$-Zerfalls $E=1460.822\,\mathrm{keV}$. Da Kalium ein Bestandteil von Beton ist, kommt dieser Peak vermutlich durch den Zerfall des Kaliums in den Wänden, welcher durch den Bleiblock nicht vollständig abgeschirmt wird. Der zweite Peak ist deutlich kleiner und vermutlich auch durch einen ähnlichen Effekt zu erklären.
+Der erste Peak befindet sich mit einer Energie von $E=1490\pm20\,\mathrm{keV}$ innerhalb von zwei Standardabweichungen bei der Energie des $^{40}\mathrm{K}$-Zerfalls $E=1460.822\,\mathrm{keV}$.\textsuperscript{\cite{energien2}} Da Kalium ein Bestandteil von Beton ist, kommt dieser Peak vermutlich durch den Zerfall des Kaliums in den Wänden, welcher durch den Bleiblock nicht vollständig abgeschirmt wird. Der zweite Peak ist deutlich kleiner und vermutlich auch durch einen ähnlichen Effekt zu erklären.
 \newpage
 \subsubsection{Bestimmung der Thorium-Peaks}
-Nachdem die Energiekalibrierung durchgeführt und die Untergrundmessung abgezogen wurde, untersuchen wir das Thoriumspektrum und versuchen die Peaks des Thoriumspektrums zu identifizieren. Wir fitten an die Peaks wieder Gaußfunktionen mit: $$f(x)=C+N\cdot\exp(-\frac{(x-\mu)^2}{2\sigma^2})$$ Die dabei bestimmten Fitparameter sind in Tabelle \ref{thoriumtable} im Anhang zu finden.
+Nachdem die Energiekalibrierung durchgeführt (siehe Kapitel \ref{calibration}) und die Untergrundmessung abgezogen wurde (siehe Kapitel \ref{untergrund}), untersuchen wir das Thoriumspektrum und versuchen die Peaks des Thoriumspektrums zu identifizieren. Wir fitten an die Peaks wieder Gaußfunktionen mit: $$f(x)=C+N\cdot\exp(-\frac{(x-\mu)^2}{2\sigma^2})$$ Die dabei bestimmten Fitparameter sind in Tabelle \ref{thoriumtable} im Anhang zu finden.
 In Abbildung \ref{thoriumGes} ist nun das gesamte Thoriumspektrum mit allen beobachteten Peaks zu sehen.
 
 \gra[1]{thorium-gesamt}{Gesamtes Thoriumspektrum\label{thoriumGes}}
