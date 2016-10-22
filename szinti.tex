@@ -85,6 +85,15 @@
 	\end{minipage}
 	\vskip 30 pt
 }
+\newcommand{\graTwoShort}[5][0.49]{
+	\begin{minipage}[h!]{\textwidth}
+		\centering
+		\includegraphics[width=#1\textwidth]{figures/#2.png}
+		\includegraphics[width=#1\textwidth]{figures/#3.png}
+		\captionof{figure}[#4]{#5}
+	\end{minipage}
+	\vskip 30 pt
+}
 \newcommand{\graTwoB}[5]{
 	\begin{minipage}[h!]{\textwidth}
 		\centering
@@ -580,7 +589,7 @@ Anschließend wollen wir die Aktivität der Probe 4 aus Kapitel \ref{alter} in A
 
 \gra[1]{natriumzeit}{Zählraten der Natriumprobe nach Abzug des Untergrunds in verschiedenen Messungen\label{natriumzeit}}
 
-Von den Zählraten der einzelnen Messungen wird der jeweilige Untergrund abgezogen. Die Zählraten nach Abzug des Untergrunds werden in Abbildung \ref{natriumzeit} aufgetragen. In der Abbildung sieht man, dass für die Messzeitpunkte 2015-1 und 2015-3 die Kurvenverläufe negativ werden. Dies liegt daran, dass der gemessene Untergrund hier größer ist als die tatsächlichen Zählraten. Dies deutet auf einen Fehler bei der Durchführung der Messungen hin, weshalb wir diese Messdaten für die weitere Auswertung nicht verwenden können. Möglicherweise wurde der Untergrund hier ohne Bleiabschirmung oder mit einer anderen Position der Bleiabschirmung als bei der Natriummessung aufgenommen. Ebenso entsprechen die restlichen Verläufe nicht den Erwartungen, da die Aktivität innerhalb von zwei Jahren deutlich sinken und nicht ansteigen sollten. Die Gesamtaktivitäten sind in Abbildung \ref{gesamtactivity} zu sehen. Diese deutlichen Abweichungen von der Erwartung könnten an unterschiedlichen Messmethoden liegen. Möglicherweise haben die anderen Gruppen die Probe in einer anderen Position, z.B. weiter vom Szintillator entfernt, vermessen. Außerdem können wir uns nicht sicher sein, ob die anderen Gruppen tatsächlich die selbe Probe verwendet haben.
+Von den Zählraten der einzelnen Messungen wird der jeweilige Untergrund abgezogen. Die Zählraten nach Abzug des Untergrunds werden in Abbildung \ref{natriumzeit} aufgetragen. In der Abbildung sieht man, dass für die Messzeitpunkte 2015-1 und 2015-3 die Kurvenverläufe negativ werden. Dies liegt daran, dass der gemessene Untergrund hier größer ist als die tatsächlichen Zählraten. Dies deutet auf einen Fehler bei der Durchführung der Messungen hin, weshalb wir diese Messdaten für die weitere Auswertung nicht verwenden können. Möglicherweise wurde der Untergrund hier ohne Bleiabschirmung oder mit einer anderen Position der Bleiabschirmung als bei der Natriummessung aufgenommen. Ebenso entsprechen die restlichen Verläufe nicht den Erwartungen, da die Aktivität innerhalb von zwei Jahren deutlich sinken und nicht ansteigen sollte (siehe Kapitel \ref{zerfallsgesetz}). Die Gesamtaktivitäten sind in Abbildung \ref{gesamtactivity} zu sehen. Diese deutlichen Abweichungen von der Erwartung könnten an unterschiedlichen Messmethoden liegen. Möglicherweise haben die anderen Gruppen die Probe in einer anderen Position, z.B. weiter vom Szintillator entfernt, vermessen. Außerdem können wir uns nicht sicher sein, ob die anderen Gruppen tatsächlich die selbe Probe verwendet haben.
 
 \gra{natriumactivity}{Gesamtaktivitäten der Natriumproben nach Abzug des Untergrunds (unbrauchbare Messungen)\label{gesamtactivity}}
 \newpage
