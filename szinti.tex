@@ -133,7 +133,7 @@ Die erwartete Winkelabhängigkeit mit einem Maximum bei 180° konnte ebenfalls b
 \pagenumbering{arabic} %verstecke Seitenzahl
 \section{Einleitung}
 
-Zur Messung radioaktiver Spektren gibt es eine Reihe verschiedener Methoden. So kann beispielsweise ein Halbleiterdetektor oder ein Zählrohr verwendet werden um radioaktive Zerfälle zu untersuchen (vgl. siehe REF). In diesem Versuch werden Szintillationszähler, die aus einem Szintillator und einem Photomultiplier bestehen, zur Untersuchung radioaktiver Proben und Aufnahme der Spektren verwendet. Hier wird Photoemission im Szintillator durch einfallende Strahlung hervorgerufen, die der Photomultiplier in ein Stromsignal umwandelt.
+Zur Messung radioaktiver Spektren gibt es eine Reihe verschiedener Methoden. So kann beispielsweise ein Halbleiterdetektor oder ein Zählrohr verwendet werden um radioaktive Zerfälle zu untersuchen (vgl. siehe Referenz \cite{staat} und \cite{staat}). In diesem Versuch werden Szintillationszähler, die aus einem Szintillator und einem Photomultiplier bestehen, zur Untersuchung radioaktiver Proben und Aufnahme der Spektren verwendet. Hier wird Photoemission im Szintillator durch einfallende Strahlung hervorgerufen, die der Photomultiplier in ein Stromsignal umwandelt.
 Es wird ein auf Grund seiner höheren Lichtausbeute für Energiemessungen besser geeigneter anorganischer NaI-Szintillator verwendet sowie ein auf Grund seiner schnelleren Abklingzeit für Zeitmessungen besser geeigneter organischer PLastikszintillator.
 Zur Signalverarbeitung werden Geräte des NIM-Standards ("Nuclear Instrument Module") verwendet, der sich in der Teilchenphysik bewehrt hat.\\
 
@@ -171,7 +171,7 @@ Beim $\alpha$-Zerfall geht ein schwerer, instabiler Kern unter Aussendung eines 
 {}_Z^A X \rightarrow {}_{Z-2}^{A-4} Y + {}^4_2He
 \end{align}
 
-\subsubsection{$\beta$-Zerfall}
+\subsubsection{$\beta$-Zerfall \label{beta}}
 Der $\beta$-Zerfall wird durch verschiedene Prozesse der schwachen Wechselwirkung beschrieben bei denen Elektronen  und Positronen auftreten. Bei diesem Vorgang wird durch W-Boson-Austausch ein Proton in ein Neutron umgewandelt bzw. ein Neutron in ein Proton.\textsuperscript{\cite{Demtröder}}
 
 \paragraph*{$\beta^-$-Zerfall:} 
@@ -223,7 +223,7 @@ Um $\gamma$-Strahlung detektieren zu können, muss die $\gamma$-Strahlung mit Ma
  \graShort{Compton-Effekt}{Compton}{links: In dieser Darstellung kann man ein Photon sehen, das mittels Comptoneffekt an einem Elektron gestreut wird und dabei Energie verliert, da es nach dem Stoß langwelliger ist.\cite{staat} rechts: Dieser Graph skizziert den erwateten Verlauf im Energiespektrum einer einzelnen
  Photonenenregie durch Compton- und Photoeffekt. Die Wölbung des Comptonplateaus ist nicht zu
  sehen.\cite{med}}
- \subsubsection{Paarbildung und Paarvernichtung}
+ \subsubsection{Paarbildung und Paarvernichtung \label{PVN1}}
  Bei der Paarbildung entsteht durch die Wechselwirkung des $\gamma$-Quants mit dem elektromagnetischen Feld des Atomkerns oder eines Elektrons ein Teilchen-Antiteilchen-Paar, z.B. Elektronen-Positronen-Paar.Paarbildung ist für Energien über $1,022$ MeV möglich. Die über diesen Grenzwert hinausgehende Energie wird auf die entstandenen Teilchen übertragen, der Imuls wird vom Kern aufgenommen. Da das Positron nicht lange alleine existieren kann, vereinigt es sich unter Abstrahlung von zwei $\gamma$-Quanten mit einem Elektron.\textsuperscript{\cite{anleitung}}
  
  \subsection{Zerfallsreihen der verwendeten Präparate \label{ZR}}
@@ -232,17 +232,17 @@ Um $\gamma$-Strahlung detektieren zu können, muss die $\gamma$-Strahlung mit Ma
  Abfolge von Zerfällen wird Zerfallsreihe genannt. Nachfolgend werden die Zerfallsreihen der verwendeten radioaktiven Isotope und die sich hieraus ergebenden erwarteten Peaks im Spektrum erläutert.
  
  \subsubsection{Natrium $^{22}Na$}
- Das in diesem Versuch verwendete Natrium-Isotop $^{22}Na$ zerfällt mit einer Halbwertszeit von $T=2,6088$ Jahren zu  89,9\% durch $\beta^+$ -Zerfallund zu  10,1 \% durch Electron Capture und zu  in den angeregten Kernzustand 2+ von $^{22}Ne$. Die Zerfallsreihe ist in Abbildung \ref{NA} dargestellt. Bei beiden Zerfällen entstehen Positronen, die in Materie mit Elektronen annihilieren und dabei zwei $\gamma$-Quanten mit einer Energie von $511\,\mathrm{keV}$ abstrahlen. Da impulserhaltung gilt, erwartet man für diese einen Winkel von $180\,\mathrm{°}$. Die Winkelabhängigkeit wird in REF überprüft. Man erwartet im Natriumspektrum also einen Peak von $511\,\mathrm{keV}$. Zusätzlich erwartet man einen Peak bei $1274,6\,\mathrm{keV}$, dies entpricht der Energie des Photons, das beim Übergang in den Grundzustand frei wird.\textsuperscript{\cite{staat}}
+ Das in diesem Versuch verwendete Natrium-Isotop $^{22}Na$ zerfällt mit einer Halbwertszeit von $T=2,6088$ Jahren zu  89,9\% durch $\beta^+$ -Zerfallund zu  10,1 \% durch Electron Capture (siehe Abschnitt \ref{beta}) und zu  in den angeregten Kernzustand 2+ von $^{22}Ne$. Die Zerfallsreihe ist in Abbildung \ref{NA} dargestellt. Bei beiden Zerfällen entstehen Positronen, die in Materie mit Elektronen annihilieren und dabei zwei $\gamma$-Quanten mit einer Energie von $511\,\mathrm{keV}$ abstrahlen (siehe Abschnitt \ref{PVN1}). Da impulserhaltung gilt, erwartet man für diese einen Winkel von $180\,\mathrm{°}$. Die Winkelabhängigkeit wird in \ref{WdP} überprüft. Man erwartet im Natriumspektrum also einen Peak von $511\,\mathrm{keV}$. Zusätzlich erwartet man einen Peak bei $1274,6\,\mathrm{keV}$, dies entpricht der Energie des Photons, das beim Übergang in den Grundzustand frei wird.\textsuperscript{\cite{staat}}. Das von uns gemessene Natriumspektrum ist in \ref{natriumbild} dargestellt.
  
  \gra{Zerfallsreihe-Na}{Zerfallsreihe von $^{22}Na$ \label{NA} \cite{staat}}
  
  \subsubsection{Cobalt  $^{60}Co$}
- $^{60}Co$ zerfällt durch zwei $\beta^-$ -Zerfälle mit annähernd 100 \% in den angeregten Zustand 4+ von  $^{60}Ni$, wobei die Halbwertszeit $T=5,2714$ Jahre beträgt. Die höchste Wahrscheinlichkeit hat dann der Übergang vom 4+ in den 2+ Kernzustand. Im Energiespektrum von $^{60}Co$ sind somit Peaks bei $1173,2$ keV und $1332,5$ keV  zu erwarten, wobei ersterer der Energiedifferenz zwischen dem 4+ und dem 2+ Kernzustand entspricht und der zweite der Energiedifferenz des Übergangs in den Grundzustand\textsuperscript{\cite{staat}} (siehe Abbildung \ref{Co} ).
+ $^{60}Co$ zerfällt durch zwei $\beta^-$ -Zerfälle mit annähernd 100 \% in den angeregten Zustand 4+ von  $^{60}Ni$, wobei die Halbwertszeit $T=5,2714$ Jahre beträgt. Die höchste Wahrscheinlichkeit hat dann der Übergang vom 4+ in den 2+ Kernzustand. Im Energiespektrum von $^{60}Co$ sind somit Peaks bei $1173,2$ keV und $1332,5$ keV  zu erwarten, wobei ersterer der Energiedifferenz zwischen dem 4+ und dem 2+ Kernzustand entspricht und der zweite der Energiedifferenz des Übergangs in den Grundzustand\textsuperscript{\cite{staat}} (siehe Abbildung \ref{Co} ). Das von uns gemessen Cobaltspektrum ist in Abbildung \ref{cobaltbild} dargestellt.
  
  \gra{Zerfallsreihe-Co}{Zerfallsreihe von $^{60}Co$ \label{Co} \cite{staat} }
  
  \subsubsection{Europium  $^{152}Eu$}
- Das Europium Isotop $^{152}Eu$ zerfällt mit einer Halbertszeit von 12 Jahren durch $\beta^-$ -Zerfall in   $^{152}_{64}Gd$ sowie $\beta^+$ -Zerfall und Electron Capture in $^{152}_{62}Sm$. Der Übergang der angeregten Zustände von  $^{152}_{64}Gd$ und $^{152}_{62}Sm$ in den Grundzustand entspricht Peaks bei 122 keV und 344 keV. In Abbildung \ref{Eu} sind die für diesen Versuch relevanten Zerfälle dargestellt.\textsuperscript{\cite{staat}}
+ Das Europium Isotop $^{152}Eu$ zerfällt mit einer Halbertszeit von 12 Jahren durch $\beta^-$ -Zerfall in   $^{152}_{64}Gd$ sowie $\beta^+$ -Zerfall und Electron Capture in $^{152}_{62}Sm$. Der Übergang der angeregten Zustände von  $^{152}_{64}Gd$ und $^{152}_{62}Sm$ in den Grundzustand entspricht Peaks bei 122 keV und 344 keV. In Abbildung \ref{Eu} sind die für diesen Versuch relevanten Zerfälle dargestellt.\textsuperscript{\cite{staat}}. Das von uns gemessene Europiumspektrum ist in Abbildung \ref{europiumbild} dargestellt.
  
  
  \gra{Zerfallsreihe-Eu}{Vereinfachte Zerfallsreihe von $^{152}Eu$ \label{Eu} \cite{staat}}
@@ -254,7 +254,7 @@ Um $\gamma$-Strahlung detektieren zu können, muss die $\gamma$-Strahlung mit Ma
  
  
  
- \subsection{Szintillationszähler}
+ \subsection{Szintillationszähler \label{SZ}}
  
  In diesem Versuch werden Szintillationszähler als Detektoren verwendet.
  Ein Szintillationszähler besteht aus einem Szintillator und einem Photomultiplier, die in diesem Versuch in einem Gehäuse sind, um Kabelwege zu reduzieren und damit Rauschen und Störsignale zu vermeiden.
@@ -265,11 +265,11 @@ Um $\gamma$-Strahlung detektieren zu können, muss die $\gamma$-Strahlung mit Ma
  
  In diesem Versuch wird ein organischer Plastikszintillator sowie ein anorganischer NaI-Szintillator verwendet. 
  
- \subsubsection{Organischer Szintillator}
+ \subsubsection{Organischer Szintillator \label{OSZ}}
  
  Organische Szintillatoren haben den Vorteil, dass sie auf Grund der geringeren Abklingzeit eine bessere Reaktionszeit haben und sich somit gut für Zeitmessungen eignen. Der in diesem Versuch verwendete PLastikszintillator besteht aus einer Trägersubstanz und einer Aktivatorsubstanz. Eingallende Photonen regen die Moleküle des Plastikmaterials an, die ihre Energie dann auf die Moleküle der Aktivatorsubstanz übertragen. Die Moleküle der verschiedenen Stoffe haben dabei unterschiedliche Energieniveaus. Beim Abregen der Moleküle der Aktivatorsubstanz werden Photonen der gleichen Energie emittiert, die den Szintillator verlassen und vom Photomultiplier detektiert werden können.
 
- \subsubsection{Anorganischer Szintillator}
+ \subsubsection{Anorganischer Szintillator \label{ASZ}}
  
  Anorganische Szintillatoren haben eine deutlich bessere Energieauflösung als organische Szintillatoren. Dies liegt an ihrer hohen Ordnungszahl und Dichte die eine hohe Nachweiswahrscheinlichkeit mit sich bringt. Der in diesem Versuch verwendete NaI-Kristall ist mit Thalium dotiert. 
  Dringen Photonen in den Kristall ein, können sie ihre Energie durch Photo-bzw. Comptoneffekt an die Elektronen im Valenzband übertragen, die dann in das Leiterband angeregt werden können. Diese regen sich dann unter Aussendung eines niederenergetischen Photons wieder ab und fallen in das Valenzband zurück. Eine Dotierung mit Thalium verhindert durch zusätzliche Energieniveaus zwischen Valenz-und Leitungsband in die Elektronen aufgenommen werden können, eine ständige Reabsorption un Emission der Photonen, sodass diese den Kristall verlassen und detektiert werden können.
@@ -333,9 +333,9 @@ Nachfolgend ist der Versuchsaufbau für die verschiedenen Teile des Versuchs erk
 
 
 Die für die Aufnahme der Spektren verwendete Schaltung ist in Abbildung  \ref{SB1} dargestellt. Die Funktionsweise der einzelnen Geräte wird in \ref{Geräte} erklärt. Das Stromsignal des Photomultipliers wird zum Vorverstärker geleitet. Dessen Ouptput wird zum Hauotverstärker geleitet, dessen unipolarer Output an dem MCA weitergeleitet wird. Dieser ist mit einem Computer verbunden auf dem ein passendes Messprogramm installiert ist. Die erwarteten Signalformen aus den verschiedenen Ausgängen der Geräte sind in blau dargestellt.
-Auf Grund der besseren Energieauflösung anorganischer Szintillatoren wird in diesem Versuchsteil  der NaI-Szintillator verwendet. Die Probe wird in einem Bleiblock mit einer Öffnung in Richtung des Szintillators befestigt. \\
+Auf Grund der besseren Energieauflösung anorganischer Szintillatoren wird in diesem Versuchsteil  der NaI-Szintillator verwendet (siehe \ref{ASZ}). Die Probe wird in einem Bleiblock mit einer Öffnung in Richtung des Szintillators befestigt. \\
 
-Das Signal wird zunächst nach dem Szintillator sowie nach den beiden Verstärkern betrachtet und die Einstellungen entsprechend optimiert. Die Verstärkung des Hauptverstärkers ist so einzustellen, dass die Channelzahl am MCA gut genutzt wird. Dabei ist zu berücksichtigen, dass die Einstellungen für die Aufnahme aller Spektren unverändert bleiben soll, sodass sicherzustellen ist, dass alle Peaks mit den gewählten Einstellungen gemessen werden können. Am Messprogramm des MCAs ist die Channelanzahl sinnvoll zu wählen, wir haben hier eine Channelanzahl von 8192 gewählt, um eine gute Energieauflösung mit ausreichend Counts zu erhalten. Die anderen gewählten Einstellungen können REF entnommen werden.
+Das Signal wird zunächst nach dem Szintillator sowie nach den beiden Verstärkern betrachtet und die Einstellungen entsprechend optimiert. Die Verstärkung des Hauptverstärkers ist so einzustellen, dass die Channelzahl am MCA gut genutzt wird. Dabei ist zu berücksichtigen, dass die Einstellungen für die Aufnahme aller Spektren unverändert bleiben soll, sodass sicherzustellen ist, dass alle Peaks mit den gewählten Einstellungen gemessen werden können. Am Messprogramm des MCAs ist die Channelanzahl sinnvoll zu wählen, wir haben hier eine Channelanzahl von 8192 gewählt, um eine gute Energieauflösung mit ausreichend Counts zu erhalten. Die anderen gewählten Einstellungen können \ref{Laborbuch} entnommen werden.
 Die Spektren von $^{22}Na$, $^{60}Co$ und $^{152}Eu$ werden jeweils 30 Minuten lang aufgenommen. Außerdem wird eine Untergrundmessung bei identischem Versuchsaufbau und lediglicher Entfernung der Probe mit einer Messzeit von drei Stunden durchgeführt. Das Spektrum von  $^{228}Th$ wird über Nacht aufgenommen.
 
 
@@ -391,7 +391,7 @@ Die Fehler auf die Positionen der Peaks ergeben sich dabei aus dem Fitparameter 
 In Abbildung \ref{natriumbild} ist das Natriumspektrum mit den Gaußfits zu sehen. Dabei sind die bekannten Peaks rot und die unbekannten Peaks rosa eingezeichnet.
 \newpage
 \paragraph{Europiumspektrum}\ \\
-\gra[0.9]{europium}{Europiumspektrum zur Bestimmung der Energiekalibrierung}
+\gra[0.9]{europium}{Europiumspektrum zur Bestimmung der Energiekalibrierung \label{europiumbild}}
 Nun bestimmen wir die Positionen der Peaks im Europiumspektrum und ordnen diese den bekannten Energien der Europiumpeaks zu. Die Positionen der Peaks erhalten wir durch Fitten einer Gaußfunktion an die Zählraten: $$f(x)=C+N\cdot\exp(-\frac{(x-\mu)^2}{2\sigma^2})$$ Die dabei bestimmten Fitparameter sind in Tabelle \ref{europiumtable} im Anhang zu finden. Aus dem Fit erhalten wir folgende Ergebnisse:
 
 \begin{table}[h!]
@@ -531,9 +531,9 @@ Im dritten Ausschnitt (siehe Abbildung \ref{thorium3}) befinden sich 3 Peaks. Vo
 \end{table}
 
 \newpage
-\subsection{Winkelabhängigkeit der Paarvernichtung}
+\subsection{Winkelabhängigkeit der Paarvernichtung \label{WdP}}
 
-Zur Überprüfung der erwarteten Winkelabhängigkeit der Paarvernichtung, tragen wir die Anzahl der gemessenen Koinzedenzen über den Winkel $\alpha$ auf. Wie in REF erklärt, erwarten wir ein Maximum bei 180°, was in diesem Versuchsaufbau einem Winkel von 0° entspricht. Als y-Fehlerbalken sind hier die Poissonfehler $s_N = \sqrt{N}$ aufgetragen, die x-Fehlerbalken entsprehen den abgeschätzten Unsicherheiten auf die Winkel. Hierbei haben wir für alle Winkel die mit einer Einrastfunktion eingestellt werden konnten einen Fehler von $s_\alpha = 0.1°$ abgeschätzt und einen Fehler von 0.5° auf die Winkel für die keine Kerbe zum Einrasten vorhanden war. Die hieraus erhaltene Abbildung ist in \ref{PVN} dargestellt. 
+Zur Überprüfung der erwarteten Winkelabhängigkeit der Paarvernichtung, tragen wir die Anzahl der gemessenen Koinzedenzen über den Winkel $\alpha$ auf. Wie in \ref{NA} erklärt, erwarten wir ein Maximum bei 180°, was in diesem Versuchsaufbau einem Winkel von 0° entspricht. Als y-Fehlerbalken sind hier die Poissonfehler $s_N = \sqrt{N}$ aufgetragen, die x-Fehlerbalken entsprehen den abgeschätzten Unsicherheiten auf die Winkel. Hierbei haben wir für alle Winkel die mit einer Einrastfunktion eingestellt werden konnten einen Fehler von $s_\alpha = 0.1°$ abgeschätzt und einen Fehler von 0.5° auf die Winkel für die keine Kerbe zum Einrasten vorhanden war. Die hieraus erhaltene Abbildung ist in \ref{PVN} dargestellt. 
 
 \gra{winkel}{Winkelabhängigkeit der Paarvernichtung \label{PVN}}
 
@@ -666,10 +666,15 @@ Es fällt auf, dass die auf unterschiedliche Art gemessenen Untergründe verschi
 
 %\newpage
 \subsection{Laborheft}
-%\begin{minipage}{\textwidth}
-%\centering
-%\includegraphics[width=0.9\textwidth]{figures/IMG_20151002_141014.jpg}
-%\end{minipage}
+\subsection{Laborheft}\label{laborbuch}
+\begin{minipage}{\textwidth}
+	\centering
+	\includegraphics[width=0.9\textwidth]{figures/Laborheft1.pdf}
+\end{minipage}
+\begin{minipage}{\textwidth}
+	\centering
+	\includegraphics[width=0.9\textwidth]{figures/Laborheft2.pdf}
+\end{minipage}
 \label{Laborbuch}
 \newpage
 \listoffigures
@@ -709,6 +714,13 @@ Wolfgang Demtröder
  Springer-Verlag,
  4. Auflage,
  2014
+ 
+ \bibitem{staat1}
+ Simon Amrein,
+ \emph{Staatsexamensarbeit: Halbleiter und Halbleiterdetektoren},\\
+ Albert-Ludwigs-Universität Freiburg,
+ Physikalisches Institut,
+ 2008
  
 \bibitem{energien1}
 \emph{http://hacol13.physik.uni-freiburg.de/fp/Versuche/FP1/FP1-3-Szintillationszaehler/Anhang/Th-228\_tables.pdf}, Stand: 20.10.2016
