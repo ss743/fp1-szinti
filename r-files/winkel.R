@@ -7,7 +7,7 @@ time=c(179797,179982,180061,179443,179961,179984,180067,180026,179953,180218,179
 counts=c(188,193,180,265,264,277,528,1846,3350,4048,4202,3475,2306,665,275,247,216,199,180)
 scounts=sqrt(counts)
 
-drawCIx(winkel,counts/time,swinkel,scounts/time,ylim=c(0,0.025),xlab="Winkel / °",scol="black",barsize=0.06,vbarsize=0.01)
+drawCIx(winkel,counts/time,swinkel,scounts/time,ylim=c(0,0.025),xlab="Winkel / ??",scol="black",barsize=0.06,vbarsize=0.01)
 fit=gaus2(data.frame(x=winkel,y=counts/time,sy=scounts/time),weighted=TRUE,sig0=10)
 plotgaus2(fit,c(-90,90))
 print(getresult(fit))
