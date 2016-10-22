@@ -23,7 +23,7 @@ draw <- function(x,y,add=FALSE,col="black",log=""){
   
 }
 
-drawCI <- function(x,y,sy,col="black",log="",ylim=c(10^-4,10^2),xlab="Kanal",ylab=expression(Zählrate / s^-1),add=FALSE){
+drawCI <- function(x,y,sy,col="black",log="",ylim=c(10^-4,10^2),xlab="Kanal",ylab=expression(Z??hlrate / s^-1),add=FALSE){
 
   plot(x,y,bty="l",cex=0.6,pch=4,col=col,log=log,ylim=ylim,xlab=xlab,ylab=ylab,add=add)
   condition=1#(y<=sy)
@@ -38,7 +38,7 @@ drawCI <- function(x,y,sy,col="black",log="",ylim=c(10^-4,10^2),xlab="Kanal",yla
   
 }
 
-draw1 <- function(x,y,sy,ylim=c(0.000001,20),xlab="Energie / Kanal",ylab=expression(Zählrate / s^-1),col="black",scol="darkgrey"){
+draw1 <- function(x,y,sy,ylim=c(0.000001,20),xlab="Energie / Kanal",ylab=expression(Z??hlrate / s^-1),col="black",scol="darkgrey"){
   plot(x,y,pch=4,cex=0.6,bty="l",log="y",ylim=ylim,col=col,xlab=xlab,ylab=ylab)
   condition=1#(y<=sy)
   lowlim=y-sy
@@ -62,9 +62,23 @@ draw2 <- function(x,y,sy,col="black",scol="darkgrey"){
   points(x,y,cex=0.6,pch=4,col=col)
   
 }
+draw3 <- function(x,y,sy,ylim=c(0,20),xlab="Energie / Kanal",ylab=expression(Z??hlrate / s^-1),col="black",scol="darkgrey"){
+  plot(x,y,pch=4,cex=0.6,bty="l",ylim=ylim,col=col,xlab=xlab,ylab=ylab)
+  arrows(x,y,x,y-sy,cex=0.6,pch=4,bty="l",col=scol,length=0.05,angle=90)
+  arrows(x,y,x,y+sy,cex=0.6,pch=4,bty="l",col=scol,length=0.05,angle=90)
+  points(x,y,cex=0.6,pch=4,col=col)
+  
+}
+draw4 <- function(x,y,sy,col="black",scol="darkgrey"){
+  arrows(x,y,x,(y-sy),cex=0.6,pch=4,bty="l",col=scol,length=0.05,angle=90)
+  arrows(x,y,x,(y+sy),cex=0.6,pch=4,bty="l",col=scol,length=0.05,angle=90)
+  points(x,y,cex=0.6,pch=4,col=col)
+  
+}
 
 
-drawCIx <- function(x,y,sx,sy,col="black",scol="darkgrey",barsize=0.05,vbarsize=0.005,log="",ylim=c(10^-4,10^2),xlab="Kanal",ylab=expression(Zählrate / s^-1)){
+
+drawCIx <- function(x,y,sx,sy,col="black",scol="darkgrey",barsize=0.05,vbarsize=0.005,log="",ylim=c(10^-4,10^2),xlab="Kanal",ylab=expression(Z??hlrate / s^-1)){
   condition=1#(y<=sy)
   lowlim=y-sy
   if(log=="y"){

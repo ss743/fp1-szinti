@@ -573,11 +573,16 @@ Wir haben verschiedene Natriumproben untersucht, welche im Praktikum verwendet w
 \gra[0.9]{natriumproben1}{Spektren der verschiedenen Natriumproben\label{natriumspektren}}
 \gra[0.6]{natriumproben2}{Aktivitäten der verschiedenen Natriumproben\label{natriumactivities}}
 
-In Abbildung \ref{natriumspektren} sind die Energiespektren der Proben aufgetragen. In Abbildung \ref{natriumactivities} sind die Gesamtaktivitäten der Proben zu sehen. Dabei fällt auf, dass die Aktivität der ältesten Probe nicht die geringste Aktivität hat, sondern eine deutlich höhere Aktivität als die nächstjüngere Probe. Dies lässt am angegeben Alter der Probe schließen, da uns keine genauen und verlässlichen Angaben zum Alter der Proben vorliegen. Es könnte allerdings auch an einer höheren Anfangsmasse der Proben im Vergleich zu den anderen Proben liegen. Andererseits stellt sich dann die Frage, warum die Probe dann durch eine deutlich schlechtere Probe ersetzt wurde.
+In Abbildung \ref{natriumspektren} sind die Energiespektren der Proben aufgetragen. Dabei sind als Fehlerbalken die aus den Poissonfehlern berechneten Fehler auf die Zählrate $s_n=\frac{\sqrt{N}}{t}$ eingezeichnet. In Abbildung \ref{natriumactivities} sind die Gesamtaktivitäten der Proben zu sehen. Dabei fällt auf, dass die Aktivität der ältesten Probe nicht die geringste Aktivität hat, sondern eine deutlich höhere Aktivität als die nächstjüngere Probe. Dies lässt am angegeben Alter der Probe schließen, da uns keine genauen und verlässlichen Angaben zum Alter der Proben vorliegen. Es könnte allerdings auch an einer höheren Anfangsmasse der Proben im Vergleich zu den anderen Proben liegen. Andererseits stellt sich dann die Frage, warum die Probe dann durch eine deutlich schlechtere Probe ersetzt wurde.
 
 \subsubsection{Untersuchung einer Natriumprobe zu verschiedenen Zeitpunkten}
-Anschließend wollten wir die Aktivität der Probe 4 aus Kapitel \ref{alter} in Abhängigkeit der Zeit bestimmen. Dazu benutzten wir 
+Anschließend wollen wir die Aktivität der Probe 4 aus Kapitel \ref{alter} in Abhängigkeit der Zeit bestimmen. Dazu benutzen wir die Daten anderer Gruppen aus früheren Semester. Wir verwenden einen Datensatz aus dem September 2014, drei Datensätze aus dem September/Oktober 2015 und unseren Datensatz (Oktober 2016). Da vor diesem Semester die Probe getauscht wurde, gehen wir davon aus, dass die Gruppen, dessen Datensätze wir benutzen, die Probe 4 verwendet haben. 
 
+\gra[1]{natriumzeit}{Zählraten der Natriumprobe nach Abzug des Untergrunds in verschiedenen Messungen\label{natriumzeit}}
+
+Von den Zählraten der einzelnen Messungen wird der jeweilige Untergrund abgezogen. Die Zählraten nach Abzug des Untergrunds werden in Abbildung \ref{natriumzeit} aufgetragen. In der Abbildung sieht man, dass für die Messzeitpunkte 2015-1 und 2015-3 die Kurvenverläufe negativ werden. Dies liegt daran, dass der gemessene Untergrund hier größer ist als die tatsächlichen Zählraten. Dies deutet auf einen Fehler bei der Durchführung der Messungen hin, weshalb wir diese Messdaten für die weitere Auswertung nicht verwenden können. Möglicherweise wurde der Untergrund hier ohne Bleiabschirmung oder mit einer anderen Position der Bleiabschirmung als bei der Natriummessung aufgenommen. Ebenso entsprechen die restlichen Verläufe nicht den Erwartungen, da die Aktivität innerhalb von zwei Jahren deutlich sinken und nicht ansteigen sollten. Die Gesamtaktivitäten sind in Abbildung \ref{gesamtactivity} zu sehen. Diese deutlichen Abweichungen von der Erwartung könnten an unterschiedlichen Messmethoden liegen. Möglicherweise haben die anderen Gruppen die Probe in einer anderen Position, z.B. weiter vom Szintillator entfernt, vermessen. Außerdem können wir uns nicht sicher sein, ob die anderen Gruppen tatsächlich die selbe Probe verwendet haben.
+
+\gra{natriumactivity}{Gesamtaktivitäten der Natriumproben nach Abzug des Untergrunds (unbrauchbare Messungen)\label{gesamtactivity}}
 \newpage
 \section{Zusammenfassung und Diskussion \label{Diskussion}}
 
@@ -673,9 +678,21 @@ Anschließend wollten wir die Aktivität der Probe 4 aus Kapitel \ref{alter} in 
 %\newpage
 \subsection{Quellcode}
 \label{sourcecode}
-%\lstinputlisting[language=MATLAB]{Rohdaten/alpha.m}
+\subsubsection{\code{auswertung.R}}\label{auswertungR}
+\lstinputlisting[language=R]{r-files/energieeichung.R}
+\subsubsection{\code{natrium.R}}\label{natriumR}
+\lstinputlisting[language=R]{r-files/natrium.R}
+\subsubsection{\code{winkel.R}}\label{winkelR}
+\lstinputlisting[language=R]{r-files/winkel.R}
+\subsubsection{\code{functions.R}}\label{functionsR}
+\lstinputlisting[language=R]{r-files/functions.R}
+\subsubsection{\code{linearfit.R}}\label{linearfitR}
+\lstinputlisting[language=R]{r-files/linearfit.R}
+\subsubsection{\code{gausfit.R}}\label{gausfitR}
+\lstinputlisting[language=R]{r-files/gausfit.R}
 
-%\newpage
+
+\newpage
 \subsection{Laborheft}\label{laborbuch}
 \begin{minipage}{\textwidth}
 	\centering

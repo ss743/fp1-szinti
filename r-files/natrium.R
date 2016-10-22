@@ -95,14 +95,26 @@ c3n=c3n#/sum(u3n)
 c4n=c4n#/sum(u4n)
 c5n=c5n#/sum(u5n)
 
+sc1n = sqrt((sqrt(natrium14)/tnatrium14)^2 + (sqrt(untergrund14)/tuntergrund14)^2)
+sc2n = sqrt((sqrt(natrium15_1)/tnatrium15_1)^2 + (sqrt(untergrund15_1)/tuntergrund15_1)^2)
+sc3n = sqrt((sqrt(natrium15_2)/tnatrium15_2)^2 + (sqrt(untergrund15_2)/tuntergrund15_2)^2)
+sc4n = sqrt((sqrt(natrium15_3)/tnatrium15_3)^2 + (sqrt(untergrund15_3)/tuntergrund15_3)^2)
+sc5n = sqrt((sqrt(natrium16)/tnatrium16)^2 + (sqrt(untergrund16)/tuntergrund16)^2)
+
+
 activity=c(sum(c1n),
            sum(c2n),
            sum(c3n),
            sum(c4n),
            sum(c5n))
+sactivity=sqrt(c(sum(sc1n^2),
+            sum(sc2n^2),
+            sum(sc3n^2),
+            sum(sc4n^2),
+            sum(sc5n^2)))
 t=c(2014,2015,2015,2015,2016)
 
-plot(t,activity,pch=4,cex=0.6,bty="l")
+plotCI(t,activity,uiw=sactivity,pch=4,cex=0.6,bty="l",lwd=3,xlab="Jahr",ylab="Aktivit??t / Bq")
 grid()
 
 # plot(1:2048,natrium14/tnatrium14)
@@ -123,12 +135,18 @@ grid()
 # plot(1:8192,natrium16/tnatrium16-untergrund16/tuntergrund16)
 x=c(1:2048)
 
-plot(x,c5n,pch=4,cex=0.6,bty="l",ylim=c(min(c2n),max(c5n)))
-points(x,c4n,pch=4,cex=0.6,col="blue")
-points(x,c3n,pch=4,cex=0.6,col="green")
-points(x,c2n,pch=4,cex=0.6,col="deeppink")
-points(x,c1n,pch=4,cex=0.6,col="red")
+colors=c("black","blue","green","deeppink","red")
+scolors=c("darkgrey","lightblue","lightgreen","pink","orange")
+
+draw3(x,c5n,sc5n,ylim=c(min(c2n),max(c5n)),col=colors[1],scol=scolors[1])
+draw4(x,c4n,sc4n,col=colors[2],scol=scolors[2])
+draw4(x,c3n,sc3n,col=colors[3],scol=scolors[3])
+draw4(x,c2n,sc2n,col=colors[4],scol=scolors[4])
+draw4(x,c1n,sc1n,col=colors[5],scol=scolors[5])
 grid()
+
+labels=c("2016","2015-3","2015-2","2015-1","2014")
+legend(1500,4,labels,fil=colors)
 
 untergrund=untergrund16
 natrium5=read("Natrium")[[1]]
@@ -160,14 +178,31 @@ scn3 = sqrt((sqrt(natrium3)/tnatrium3)^2 + (sqrt(untergrund)/tuntergrund)^2)
 scn4 = sqrt((sqrt(natrium4)/tnatrium4)^2 + (sqrt(untergrund)/tuntergrund)^2)
 scn5 = sqrt((sqrt(natrium5)/tnatrium5)^2 + (sqrt(untergrund)/tuntergrund)^2)
 
+
+
 x=c(1,2,3,4,5)
 y=c(sum(cn1),
     sum(cn2),
     sum(cn3),
     sum(cn4),
     sum(cn5))
+sy=sqrt(c(1,#sum(scn1^2),
+          sum(scn2^2),
+          1,#sum(scn3^2),
+          1,#sum(scn4^2),
+          2500))#sum(scn5^2)))
 
-plotCI(x,y,uiw=sqrt(y),pch=4,cex=1,lwd=3,log="y",xlab="Probe Nr.",ylab="Aktivität / Bq",bty="l")
+plot(x,y,pch=4,cex=1,lwd=3,log="y",xlab="Probe Nr.",ylab="Aktivit??t / Bq",bty="l")
+scol="black"
+condition=1#(y<=sy)
+lowlim=y-sy
+#if(log=="y"){
+lowlim=((y-sy)*(y>sy)+0.000001*(y<=sy))
+#}
+arrows(x,y*condition,x,lowlim*condition,cex=1,pch=4,bty="l",lwd=3,col=scol,length=0.1,angle=90)
+arrows(x,y*condition,x,(y+sy)*condition,cex=1,pch=4,bty="l",lwd=3,col=scol,length=0.1,angle=90)
+points(x,y,cex=1,pch=4,lwd=3)
+
 grid()
 
 x=c(1:8192)
@@ -175,7 +210,7 @@ x=c(1:8192)
 colors=c("blue","black","green","deeppink","red")
 scolors=c("lightblue","darkgrey","lightgreen","pink","orange")
 
-draw1(x,cn3,scn3,ylim=c(0.000001,20),col=colors[3],scol=scolors[3],xlab="Energie / Kanal",ylab=expression(Zählrate / s^-1))
+draw1(x,cn3,scn3,ylim=c(0.000001,20),col=colors[3],scol=scolors[3],xlab="Energie / Kanal",ylab=expression(Z??hlrate / s^-1))
 draw2(x,cn2,scn2,col=colors[2],scol=scolors[2])
 draw2(x,cn4,scn4,col=colors[4],scol=scolors[4])
 draw2(x,cn1,scn1,col=colors[1],scol=scolors[1])
