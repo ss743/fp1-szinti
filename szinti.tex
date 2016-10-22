@@ -151,6 +151,7 @@ Der Versuch ist in drei Teile untergliedert.
 In einem ersten Versuchsteil wird mit dem energiesensiblen NaI-Szinzillationszähler das Spektrum von  $^{228}Th$ aufgenommen und die Peaks identifiziert, wofür zunächst eine Energiekalibrierung durchgeführt werden muss. Diese wird an Hand von Spektren von  $^{22}Na$, $^{60}Co$ und $^{152}Eu$ und der bekannten Peaks durchgeführt.
 Im zweiten Teil des Versuchs wird die Winkelabhängigkeit der beim $\beta^{+}$-Zerfall in  $^{22}Na$ auftretenden Photonen, die durch Paarvernichtung enstehen, untersucht. Hier werden beide Szintillatoren verwendet, wobei der Plastikszintillator auf einem drehbaren Arm montiert ist, sodass der Winkel zwischen beiden Szintillatoren verstellbar ist. Es werden Messungen der Koinzidenzen bei verschiedenen Winkeln vorgenommen.
 Im dritten Teil des Versuchs werden die Spektren von Natriumproben unterschiedlichen Alters aufgenommen und mit Datensätzen aus anderen Jahren verglichen.
+Beim Optimieren der Einstellungen und besseren Verständnis der einzelnen Geräte half ein Oszilloskop, auf dem die Signale beobachtet werden können.
 
 
 
@@ -278,6 +279,8 @@ Um $\gamma$-Strahlung detektieren zu können, muss die $\gamma$-Strahlung mit Ma
  \subsubsection{Organischer Szintillator \label{OSZ}}
  
  Organische Szintillatoren haben den Vorteil, dass sie auf Grund der geringeren Abklingzeit eine bessere Reaktionszeit haben und sich somit gut für Zeitmessungen eignen. Der in diesem Versuch verwendete PLastikszintillator besteht aus einer Trägersubstanz und einer Aktivatorsubstanz. Eingallende Photonen regen die Moleküle des Plastikmaterials an, die ihre Energie dann auf die Moleküle der Aktivatorsubstanz übertragen. Die Moleküle der verschiedenen Stoffe haben dabei unterschiedliche Energieniveaus. Beim Abregen der Moleküle der Aktivatorsubstanz werden Photonen der gleichen Energie emittiert, die den Szintillator verlassen und vom Photomultiplier detektiert werden können.
+ 
+ \graShort{arg2}{arg3}{arg4}
 
  \subsubsection{Anorganischer Szintillator \label{ASZ}}
  
@@ -289,14 +292,14 @@ Um $\gamma$-Strahlung detektieren zu können, muss die $\gamma$-Strahlung mit Ma
  Die verschiedenen Geräte, die im Versuchsaufbau als Teil der NIM-Module verwendet werden, sind im Folgenden aufgelistet und ihre Funktionsweise wird erklärt:
  
  \paragraph{Detektor} Der Szintillator und der Photomultiplier bilden zusammen den Detektor.
- \paragraph{Pre-Amplifier}
- Der Pre-Amplifier (PA) verstärkt die schwachen Signale des Detektors und verbessert so
+ \paragraph{Vorverstärker}
+ Der VOrverstärker (VV) verstärkt die schwachen Signale des Detektors und verbessert so
  das Signal zu Rausch Verhältnis. Um Signalverluste entlang der Kabel zu reduzieren, ist der PA im Gehäuse des PM integriert. Die Pulsform des Ausgangssignals besitzt eine negative Amplitude und nimmt exponentiell zu.
- \paragraph{Main Amplifier (MA)}
+ \paragraph{Hauptverstärker (HV)}
  Der Hauptverstärker  verstärkt das Spannungssignal rauscharm und erzeugt einen möglichst kurzen Puls, dessen Dauer Amplituden-unabhängig ist. Die Pulshöhe ist dabei annähernd proportional zur deponierten Ladungsmenge im Szintillator. Der Hauptverstärker hat zwei verschiedene Ausgänge, die entweder ein bipolares Signal (zeitsensible Messungen) oder ein unipolares Signal (Aufnahme der Spektren) liefern.
  \paragraph{Multi Channel Analyser (MCA)}
  Der Multi Channel Analyser ordnet jeden eingehenden Puls, abhängig von der Pulshöhe (also von der im Szintillator deponierten Ladungsmenge ) einem Channel zu. Das so erhaltene Energiespektrum kann als Histogramm dargestellt werden.
- \paragraph{Single Channel Analyser}
+ \paragraph{Single Channel Analyser (SCA)}
  Ein Single Channel Analyser selektiert aus eingehenden Signalen in dem nur für Energien in einem einstellbaren Energiefenster ein Ausgangspuls erzeugt wird.  Für die Messung der verzögerten und zufälligen Koinzedenzen sollen hier die Energiefenster dem $122$ keV Peak und dem $14,4$ keV Peak angepasst werden (siehe \ref{Energiefenster})
  \paragraph{Gate} Das Gate hat zwei Eingänge. Sofern am enable Eingang ein Signal ankommt, wird das Signal des anderen Eingangs während dieser Zeit direkt als Output weitergeleitet. Die Dauer des Gatesignals kann mit einem Schlitzschraubenzieher eingestellt werden.
  \paragraph{Timing Unit}
@@ -335,9 +338,9 @@ Es können in der Quelle Wechselwirkungen von $\gamma$-Quanten mit Elektronen st
 \newpage
 \section{Versuchsaufbau und -Durchführung}
 
-Nachfolgend ist der Versuchsaufbau für die verschiedenen Teile des Versuchs erklärt sowie die Versuchsdurchführung protokolliert.
+Nachfolgend ist der Versuchsaufbau für die verschiedenen Teile des Versuchs erklärt sowie die Versuchsdurchführung protokolliert. Zur Optimierung der Einstellungen und Überprüfen der Signale wurde ein Oszilloskop verwendet. Da dieses keinen der zur Verfügung stehenden USB-Sticks erkannte, wurden mit dem Handy Fotos gemacht.
 
-\subsection{Teil I: Vorbereitung und Energiekalibrierung}
+\subsection{Teil I: Vorbereitung und Energiekalibrierung \label{Teil1}}
 
 \gra[0.9]{schaltbild1}{Versuchsaufbau zur Aufnahme der Energiespektren \label{SB1}}
 
@@ -350,11 +353,19 @@ Die Spektren von $^{22}Na$, $^{60}Co$ und $^{152}Eu$ werden jeweils 30 Minuten l
 
 
 \subsection{Teil II: Messung der Koinzedenzen}
+In diesem Versuchsteil wird die Winkelabhängigkeit der Paarvernichtung untersucht. Dazu wird eine Natriumprobe verwendet und die Anzahl der Koinzidenzen in Abhängigkeit des Winkels gemessen.
 
 \gra[0.95]{schaltbild2}{Versuchsaufbau zur Untersuchung der Winkelabhängigkeit \label{SB2}}
 
-Der Versuchsaufbau und die verwendete Schaltung für diesen Versuchsteil kann Abbildung \ref{SB2} entnommen werden.
+Der Versuchsaufbau und die verwendete Schaltung für diesen Versuchsteil kann Abbildung \ref{SB2} entnommen werden. Die Funktionsweise der Geräte wird in Kapitel \ref{Geräte} erklärt.  Die erwarteten Pulsformen sind in blau dargestellt. Der Plastikszintillator ist auf einem drehbaren Arm montiert, sodass der Winkel der beiden Szintillatoren zueinander verstellbar ist. In 5°-Schritten sind dabei Einkerbungen zu finden, die den Detektor einrasten lassen. Von den Szintillationszählern werden Signale wie zuvor über einen Vorverstärker zum Hauptverstärker geleitet. Der bipolare Ausgang des Hauptverstärkers gibt das Signal jeweils an einen Single Channel Analyzer weiter. Auf der Seite des NaI-Szintillators ist außerdem der unipolare Ausgang des Hauptversärkers mit einem Gate verbunden, auf dem enable Eingang des Gates liegt das positive Output Signal des SCA. Das Signal des HV wird vom Gate (sofern ein enable Signal vorliegt) dann an den mit dem Computer und Messprogramm verbundenen MCA weitergegeben. Dieser Zweig der Schaltung ermöglicht die Einstellung der Energiefenster am SCA, die so einzustellen sind, das nur noch der 511 keV Peak des Natrium-Spektrums zu sehen ist. Am mit dem PLastik-szintillationszähler verbundenen SCA ist lediglich eine untere Schwelle einzustellen, da dieser eine deutlich schlechtere Energieauflösung und Lichtausbeute hat. Das negative Output-Signal der SCAs ist jeweils mit einer Timing Unit verbunden. Diese geben das Signal an ein Oszilloskop sowie eine Koinzidenzeneinheit weiter, die schließlich mit einem HEX-Zähler verbunden ist. Mit Hilfe des Oszilloskops ist die Zeitverzögerung so zu wählen, das beide Signale gleichzeitig zu beobachten sind. Außerdem ist das Signal möglichst schmal zu wählen, um die Zahl der zufälligen Koinzidenzen zu reduzieren. Die Einstellungen aller Geräte sind so zu optimieren, dass das Verhältnis der Koinzidenzen zum Untergrund möglichst groß ist.\\
 
+Die Platte, auf der der Dreharm mit Plastikszintillationszähler montiert ist, ist mit Gradzahlen von -90° bis +90° markiert, wobei eine Einstellung von 0° einem eigentlichen Winkel von 180° entspricht. In dem Bereich um auf der Platte als 0° markierten Punkt, nämlich von -15° bis +15°, messen wir in 2,5° Schritten bei einer Messdauer von drei Minuten. Danach messen wir in Schritten von 25° in beide Richtungen, bis wir jeweils 90° erreichen bei gleicher Messzeit.
+Zusätzlich führen wir eine Untergrundmessung bei verstellter Verzögerung durch, die wir mit dem aus dem Winkelspektrum ermittelten Wert für den Untergrund vergleichen.
+
+\subsection{Teil III: Untersuchung der verschiedenen Natriumproben}
+
+Der Versuchsaufbau für diesen Teil ist identisch zum Aufbau in Abschnitt \ref{Teil1}.
+Es wurden die Energiespektren vier weiterer Natriumproben unterschiedlichen Alters aufgenommen. Die Messzeit beträgt dabei je ca. 1 Stunde.
 
 
 \newpage
