@@ -133,6 +133,14 @@ Die erwartete Winkelabhängigkeit mit einem Maximum bei 180° konnte ebenfalls b
 \pagenumbering{arabic} %verstecke Seitenzahl
 \section{Einleitung}
 
+Zur Messung radioaktiver Spektren gibt es eine Reihe verschiedener Methoden. So kann beispielsweise ein Halbleiterdetektor oder ein Zählrohr verwendet werden um radioaktive Zerfälle zu untersuchen (vgl. siehe REF). In diesem Versuch werden Szintillationszähler, die aus einem Szintillator und einem Photomultiplier bestehen, zur Untersuchung radioaktiver Proben und Aufnahme der Spektren verwendet. Hier wird Photoemission im Szintillator durch einfallende Strahlung hervorgerufen, die der Photomultiplier in ein Stromsignal umwandelt.
+Es wird ein auf Grund seiner höheren Lichtausbeute für Energiemessungen besser geeigneter anorganischer NaI-Szintillator verwendet sowie ein auf Grund seiner schnelleren Abklingzeit für Zeitmessungen besser geeigneter organischer PLastikszintillator.
+Zur Signalverarbeitung werden Geräte des NIM-Standards ("Nuclear Instrument Module") verwendet, der sich in der Teilchenphysik bewehrt hat.\\
+
+Der Versuch ist in drei Teile untergliedert. 
+In einem ersten Versuchsteil wird mit dem energiesensiblen NaI-Szinzillationszähler das Spektrum von  $^{228}Th$ aufgenommen und die Peaks identifiziert, wofür zunächst eine Energiekalibrierung durchgeführt werden muss. Diese wird an Hand von Spektren von  $^{22}Na$, $^{60}Co$ und $^{152}Eu$ und der bekannten Peaks durchgeführt.
+Im zweiten Teil des Versuchs wird die Winkelabhängigkeit der beim $\beta^{+}-Zerfall$ in  $^{22}Na$ auftretenden Photonen, die durch Paarvernichtung enstehen, untersucht. Hier werden beide Szintillatoren verwendet, wobei der Plastikszintillator auf einem drehbaren Arm montiert ist, sodass der Winkel zwischen beiden Szintillatoren verstellbar ist. Es werden Messungen der Koinzidenzen bei verschiedenen Winkeln vorgenommen.
+Im dritten Teil des Versuchs werden die Spektren von Natriumproben unterschiedlichen Alters aufgenommen und mit Datensätzen aus anderen Jahren verglichen.
 
 
 
@@ -141,28 +149,30 @@ Die erwartete Winkelabhängigkeit mit einem Maximum bei 180° konnte ebenfalls b
 
 In diesem Abschnitt werden die für das Verständnis dieses Versuches wesentlichen Hintergründe erklärt.
 
-\subsection{Zerfallsgesetz}\label{zerfallsgesetz}
+\subsection{Zerfallsgesetz\label{zerfallsgesetz}}
 Der radioaktive Zerfall ist ein statistischer Prozess, d.h. der genaue Zeitpunkt, zu dem ein Kern zerfällt, kann nicht vorhergesagt werden. Wir können nur Wahrscheinlichkeiten angeben. Die Zerfallsrate $dN/dt$ ist abhängig von der momentanen Anzahl $N$ der Atome.
 \[\frac{dN}{dt}=-\lambda N\]
-wobei $\lambda$ die Zerfallskonstante ist, welche den Bruchteil der zu Beginn vorhandenen Kerne, die pro Zeiteinheit zerfallen beschreibt. Zerfallskonstanten einzelner Zerfälle addieren sich, zerfällt ein Kern auf mehrere Arten. Durch Lösen dieser Differentialgleichung erhält man die Anzahl der Kerne $N$ zum Zeitpunkt $t$.
+wobei $\lambda$ die Zerfallskonstante ist, welche den Bruchteil der zu Beginn vorhandenen Kerne, die pro Zeiteinheit zerfallen beschreibt\textsuperscript{\cite{Demtröder}}. Zerfallskonstanten einzelner Zerfälle addieren sich, zerfällt ein Kern auf mehrere Arten. Durch Lösen dieser Differentialgleichung erhält man die Anzahl der Kerne $N$ zum Zeitpunkt $t$.
 \[N(t)=N_0e^{-\lambda t}\hspace{0.5cm}\]
 wobei $N_0=N(t=0)$ die anfängliche Anzahl der Kerne beschreibt. Hieraus lässt sich dann die mittlere Lebensdauer $\tau$ bestimmen:
 \[\tau=\frac{1}{\lambda}\]
-welche mit der Halbwertszeit $T_{1/2}$ wie folgt zusammenhängt:
+welche mit der Halbwertszeit $T_{1/2}$ wie folgt zusammenhängt:\textsuperscript{\cite{Demtröder}}
 \[T_{1/2} = \ln2\cdot \tau = \frac{\ln2}{\lambda}\]
+ 
+
 
 \subsection{Radioaktive Zerfälle}
 In diesem Versuch werden verschiedene radioaktive Proben untersucht, die auf unterschiedliche Weise zerfallen.
 Instabile Atomkerne gehen, je nach Art des Zerfalls, unter Aussendung von ionisierender Strahlung und Aussendung von Teilchen spontan in einen anderen Atomkern über. Im Folgenden werden die verschiedenen Arten radioaktiver Zerfälle erläutert.
 \subsubsection{$\alpha$-Zerfall}
-Beim $\alpha$-Zerfall geht ein schwerer, instabiler Kern unter Aussendung eines $\alpha$-Teilchens, einem Heliumkern (zwei Protonen und zwei Neutronen) in einen stabilen Kern über. Die Massenzahl des neuen Atomkerns ist dabei um vier gesunken, die Ordnungszahl verringert sich um zwei.
+Beim $\alpha$-Zerfall geht ein schwerer, instabiler Kern unter Aussendung eines $\alpha$-Teilchens, einem Heliumkern (zwei Protonen und zwei Neutronen) in einen stabilen Kern über. Die Massenzahl des neuen Atomkerns ist dabei um vier gesunken, die Ordnungszahl verringert sich um zwei.\textsuperscript{\cite{Demtröder}}
 
 \begin{align}
 {}_Z^A X \rightarrow {}_{Z-2}^{A-4} Y + {}^4_2He
 \end{align}
 
 \subsubsection{$\beta$-Zerfall}
-Der $\beta$-Zerfall wird durch verschiedene Prozesse der schwachen Wechselwirkung beschrieben bei denen Elektronen  und Positronen auftreten. Bei diesem Vorgang wird durch W-Boson-Austausch ein Proton in ein Neutron umgewandelt bzw. ein Neutron in ein Proton.
+Der $\beta$-Zerfall wird durch verschiedene Prozesse der schwachen Wechselwirkung beschrieben bei denen Elektronen  und Positronen auftreten. Bei diesem Vorgang wird durch W-Boson-Austausch ein Proton in ein Neutron umgewandelt bzw. ein Neutron in ein Proton.\textsuperscript{\cite{Demtröder}}
 
 \paragraph*{$\beta^-$-Zerfall:} 
 Bei dieser Art des Zerfalls wandelt sich ein Neutron im Kern unter Aussendung eines Elektrons und eines Elektron-Antineutrinos in ein Proton um. 
@@ -190,30 +200,31 @@ Der Elektroneneinfang führt effektiv im Kern zum gleichen Resultat wie der $\be
 
 Der $\gamma$-Zerfall ist oft eine Begleiterscheinung der bereits diskutierten Kernzerfälle: Befindet sich das Tochternuklid nach dem Zerfall in einem angeregten Zustand, geht es über Aussendung eines $\gamma$-Quants (Photon)  in einen energetisch niedrigeren Zustand über. Die Energie dieser Photonen liegt dabei im Bereich von keV bis MeV. In Materie fällt die Intensität $I_d$ der $\gamma$-Strahlung exponentiell mit der Strecke $d$ ab:
 \[I_d=e^{\mu d}\]
-Dabei ist $\mu$ der Absorptionskoeffizent des Materials und $I_0$ die Anfangsintensität.
+Dabei ist $\mu$ der Absorptionskoeffizent des Materials und $I_0$ die Anfangsintensität.\textsuperscript{\cite{Demtröder}}
 
 \subsubsection{Innere Konversion}
-Konkurrierend zum $\gamma$-Zerfall gibt es auch die Innere Konversion. Bei dieser gehen angeregte Kernzustände strahlungslos in den Grundzustand über, wobei die Energie an ein Elektron übertragen und dieses abgestrahlt wird. Die so entstandene Lücke in der Atomhülle wird dann unter Emission von Röntgenstrahlung oder Auger-Elektronen (siehe \ref{auger}) gefüllt.
+Konkurrierend zum $\gamma$-Zerfall gibt es auch die Innere Konversion. Bei dieser gehen angeregte Kernzustände strahlungslos in den Grundzustand über, wobei die Energie an ein Elektron übertragen und dieses abgestrahlt wird. Die so entstandene Lücke in der Atomhülle wird dann unter Emission von Röntgenstrahlung oder Auger-Elektronen (siehe \ref{auger}) gefüllt.\textsuperscript{\cite{anleitung1}}
 
 \subsection{Prozesse in der Atomhülle}\label{auger}
-Bei manchen Zerfallsprozessen entsteht in der Atomhülle durch Emission eines Elektrons ein Loch. Dieses Loch wird gefüllt, indem ein Elektron einer höheren Schale in die Schale des Loches wechselt und dabei Energie freigibt. Diese Energie kann entweder über direkte Emission eines Photons (Röntgenstrahlung) oder über die Emission eines anderen Elektrons (Auger-Elektron) abgegeben werden. Dadurch entstehen ein oder zwei neue Lücken, welche wiederum über die weitere Emission von Röntgenstrahlung oder eines Auger-Elektrons geschlossen werden können.
+Bei manchen Zerfallsprozessen entsteht in der Atomhülle durch Emission eines Elektrons ein Loch. Dieses Loch wird gefüllt, indem ein Elektron einer höheren Schale in die Schale des Loches wechselt und dabei Energie freigibt. Diese Energie kann entweder über direkte Emission eines Photons (Röntgenstrahlung) oder über die Emission eines anderen Elektrons (Auger-Elektron) abgegeben werden. Dadurch entstehen ein oder zwei neue Lücken, welche wiederum über die weitere Emission von Röntgenstrahlung oder eines Auger-Elektrons geschlossen werden können.\textsuperscript{\cite{anleitung1}}
 
 \subsection{Wechselwirkung von $\gamma$-Strahlung mit Materie}
 Um $\gamma$-Strahlung detektieren zu können, muss die $\gamma$-Strahlung mit Materie wechselwirken. Wir unterscheiden dabei grundsätzlich drei Prozesse: Den Photoeffekt, den Compton-Effekt und die Paarbildung.
  \subsubsection{Photo-Effekt}
- Beim Photoeffekt dringt ein Photon in das Atom ein und überträgt seine gesamte Energie an ein Elektron der inneren Schalen. Dabei wird Energie auf dieses Elektron übertragen, es wird aus der Atomhülle befreit und erhält kinetische Energie. Die hier entstandene Lücke wird über Abstrahlung eines $\gamma$-Quants oder eines Auger-Elektrons wieder gefüllt.
- Der Photoeffekt findet typischerweise bei Energien bis zu $200$ keV statt.
- 
- \gra{Photo}{Äußerer Photoeffekt.}
+ Beim Photoeffekt dringt ein Photon in das Atom ein und überträgt seine gesamte Energie an ein Elektron der inneren Schalen. Dabei wird Energie auf dieses Elektron übertragen, es wird aus der Atomhülle befreit und erhält kinetische Energie. Die hier entstandene Lücke wird über Abstrahlung eines $\gamma$-Quants oder eines Auger-Elektrons wieder gefüllt. Dies wird als äußerer Photoeffekt bezeichnet (siehe Abbildung \ref{PHOTO}) .
+
+  \gra{Photo}{Äußerer Photoeffekt\cite{staat} \label{PHOTO}}
+  Reicht die Energie des Photons nicht aus, um das Elektron zu befreien, wird es in eine höhere Schale angeregt. Dies wird als innerer Photoeffekt bezeichnet.
+  Der Photoeffekt findet typischerweise bei Energien bis zu $200$ keV statt.\textsuperscript{\cite{anleitung1}}
  \subsubsection{Compton-Effekt}
- Beim Compton-Effekt trifft ein einfallendes $\gamma$-Quant auf ein freies oder nur leicht gebundenes Elektron und überträgt einen Teil seiner Energie auf dieses. Dieser Prozess findet meist bei Energien zwischen $200$ keV und $5$ MeV statt.
+ Beim Compton-Effekt trifft ein einfallendes $\gamma$-Quant auf ein freies oder nur leicht gebundenes Elektron und überträgt einen Teil seiner Energie auf dieses. Dieser Prozess findet meist bei Energien zwischen $200$ keV und $5$ MeV statt.\textsuperscript{\cite{anleitung1}}
  
 
- \graShort{Compton-Effekt}{Compton}{links: In dieser Darstellung kann man ein Photon sehen, das mittels Comptoneffekt an einem Elektron gestreut wird und dabei Energie verliert, da es nach dem Stoß langwelliger ist. rechts: Dieser Graph skizziert den erwateten Verlauf im Energiespektrum einer einzelnen
+ \graShort{Compton-Effekt}{Compton}{links: In dieser Darstellung kann man ein Photon sehen, das mittels Comptoneffekt an einem Elektron gestreut wird und dabei Energie verliert, da es nach dem Stoß langwelliger ist.\cite{staat} rechts: Dieser Graph skizziert den erwateten Verlauf im Energiespektrum einer einzelnen
  Photonenenregie durch Compton- und Photoeffekt. Die Wölbung des Comptonplateaus ist nicht zu
- sehen.}
+ sehen.\cite{med}}
  \subsubsection{Paarbildung und Paarvernichtung}
- Bei der Paarbildung entsteht durch die Wechselwirkung des $\gamma$-Quants mit dem elektromagnetischen Feld des Atomkerns oder eines Elektrons ein Teilchen-Antiteilchen-Paar, z.B. Elektronen-Positronen-Paar.Paarbildung ist für Energien über $1,022$ MeV möglich. Die über diesen Grenzwert hinausgehende Energie wird auf die entstandenen Teilchen übertragen, der Imuls wird vom Kern aufgenommen. Da das Positron nicht lange alleine existieren kann, vereinigt es sich unter Abstrahlung von zwei $\gamma$-Quanten mit einem Elektron.
+ Bei der Paarbildung entsteht durch die Wechselwirkung des $\gamma$-Quants mit dem elektromagnetischen Feld des Atomkerns oder eines Elektrons ein Teilchen-Antiteilchen-Paar, z.B. Elektronen-Positronen-Paar.Paarbildung ist für Energien über $1,022$ MeV möglich. Die über diesen Grenzwert hinausgehende Energie wird auf die entstandenen Teilchen übertragen, der Imuls wird vom Kern aufgenommen. Da das Positron nicht lange alleine existieren kann, vereinigt es sich unter Abstrahlung von zwei $\gamma$-Quanten mit einem Elektron.\textsuperscript{\cite{anleitung}}
  
  \subsection{Zerfallsreihen der verwendeten Präparate \label{ZR}}
  
@@ -221,36 +232,36 @@ Um $\gamma$-Strahlung detektieren zu können, muss die $\gamma$-Strahlung mit Ma
  Abfolge von Zerfällen wird Zerfallsreihe genannt. Nachfolgend werden die Zerfallsreihen der verwendeten radioaktiven Isotope und die sich hieraus ergebenden erwarteten Peaks im Spektrum erläutert.
  
  \subsubsection{Natrium $^{22}Na$}
- Das in diesem Versuch verwendete Natrium-Isotop $^{22}Na$ zerfällt mit einer Halbwertszeit von $T=2,6088$ Jahren zu  89,9\% durch $\beta^+$ -Zerfallund zu  10,1 \% durch Electron Capture und zu  in den angeregten Kernzustand 2+ von $^{22}Ne$. Die Zerfallsreihe ist in Abbildung \ref{NA} dargestellt. Bei beiden Zerfällen entstehen Positronen, die in Materie mit Elektronen annihilieren und dabei zwei $\gamma$-Quanten mit einer Energie von $511\,\mathrm{keV}$ abstrahlen. Da impulserhaltung gilt, erwartet man für diese einen Winkel von $180\,\mathrm{°}$. Die Winkelabhängigkeit wird in REF überprüft. Man erwartet im Natriumspektrum also einen Peak von $511\,\mathrm{keV}$. Zusätzlich erwartet man einen Peak bei $1274,6\,\mathrm{keV}$, dies entpricht der Energie des Photons, das beim Übergang in den Grundzustand frei wird.
+ Das in diesem Versuch verwendete Natrium-Isotop $^{22}Na$ zerfällt mit einer Halbwertszeit von $T=2,6088$ Jahren zu  89,9\% durch $\beta^+$ -Zerfallund zu  10,1 \% durch Electron Capture und zu  in den angeregten Kernzustand 2+ von $^{22}Ne$. Die Zerfallsreihe ist in Abbildung \ref{NA} dargestellt. Bei beiden Zerfällen entstehen Positronen, die in Materie mit Elektronen annihilieren und dabei zwei $\gamma$-Quanten mit einer Energie von $511\,\mathrm{keV}$ abstrahlen. Da impulserhaltung gilt, erwartet man für diese einen Winkel von $180\,\mathrm{°}$. Die Winkelabhängigkeit wird in REF überprüft. Man erwartet im Natriumspektrum also einen Peak von $511\,\mathrm{keV}$. Zusätzlich erwartet man einen Peak bei $1274,6\,\mathrm{keV}$, dies entpricht der Energie des Photons, das beim Übergang in den Grundzustand frei wird.\textsuperscript{\cite{staat}}
  
- \gra{Zerfallsreihe-Na}{Zerfallsreihe von $^{22}Na$ \label{NA}}
+ \gra{Zerfallsreihe-Na}{Zerfallsreihe von $^{22}Na$ \label{NA} \cite{staat}}
  
  \subsubsection{Cobalt  $^{60}Co$}
- $^{60}Co$ zerfällt durch zwei $\beta^-$ -Zerfälle mit annähernd 100 \% in den angeregten Zustand 4+ von  $^{60}Ni$, wobei die Halbwertszeit $T=5,2714$ Jahre beträgt. Die höchste Wahrscheinlichkeit hat dann der Übergang vom 4+ in den 2+ Kernzustand. Im Energiespektrum von $^{60}Co$ sind somit Peaks bei $1173,2$ keV und $1332,5$ keV  zu erwarten, wobei ersterer der Energiedifferenz zwischen dem 4+ und dem 2+ Kernzustand entspricht und der zweite der Energiedifferenz des Übergangs in den Grundzustand (siehe Abbildung \ref{Co} )
+ $^{60}Co$ zerfällt durch zwei $\beta^-$ -Zerfälle mit annähernd 100 \% in den angeregten Zustand 4+ von  $^{60}Ni$, wobei die Halbwertszeit $T=5,2714$ Jahre beträgt. Die höchste Wahrscheinlichkeit hat dann der Übergang vom 4+ in den 2+ Kernzustand. Im Energiespektrum von $^{60}Co$ sind somit Peaks bei $1173,2$ keV und $1332,5$ keV  zu erwarten, wobei ersterer der Energiedifferenz zwischen dem 4+ und dem 2+ Kernzustand entspricht und der zweite der Energiedifferenz des Übergangs in den Grundzustand\textsuperscript{\cite{staat}} (siehe Abbildung \ref{Co} ).
  
- \gra{Zerfallsreihe-Co}{Zerfallsreihe von $^{60}Co$ \label{Co} }
+ \gra{Zerfallsreihe-Co}{Zerfallsreihe von $^{60}Co$ \label{Co} \cite{staat} }
  
  \subsubsection{Europium  $^{152}Eu$}
- Das Europium Isotop $^{152}Eu$ zerfällt mit einer Halbertszeit von 12 Jahren durch $\beta^-$ -Zerfall in   $^{152}_{64}Gd$ sowie $\beta^+$ -Zerfall und Electron Capture in $^{152}_{62}Sm$. Der Übergang der angeregten Zustände von  $^{152}_{64}Gd$ und $^{152}_{62}Sm$ in den Grundzustand entspricht Peaks bei 122 keV und 344 keV. In Abbildung \ref{Eu} sind die für diesen Versuch relevanten Zerfälle dargestellt.
+ Das Europium Isotop $^{152}Eu$ zerfällt mit einer Halbertszeit von 12 Jahren durch $\beta^-$ -Zerfall in   $^{152}_{64}Gd$ sowie $\beta^+$ -Zerfall und Electron Capture in $^{152}_{62}Sm$. Der Übergang der angeregten Zustände von  $^{152}_{64}Gd$ und $^{152}_{62}Sm$ in den Grundzustand entspricht Peaks bei 122 keV und 344 keV. In Abbildung \ref{Eu} sind die für diesen Versuch relevanten Zerfälle dargestellt.\textsuperscript{\cite{staat}}
  
  
- \gra{Zerfallsreihe-Eu}{Vereinfachte Zerfallsreihe von $^{152}Eu$ \label{Eu}}
+ \gra{Zerfallsreihe-Eu}{Vereinfachte Zerfallsreihe von $^{152}Eu$ \label{Eu} \cite{staat}}
  
   \subsubsection{Thorium  $^{228}Th$}
-  In Abbildung \ref{Th} ist die Zerfallsreihe von Thorium  $^{232}Th$ dargestellt, die $^{228}Th$ als Zerfallsprodukt enthält. Es wird hier auf Grund der Komplexität dieser Zerfallsreihe auf die Darstellung der wahrscheinlichsten Übergänge und deren zugehörigen Peaks verzichtet und auf REF verwiesen.
+  In Abbildung \ref{Th} ist die Zerfallsreihe von Thorium  $^{232}Th$ dargestellt, die $^{228}Th$ als Zerfallsprodukt enthält. Es wird hier auf Grund der Komplexität dieser Zerfallsreihe auf die Darstellung der wahrscheinlichsten Übergänge und deren zugehörigen Peaks verzichtet und Referenz \cite{staat} verwiesen.
   
-  \gra{Zerfallsreihe-Th}{Zerfallsreihe von  $^{228}Th$ \label{Th}}
+  \gra{Zerfallsreihe-Th}{Zerfallsreihe von  $^{228}Th$ \label{Th} \cite{staat}}
  
  
  
  \subsection{Szintillationszähler}
  
  In diesem Versuch werden Szintillationszähler als Detektoren verwendet.
- Ein Szintillationszähler besteht aus einem Szintillator und einem Photomultiplier. 
+ Ein Szintillationszähler besteht aus einem Szintillator und einem Photomultiplier, die in diesem Versuch in einem Gehäuse sind, um Kabelwege zu reduzieren und damit Rauschen und Störsignale zu vermeiden.
  In Abbildung \ref{Szintiyay} ist die Funktionsweise eines Szntillators dargestellt.Mit Szintillatoren bezeichnet man spezielle Messgeräte, mit denen hochenergetische Photonen in Strahlung niedrigerer Energie aber höherer Intensität umgewandelt werden. Die Intensität der Szintillatorstrahlung ist proportional zur Energie der zu detektierenden Strahlung. Im Szintillationsmedium regt
- die radioaktive Strahlung durch Kernprozesse die Emission von Photonen an. Diese Photonen können das Medium durchdringen und werden in einem Photomultiplier verstärkt und gemessen. Die Funktionsweise eines Photomultipliers kann in REF nachgelesen werden.
+ die radioaktive Strahlung durch Kernprozesse die Emission von Photonen an. Diese Photonen können das Medium durchdringen und werden in einem Photomultiplier verstärkt und gemessen. Die Funktionsweise eines Photomultipliers kann in Referenz \cite{Demtröder} nachgelesen werden.
 
- \gra{Szinti}{Funktionsweise eines Szintillationszähler \cite{Demtröder} \label{Szintiyay}}
+ \gra{Szinti}{Funktionsweise eines Szintillationszähler \cite{Demtröder} \label{Szintiyay} }
  
  In diesem Versuch wird ein organischer Plastikszintillator sowie ein anorganischer NaI-Szintillator verwendet. 
  
@@ -263,7 +274,7 @@ Um $\gamma$-Strahlung detektieren zu können, muss die $\gamma$-Strahlung mit Ma
  Anorganische Szintillatoren haben eine deutlich bessere Energieauflösung als organische Szintillatoren. Dies liegt an ihrer hohen Ordnungszahl und Dichte die eine hohe Nachweiswahrscheinlichkeit mit sich bringt. Der in diesem Versuch verwendete NaI-Kristall ist mit Thalium dotiert. 
  Dringen Photonen in den Kristall ein, können sie ihre Energie durch Photo-bzw. Comptoneffekt an die Elektronen im Valenzband übertragen, die dann in das Leiterband angeregt werden können. Diese regen sich dann unter Aussendung eines niederenergetischen Photons wieder ab und fallen in das Valenzband zurück. Eine Dotierung mit Thalium verhindert durch zusätzliche Energieniveaus zwischen Valenz-und Leitungsband in die Elektronen aufgenommen werden können, eine ständige Reabsorption un Emission der Photonen, sodass diese den Kristall verlassen und detektiert werden können.
  
- \subsection{Gerätebeschreibung}
+ \subsection{Gerätebeschreibung \label{Geräte}}
  
  Die verschiedenen Geräte, die im Versuchsaufbau als Teil der NIM-Module verwendet werden, sind im Folgenden aufgelistet und ihre Funktionsweise wird erklärt:
  
@@ -314,14 +325,25 @@ Es können in der Quelle Wechselwirkungen von $\gamma$-Quanten mit Elektronen st
 \newpage
 \section{Versuchsaufbau und -Durchführung}
 
+Nachfolgend ist der Versuchsaufbau für die verschiedenen Teile des Versuchs erklärt sowie die Versuchsdurchführung protokolliert.
+
 \subsection{Teil I: Vorbereitung und Energiekalibrierung}
 
-\gra[0.9]{schaltbild1}{Versuchsaufbau zur Aufnahme der Energiespektren}
+\gra[0.9]{schaltbild1}{Versuchsaufbau zur Aufnahme der Energiespektren \label{SB1}}
+
+
+Die für die Aufnahme der Spektren verwendete Schaltung ist in Abbildung  \ref{SB1} dargestellt. Die Funktionsweise der einzelnen Geräte wird in \ref{Geräte} erklärt. Das Stromsignal des Photomultipliers wird zum Vorverstärker geleitet. Dessen Ouptput wird zum Hauotverstärker geleitet, dessen unipolarer Output an dem MCA weitergeleitet wird. Dieser ist mit einem Computer verbunden auf dem ein passendes Messprogramm installiert ist. Die erwarteten Signalformen aus den verschiedenen Ausgängen der Geräte sind in blau dargestellt.
+Auf Grund der besseren Energieauflösung anorganischer Szintillatoren wird in diesem Versuchsteil  der NaI-Szintillator verwendet. Die Probe wird in einem Bleiblock mit einer Öffnung in Richtung des Szintillators befestigt. \\
+
+Das Signal wird zunächst nach dem Szintillator sowie nach den beiden Verstärkern betrachtet und die Einstellungen entsprechend optimiert. Die Verstärkung des Hauptverstärkers ist so einzustellen, dass die Channelzahl am MCA gut genutzt wird. Dabei ist zu berücksichtigen, dass die Einstellungen für die Aufnahme aller Spektren unverändert bleiben soll, sodass sicherzustellen ist, dass alle Peaks mit den gewählten Einstellungen gemessen werden können. Am Messprogramm des MCAs ist die Channelanzahl sinnvoll zu wählen, wir haben hier eine Channelanzahl von 8192 gewählt, um eine gute Energieauflösung mit ausreichend Counts zu erhalten. Die anderen gewählten Einstellungen können REF entnommen werden.
+Die Spektren von $^{22}Na$, $^{60}Co$ und $^{152}Eu$ werden jeweils 30 Minuten lang aufgenommen. Außerdem wird eine Untergrundmessung bei identischem Versuchsaufbau und lediglicher Entfernung der Probe mit einer Messzeit von drei Stunden durchgeführt. Das Spektrum von  $^{228}Th$ wird über Nacht aufgenommen.
+
 
 \subsection{Teil II: Messung der Koinzedenzen}
 
-\gra[0.95]{schaltbild2}{Versuchsaufbau zur Untersuchung der Winkelabhängigkeit}
+\gra[0.95]{schaltbild2}{Versuchsaufbau zur Untersuchung der Winkelabhängigkeit \label{SB2}}
 
+Der Versuchsaufbau und die verwendete Schaltung für diesen Versuchsteil kann Abbildung \ref{SB2} entnommen werden.
 
 
 
@@ -530,6 +552,8 @@ Wir wählen als Fehler auf den Mittelwert dabei $\frac{\sigma}{2}$, da es sich h
 \alpha_{max} = (1 \pm 2)°
 \end{align}
 
+Dies entspricht einem Maximum von $(181 \pm 2)°$, sodass wir im Rahmen der Messgenauigkeit die erwartete Abhängigkeit bestätigen können.
+
 Der Fitparameter C entspricht außerdem dem Untergrund der Messung.
 Diesen nahmen wir zusätzlich an Hand einer zweiten Messung bei verstelltem Delay ($t=11\,\mathrm{\mu s}$) auf. Wir erhielten dabei $N=63$ counts in $t=363669$  Sekunden, woraus wir einen Untergrund $C_2$ von 
 
@@ -537,7 +561,9 @@ Diesen nahmen wir zusätzlich an Hand einer zweiten Messung bei verstelltem Dela
 C' = \frac{N}{t} = ( 0.00017 \pm 0.00002) \frac{1}{s} 
 \end{align} 
 
-wobei sich der Fehler aus dem Poissonfehler mit Gauß'scher Fehlerfortpflanzung berechnet, der Fehler auf die Zeit kann vernachlässigt werden.
+wobei sich der Fehler aus dem Poissonfehler mit Gauß'scher Fehlerfortpflanzung berechnet, der Fehler auf die Zeit kann vernachlässigt werden. \\
+Es fällt auf, dass die auf unterschiedliche Art gemessenen Untergründe verschiedene Größenordnungen haben.
+
 
 
 
@@ -686,7 +712,9 @@ Wolfgang Demtröder
  
 \bibitem{energien1}
 \emph{http://hacol13.physik.uni-freiburg.de/fp/Versuche/FP1/FP1-3-Szintillationszaehler/Anhang/Th-228\_tables.pdf}, Stand: 20.10.2016
- 
+
+\bibitem{anleitung1}
+(Zerfall von $^{57}$Co): http://hacol13.physik.uni-freiburg.de/fp/Versuche/FP1/FP1-6-KurzeHalbwertzeiten/Anleitung.pdf
 \end{thebibliography}
 
 \end{document}
