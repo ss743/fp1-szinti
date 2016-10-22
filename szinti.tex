@@ -371,7 +371,7 @@ Es wurden die Energiespektren vier weiterer Natriumproben unterschiedlichen Alte
 \newpage
 \section{Auswertung}Die Auswertung haben wir mit der Programmiersprache \code{R} durchgeführt. Der Quellcode befindet sich im Anhang in Kapitel \ref{sourcecode}.
 \subsection{Aufnahme des Thoriumspektrums}\label{thoriumspektrum}
-Um das aufgenommene Thoriumspektrum auswerten zu können, müssen wir den Kanälen des MCA die entsprechende Energie zuordnen. Dazu haben wir für Cobalt, Natrium und Europium ebenfalls Spektren aufgenommen und aus den bekannten Peaks (siehe Kapitel \ref{ZR}) für diese Proben die Energiekalibrierung durchgeführt. Um die Spektren zu bereinigen, haben wir eine Untergrundmessung durchgeführt und die Zählraten des Untergrunds von den gemessenen Zählraten abgezogen, um äußere Einflüsse auf die Spektren zu verringern (siehe Kapitel \ref{untergrund}). Der Fehler auf die Zählraten ergibt sich durch den Poissonfehler $s_N=\sqrt{N}$ auf die Ereigniszahlen und ist damit $s_n=\frac{\sqrt{N}}{t}=\sqrt{\frac{n}{t}}$.\\
+Um das aufgenommene Thoriumspektrum (siehe Kapitel \ref{Teil1}) auswerten zu können, müssen wir den Kanälen des MCA die entsprechende Energie zuordnen. Dazu haben wir für Cobalt, Natrium und Europium ebenfalls Spektren aufgenommen und aus den bekannten Peaks (siehe Kapitel \ref{ZR}) für diese Proben die Energiekalibrierung durchgeführt. Um die Spektren zu bereinigen, haben wir eine Untergrundmessung durchgeführt und die Zählraten des Untergrunds von den gemessenen Zählraten abgezogen, um äußere Einflüsse auf die Spektren zu verringern (siehe Kapitel \ref{untergrund}). Der Fehler auf die Zählraten ergibt sich durch den Poissonfehler $s_N=\sqrt{N}$ auf die Ereigniszahlen und ist damit $s_n=\frac{\sqrt{N}}{t}=\sqrt{\frac{n}{t}}$.\\
 
 %Mithilfe kurzer Messungen der verwendeten Präparate stellten wir den MCA so ein, dass auch der äußerste erwartete Thoriumpeak (bei $2614.53\,\mathrm{keV}$ \textsuperscript{\cite{staat}}) noch innerhalb des Messbereichs des MCA lag.
 \newpage
@@ -466,6 +466,7 @@ In Abbildung \ref{background} ist das gemessene Untergrundspektrum aufgetragen. 
 	\end{tabular}
 	\caption{Energien der gefundenen Untergrundpeaks\label{untergrundpeaks}}
 \end{table}
+Der erste Peak befindet sich mit einer Energie von $E=1490\pm20\,\mathrm{keV]$ innerhalb von zwei Standardabweichungen bei der Energie des $^40\mathrm{K}$-Zerfalls $E=1460.822\,\mathrm{keV}$. Da Kalium ein Bestandteil von Beton ist, kommt dieser Peak vermutlich durch den Zerfall des Kaliums in den Wänden, welcher durch den Bleiblock nicht vollständig abgeschirmt wird. Der zweite Peak ist deutlich kleiner und vermutlich auch durch einen ähnlichen Effekt zu erklären.
 \newpage
 \subsubsection{Bestimmung der Thorium-Peaks}
 Nachdem die Energiekalibrierung durchgeführt und die Untergrundmessung abgezogen wurde, untersuchen wir das Thoriumspektrum und versuchen die Peaks des Thoriumspektrums zu identifizieren. Wir fitten an die Peaks wieder Gaußfunktionen mit: $$f(x)=C+N\cdot\exp(-\frac{(x-\mu)^2}{2\sigma^2})$$ Die dabei bestimmten Fitparameter sind in Tabelle \ref{thoriumtable} im Anhang zu finden.
@@ -772,6 +773,9 @@ Wolfgang Demtröder
  
 \bibitem{energien1}
 \emph{http://hacol13.physik.uni-freiburg.de/fp/Versuche/FP1/FP1-3-Szintillationszaehler/Anhang/Th-228\_tables.pdf}, Stand: 20.10.2016
+
+\bibitem{energien2}
+\emph{http://www.nucleide.org/DDEP\_WG/Nuclides/K-40\_tables.pdf}, Stand: 22.10.2016
 
 \bibitem{anleitung1}
 (Zerfall von $^{57}$Co): http://hacol13.physik.uni-freiburg.de/fp/Versuche/FP1/FP1-6-KurzeHalbwertzeiten/Anleitung.pdf
